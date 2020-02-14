@@ -1,0 +1,40 @@
+Index,Name,Sprite IDX,Part IDC,Grade,Weight,Damage,RPM,Type,C_Damage,C_Chance,P_Percent,P_Amount,Stability,Accuracy,Recovery,Rounds,R_Speed
+0,RA47 Barrel,0,Barrel,Normal,8,1.1,1,Rifle,0,0.2,0,0,1,1,1,0,1
+1,RA47 Magazine,1,Magazine,Normal,8,1.05,1,Rifle,0,0,0,10,1,1,1,30,1
+2,RA47 Receiver,2,Receiver,Normal,8,25,600,Rifle,2,0.1,0.2,5,10,10,10,1,190
+3,RA47 Tangent Sight,3,Sight,Normal,4,1,1,NA,0.5,0.2,-0.1,5,1,1,1,0,1
+4,RA47 Stock,4,Stock,Normal,8,1,1,NA,0,0,0,0,3.4,1.9,2.1,0,1
+5,RSD Barrel,5,Barrel,Special,12,1.4,0.9,Rifle,0,0,0,0,1,1,1,0,1
+6,RSD Magazine,7,Magazine,Special,7,1.1,0.9,Rifle,0,0,0.2,0,1,1,1,20,1
+7,RSD Flash Hider,6,Muzzle,Special,6,1.05,1,Rifle,0,0,0,0,1,1,1,0,1
+8,RSO1 Scope,8,Sight,Special,10,1,1,NA,0.5,0.1,0.4,0,1,1,1,0,1
+9,RSD Stock,9,Stock,Special,10,1,1,NA,0,0,0,0,2.3,2.3,2.6,0,1
+10,RSD Stock with Cheekpad,10,Stock,Custom,11,1,1,NA,0,0,0,0,2.4,2.8,2.4,0,1
+11,RSD Receiver,2,Receiver,Special,10,40,250,Rifle,1.5,0,0.4,0,5,20,25,1,150
+12,RP Comrade,11,Pistol,Normal,15,30,350,Pistol,2.5,0.4,0,0,10,10,10,12,450
+13,RP Companion,12,Pistol,Special,14,29,400,Pistol,2.3,0.5,0,0,9,16,8,12,550
+14,RDP Blade,13,Blade,Normal,5,55,60,NA,3,0.5,0,0,100,100,100,1,1
+15,RDP Handle,14,Handle,Normal,5,1,1,NA,0,0,0,10,1,1,1,0,1
+16,U16A1 Barrel,18,Barrel,Normal,7,1.05,1,Rifle,0,0.2,0,0,1,1,1,0,1
+17,U16A1 Magazine,19,Magazine,Normal,7,1.05,0.9,Rifle,0,0,0,10,1,1,1,20,1
+18,U16A1 Receiver,15,Receiver,Normal,7,20,800,Rifle,1.5,0,0.3,10,12,15,11,1,250
+19,U16A1 Sight,16,Sight,Normal,5,1,1,NA,0.5,0.1,0,5,1,1,1,0,1
+20,U16A1 Stock,17,Stock,Normal,7,1,1,NA,0,0,0,0,3.4,1.9,2.1,0,1
+21,U16A1 Flash Hider,20,Muzzle,Normal,5,1,1,Rifle,0,0,0,0,1.7,1,1,0,1
+22,U16A2 Barrel,21,Barrel,Special,7,1.05,1,Rifle,0,0.2,0,0,1.3,1,1,0,1
+23,U16A2 Magazine,22,Magazine,Special,7,1,1,Rifle,0,0,0,10,1,1,1,30,1
+24,U16A2 Receiver,15,Receiver,Special,7,22,850,Rifle,1.5,0,0.3,10,12,15,11,1,280
+25,U16A2 Sight,16,Sight,Special,5,1,1,NA,0.5,0.1,0,5,1,1,1,0,1
+26,U16A2 Stock,17,Stock,Special,7,1,1,NA,0,0,0,0,3.7,2,2.1,0,1
+27,U16A2 Flash Hider,23,Muzzle,Special,4,1,1,Rifle,0,0,0,0,1.7,1,1,0,1
+28,BN LB Barrel,24,Barrel,Custom,3,1.05,0.95,Rifle,0,0,0.3,15,1,1,1,0,1
+29,BN Standard Barrel,25,Barrel,Special,2,1,1,Rifle,0.5,0.1,0.1,5,1,1,1,0,1
+30,BN CQC Barrel,26,Barrel,Custom,1,0.95,1.1,Rifle,1,0.3,0,0,1,1,1,0,1
+31,BN SSR Barrel,27,Barrel,Masterpiece,4,1.2,0.9,Rifle,0,0,0.3,25,1,1,1,0,1
+32,BN Mk16-L,28,Receiver,Special,2,35,650,Rifle,2.5,0.3,0.1,10,10,10,10,1,310
+33,BN Mk17-H,28,Receiver,Custom,3,45,350,Rifle,2,0.2,0.2,20,6,15,14,1,290
+34,BN Mk20-SSR,28,Receiver,Masterpiece,4,95,200,Rifle,1.5,0.1,0.3,30,2,25,20,1,210
+35,BN Mk16-L Stock,29,Stock,Special,2.5,1,1,NA,0.5,0.1,0,0,2,2,2.2,0,1
+36,BN Mk17-H Stock,29,Stock,Custom,2.5,1,1,NA,0,0,0.1,5,2.2,2.5,2.6,0,1
+37,BN Mk20-SSR Stock,30,Stock,Masterpiece,4.5,1.2,1,NA,0,0,0.2,25,2.5,3.5,3,0,1
+38,BN Mk16-L Muzzle,35,Muzzle,Special,3,1,1,Rifle,0,0,0,0,2,2,2,0,1

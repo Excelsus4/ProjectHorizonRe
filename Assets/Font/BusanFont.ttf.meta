@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e7e8227904809c04eaf89b4ec3106d18
+timeCreated: 1532617543
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BusanFont_Provisional
+  fontNames:
+  - BusanFont
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

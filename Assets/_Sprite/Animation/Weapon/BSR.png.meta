@@ -1,0 +1,404 @@
+fileFormatVersion: 2
+guid: 55dadc3eabb28be4fb7da769aff72e96
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BSR_MuzzleL
+    21300002: BSR_BarrelS
+    21300004: BSR_BarrelM
+    21300006: BSR_Sight
+    21300008: BSR_BarrelL
+    21300010: BSR_MuzzleH
+    21300012: BSR_MagazineL
+    21300014: BSR_Stock
+    21300016: BSR_MagazineH
+    21300018: BSR_Receiver
+    21300020: BSR_StockSSR
+    21300022: BSR_MuzzleSSR
+    21300024: BSR_BarrelSSR
+    21300026: BSR_MagazineSSR
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BSR_MuzzleL
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 30
+        height: 14
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f180b16b6d1fb4dad12dea3397273e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_BarrelS
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 236
+        width: 76
+        height: 52
+      alignment: 9
+      pivot: {x: 0, y: 0.21153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fd3ab616907ac46a8739577fdcc3f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_BarrelM
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 158
+        width: 118
+        height: 52
+      alignment: 9
+      pivot: {x: 0, y: 0.21153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7fec4a1d158684a90dc8599b4517cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_Sight
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 184
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 3.3333333, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e464b01f868c342af7e26e49080b60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_BarrelL
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 78
+        width: 168
+        height: 52
+      alignment: 9
+      pivot: {x: 0, y: 0.21153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d452c735d8ef1439a85b9f77c0dd47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_MuzzleH
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 116
+        width: 52
+        height: 14
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a61ff905b591b64a9d3d4ee812a16bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_MagazineL
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 90
+        width: 36
+        height: 66
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737cb06f4eea45241acb2a10bb786f14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_Stock
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 194
+        width: 160
+        height: 86
+      alignment: 9
+      pivot: {x: 0.71250004, y: 0.53488374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9875343d5d7e641a9cb11cbf5fd64a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_MagazineH
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 208
+        width: 28
+        height: 52
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930d23ae7ed7e14438dbb95c08255325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_Receiver
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 106
+        width: 130
+        height: 40
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344498c787d12924b9354193f56a84df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_StockSSR
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 154
+        width: 156
+        height: 86
+      alignment: 9
+      pivot: {x: 0.7051282, y: 0.53488374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6138af8d33b4c4799970007745e1d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_MuzzleSSR
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 268
+        width: 46
+        height: 10
+      alignment: 9
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0672c0962360484b8e5472265873def
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_BarrelSSR
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 236
+        width: 162
+        height: 46
+      alignment: 9
+      pivot: {x: 0, y: 0.23913044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44616a848f8b3dc46b05581d29326a80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BSR_MagazineSSR
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 148
+        width: 28
+        height: 28
+      alignment: 9
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea959d10c5d909449e1505adcce3a28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2de9a0c9d1a5b5a49a339171aea950d8
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

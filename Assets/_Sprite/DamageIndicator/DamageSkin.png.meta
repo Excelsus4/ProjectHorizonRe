@@ -1,0 +1,817 @@
+fileFormatVersion: 2
+guid: 170f0ea51d504ff4298f029ac032b3eb
+timeCreated: 1533717834
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: DamageSkin_0
+    21300002: DamageSkin_1
+    21300004: DamageSkin_2
+    21300006: DamageSkin_3
+    21300008: DamageSkin_4
+    21300010: DamageSkin_5
+    21300012: DamageSkin_6
+    21300014: DamageSkin_7
+    21300016: DamageSkin_8
+    21300018: DamageSkin_9
+    21300020: CritEffect
+    21300022: DamageSkin_10
+    21300024: DamageSkin_11
+    21300026: DamageSkin_12
+    21300028: DamageSkin_13
+    21300030: DamageSkin_14
+    21300032: DamageSkin_15
+    21300034: DamageSkin_16
+    21300036: DamageSkin_17
+    21300038: DamageSkin_18
+    21300040: DamageSkin_19
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DamageSkin_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 836
+        width: 33
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.810867, y: 17.995056}
+        - {x: 7.7829514, y: 21}
+        - {x: -0.9952736, y: 21}
+        - {x: -8.828537, y: 15.725403}
+        - {x: -15.51929, y: 3.5805664}
+        - {x: -16.5, y: -11.003479}
+        - {x: -12.1154175, y: -18.818787}
+        - {x: -4.053795, y: -20.417053}
+        - {x: 6.0955086, y: -15.083679}
+        - {x: 16.5, y: 4.3826904}
+        - {x: 16.5, y: 12.63562}
+      physicsShape:
+      - - {x: -16.5, y: 21}
+        - {x: -16.5, y: -21}
+        - {x: 16.5, y: -21}
+        - {x: 16.5, y: 21}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 836
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.135605, y: 21.77594}
+        - {x: -13.5, y: 10.64856}
+        - {x: -13.091984, y: 2.611145}
+        - {x: -9.767445, y: 2.124939}
+        - {x: -6.1315613, y: 3.5498047}
+        - {x: -6.2371063, y: -8.306702}
+        - {x: -12.806271, y: -14.07373}
+        - {x: -13.5, y: -19.634827}
+        - {x: -9.827827, y: -22.79602}
+        - {x: 8.581955, y: -21.987427}
+        - {x: 13.5, y: -19.246155}
+        - {x: 13.5, y: -13.20752}
+        - {x: 7.858841, y: -8.317261}
+        - {x: 5.1198273, y: -3.7403564}
+        - {x: 4.5755157, y: 18.662292}
+        - {x: 1.6674423, y: 22.79602}
+      physicsShape:
+      - - {x: -13.5, y: 23}
+        - {x: -13.5, y: -23}
+        - {x: 13.5, y: -23}
+        - {x: 13.5, y: 23}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 837
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.621414, y: 20.5}
+        - {x: -14.990402, y: 18.824524}
+        - {x: -17.5, y: 16.82788}
+        - {x: -17.5, y: 7.71875}
+        - {x: -14.546425, y: 4.6505127}
+        - {x: -4.2380066, y: 4.683777}
+        - {x: -3.7153625, y: -0.8840332}
+        - {x: -17.240906, y: -11.666748}
+        - {x: -17.5, y: -17.320435}
+        - {x: -13.393448, y: -20.5}
+        - {x: 12.382019, y: -18.102234}
+        - {x: 17.210953, y: -13.273743}
+        - {x: 17.252243, y: -8.561096}
+        - {x: 15.615753, y: -6.017212}
+        - {x: 8.687119, y: -4.0181274}
+        - {x: 7.385376, y: -1.7538452}
+        - {x: 9.307816, y: 2.5049438}
+        - {x: 8.793564, y: 12.694946}
+        - {x: 4.9563446, y: 17.818054}
+        - {x: -0.5656891, y: 20.5}
+      physicsShape:
+      - - {x: -17.5, y: 20.5}
+        - {x: -17.5, y: -20.5}
+        - {x: 17.5, y: -20.5}
+        - {x: 17.5, y: 20.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_3
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 839
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.464157, y: 21}
+        - {x: -3.2934418, y: 21}
+        - {x: -10.878906, y: 17.65509}
+        - {x: -15, y: 11.593994}
+        - {x: -14.710953, y: 6.312744}
+        - {x: -11.593811, y: 4.026428}
+        - {x: -12.968033, y: 0.82873535}
+        - {x: -12.763214, y: -3.143982}
+        - {x: -9.922272, y: -5.1221313}
+        - {x: -15, y: -11.335388}
+        - {x: -15, y: -15.94165}
+        - {x: -9.74852, y: -21}
+        - {x: 2.5708008, y: -20.566406}
+        - {x: 11.230057, y: -18.067688}
+        - {x: 15, y: -12.808594}
+        - {x: 15, y: -2.2625122}
+        - {x: 8.351822, y: 4.6297607}
+        - {x: 9.924103, y: 10.358398}
+        - {x: 10.086136, y: 16.375183}
+      physicsShape:
+      - - {x: -15, y: 21}
+        - {x: -15, y: -21}
+        - {x: 15, y: -21}
+        - {x: 15, y: 21}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 834
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.249054, y: 22.69928}
+        - {x: -8.828461, y: 12.004395}
+        - {x: -17.399292, y: -0.18835449}
+        - {x: -17.011536, y: -4.3757935}
+        - {x: -12.008041, y: -6.945984}
+        - {x: -1.342865, y: -6.651245}
+        - {x: -1.3477478, y: -21.420776}
+        - {x: 3.0307007, y: -24}
+        - {x: 7.2837524, y: -23.566467}
+        - {x: 10.996353, y: -18.94159}
+        - {x: 10.820709, y: -8.152893}
+        - {x: 16.76181, y: -5.594116}
+        - {x: 17.5, y: 0.14416504}
+        - {x: 12.105423, y: 3.2384644}
+        - {x: 9.864166, y: 5.936035}
+        - {x: 10.33432, y: 16.275818}
+        - {x: 4.673218, y: 22.026367}
+        - {x: 0.87957764, y: 23.421875}
+      physicsShape:
+      - - {x: -17.5, y: 24}
+        - {x: -17.5, y: -24}
+        - {x: 17.5, y: -24}
+        - {x: 17.5, y: 24}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_5
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 833
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.286255, y: 17.838562}
+        - {x: -0.8570862, y: 24}
+        - {x: -5.3247986, y: 24}
+        - {x: -9.838715, y: 18.931335}
+        - {x: -14.576843, y: 0.6248779}
+        - {x: -13.278809, y: -3.3407593}
+        - {x: -7.075012, y: -5.7318726}
+        - {x: -7.0417175, y: -8.214844}
+        - {x: -20.5, y: -13.978455}
+        - {x: -20.5, y: -20.38684}
+        - {x: -15.560425, y: -24}
+        - {x: -9.994873, y: -24}
+        - {x: 2.4809265, y: -18.55017}
+        - {x: 8.540924, y: -12.683411}
+        - {x: 9.096039, y: -6.9518433}
+        - {x: 2.7454224, y: 3.5388184}
+        - {x: 17.955566, y: 6.8389893}
+        - {x: 20.5, y: 9.906799}
+        - {x: 17.320435, y: 16.773682}
+      physicsShape:
+      - - {x: -20.5, y: 24}
+        - {x: -20.5, y: -24}
+        - {x: 20.5, y: -24}
+        - {x: 20.5, y: 24}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_6
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 836
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.2404785, y: 20.5}
+        - {x: 2.1802673, y: 20.5}
+        - {x: -7.6525574, y: 8.504395}
+        - {x: -11.770599, y: -0.71118164}
+        - {x: -13, y: -9.371521}
+        - {x: -11.6719055, y: -15.4279785}
+        - {x: -6.1882324, y: -20.5}
+        - {x: 4.472992, y: -20.5}
+        - {x: 10.410645, y: -16.777039}
+        - {x: 13, y: -9.447998}
+        - {x: 10.687592, y: -1.8756104}
+        - {x: 5.142456, y: 3.6881714}
+        - {x: 10.543182, y: 12.420044}
+        - {x: 11.121185, y: 18.187622}
+      physicsShape:
+      - - {x: -13, y: 20.5}
+        - {x: -13, y: -20.5}
+        - {x: 13, y: -20.5}
+        - {x: 13, y: 20.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_7
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 827
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.288574, y: 22.51477}
+        - {x: 6.187042, y: 24.404358}
+        - {x: -7.305084, y: 24.5}
+        - {x: -14.752686, y: 21.87915}
+        - {x: -18, y: 18.17981}
+        - {x: -18, y: 11.053284}
+        - {x: -15.316193, y: 9.670166}
+        - {x: -3.5072327, y: 9.50592}
+        - {x: -0.7687073, y: 7.1290283}
+        - {x: -5.126129, y: -8.301392}
+        - {x: -5.016632, y: -20.33368}
+        - {x: -1.4469604, y: -24.5}
+        - {x: 4.9927063, y: -24.5}
+        - {x: 9.102997, y: -20.275146}
+        - {x: 10.39447, y: -5.3494263}
+        - {x: 14.683594, y: 8.893494}
+        - {x: 18, y: 15.434265}
+        - {x: 18, y: 19.875183}
+      physicsShape:
+      - - {x: -18, y: 24.5}
+        - {x: -18, y: -24.5}
+        - {x: 18, y: -24.5}
+        - {x: 18, y: 24.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_8
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 834
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.9355164, y: 21.5}
+        - {x: -13.025696, y: 12.249084}
+        - {x: -13.738861, y: 4.958191}
+        - {x: -9.679657, y: 1.241272}
+        - {x: -13.034973, y: -2.116516}
+        - {x: -15, y: -6.920227}
+        - {x: -15, y: -12.483704}
+        - {x: -11.552246, y: -17.79248}
+        - {x: -4.725128, y: -21.5}
+        - {x: 6.1163025, y: -20.174072}
+        - {x: 11.769501, y: -16.996216}
+        - {x: 15, y: -10.5373535}
+        - {x: 13.674072, y: -1.1027222}
+        - {x: 10.677643, y: 3.8068848}
+        - {x: 12.199036, y: 7.91333}
+        - {x: 12.056885, y: 14.645691}
+        - {x: 3.5970764, y: 21.102234}
+      physicsShape:
+      - - {x: -15, y: 21.5}
+        - {x: -15, y: -21.5}
+        - {x: 15, y: -21.5}
+        - {x: 15, y: 21.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 832
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5641174, y: 23.691467}
+        - {x: -10.287415, y: 19.62445}
+        - {x: -13.4696045, y: 12.306213}
+        - {x: -13.969391, y: 6.744507}
+        - {x: -12.840271, y: 1.6017456}
+        - {x: -8.914215, y: -1.2429199}
+        - {x: -3.388794, y: -0.7562866}
+        - {x: -3.1870422, y: -4.9330444}
+        - {x: -5.5596313, y: -14.327881}
+        - {x: -6.0071716, y: -21.153015}
+        - {x: -2.5970764, y: -24}
+        - {x: 3.1274414, y: -22.93927}
+        - {x: 7.213623, y: -18.719177}
+        - {x: 9.302643, y: -7.3706055}
+        - {x: 10.909576, y: -0.56140137}
+        - {x: 13.2335205, y: 6.564209}
+        - {x: 13.496185, y: 15.22876}
+        - {x: 9.705048, y: 20.9245}
+        - {x: 5.6466675, y: 24}
+      physicsShape:
+      - - {x: -14, y: 24}
+        - {x: -14, y: -24}
+        - {x: 14, y: -24}
+        - {x: 14, y: 24}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CritEffect
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 697
+        width: 43
+        height: 47
+      alignment: 9
+      pivot: {x: 0.57990813, y: 0.60847896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.058487, y: 4.2747803}
+        - {x: 15.667114, y: 7.349182}
+        - {x: 9.45723, y: 11.284241}
+        - {x: 7.316696, y: 23.094788}
+        - {x: 3.545166, y: 16.304749}
+        - {x: -1.2785797, y: 20.85199}
+        - {x: -1.2433395, y: 12.936707}
+        - {x: -12.305191, y: 19.249634}
+        - {x: -6.996994, y: 9.407898}
+        - {x: -15.383789, y: 10.579773}
+        - {x: -14.553871, y: 5.2165527}
+        - {x: -18.921917, y: 3.7755127}
+        - {x: -16.680279, y: -0.20568848}
+        - {x: -9.8041, y: -1.989685}
+        - {x: -13.921051, y: -10.574463}
+        - {x: -12.483761, y: -12.221313}
+        - {x: -5.898361, y: -6.885254}
+        - {x: -8.622356, y: -21.178284}
+        - {x: -4.769184, y: -21.523376}
+        - {x: 1.2381287, y: -8.911499}
+        - {x: 4.348778, y: -10.014587}
+        - {x: 7.125038, y: -3.4577026}
+        - {x: 11.572067, y: -6.48999}
+        - {x: 14.205727, y: -0.2064209}
+      physicsShape:
+      - - {x: -21.5, y: 23.5}
+        - {x: -21.5, y: -23.5}
+        - {x: 21.5, y: -23.5}
+        - {x: 21.5, y: 23.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 770
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.999535, y: 16.380798}
+        - {x: 6.6286736, y: 21.422852}
+        - {x: -3.9333458, y: 21.60614}
+        - {x: -9.374683, y: 15.317139}
+        - {x: -14.662815, y: 3.9434814}
+        - {x: -14.770988, y: -11.997498}
+        - {x: -10.588612, y: -18.3443}
+        - {x: -4.669733, y: -22.5}
+        - {x: 0.577034, y: -21.941711}
+        - {x: 8.219978, y: -16.680298}
+        - {x: 14.429371, y: -5.1030273}
+        - {x: 16, y: 2.2844238}
+        - {x: 16, y: 9.427795}
+      physicsShape:
+      - - {x: -16, y: 22.5}
+        - {x: -16, y: -22.5}
+        - {x: 16, y: -22.5}
+        - {x: 16, y: 22.5}
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 770
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1.8297806, y: 22}
+        - {x: -11.544941, y: 13.829407}
+        - {x: -12.045509, y: 6.942627}
+        - {x: -6.314743, y: 4.4699707}
+        - {x: -6.165245, y: -7.1642456}
+        - {x: -11.877235, y: -8.020569}
+        - {x: -14.856949, y: -12.173584}
+        - {x: -15, y: -18.352905}
+        - {x: -8.837364, y: -22}
+        - {x: 13.379051, y: -17.542358}
+        - {x: 15, y: -13.018433}
+        - {x: 13.986908, y: -8.482605}
+        - {x: 6.978073, y: -3.5411987}
+        - {x: 6.7361526, y: 18.093079}
+        - {x: 2.6402588, y: 22}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_12
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 773
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.9320984, y: 21.568665}
+        - {x: -12.509476, y: 22}
+        - {x: -18.753433, y: 16.669006}
+        - {x: -19.77958, y: 10.223633}
+        - {x: -16.37555, y: 5.5457153}
+        - {x: -7.456833, y: 5.5514526}
+        - {x: -5.538269, y: 2.8322754}
+        - {x: -8.623512, y: -2.0391846}
+        - {x: -16.479736, y: -9.946533}
+        - {x: -16.844597, y: -17.649353}
+        - {x: -13.083954, y: -22}
+        - {x: 16.254745, y: -19.58368}
+        - {x: 20, y: -15.509705}
+        - {x: 19.758377, y: -9.465576}
+        - {x: 14.981049, y: -5.0475464}
+        - {x: 5.884247, y: -4.9174194}
+        - {x: 7.2416687, y: 9.561279}
+        - {x: 1.9985809, y: 18.25476}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_13
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 775
+        width: 28
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.133926, y: 21.637573}
+        - {x: -14, y: 18.821167}
+        - {x: -14, y: 12.996887}
+        - {x: -11.689896, y: 10.360413}
+        - {x: -5.770233, y: 7.95105}
+        - {x: -8.902008, y: 4.7730713}
+        - {x: -8.913727, y: 1.1054688}
+        - {x: -6.503128, y: -3.730713}
+        - {x: -6.8627625, y: -6.3079224}
+        - {x: -12.554108, y: -11.239929}
+        - {x: -12.835129, y: -17.838379}
+        - {x: -8.321701, y: -21.395874}
+        - {x: -0.7199402, y: -21.626709}
+        - {x: 9.039322, y: -17.102661}
+        - {x: 14, y: -9.435242}
+        - {x: 14, y: -4.699707}
+        - {x: 9.036499, y: 1.6514282}
+        - {x: 13.251617, y: 10.058533}
+        - {x: 10.633377, y: 15.823364}
+        - {x: 1.1936188, y: 22}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_14
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 771
+        width: 40
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.04216, y: 25.5}
+        - {x: 0.28866577, y: 23.333069}
+        - {x: -18.591476, y: 4.328125}
+        - {x: -20, y: -1.1384888}
+        - {x: -16.85881, y: -6.048828}
+        - {x: -4.3414154, y: -6.1000366}
+        - {x: -5.0945587, y: -18.090088}
+        - {x: -3.1789856, y: -23.848938}
+        - {x: 2.1809235, y: -25.5}
+        - {x: 9.730743, y: -22.600403}
+        - {x: 9.591263, y: -6.685913}
+        - {x: 18.484375, y: -5.8953247}
+        - {x: 20, y: -3.7729492}
+        - {x: 20, y: 3.33844}
+        - {x: 17.621307, y: 6.1781616}
+        - {x: 9.928986, y: 6.771057}
+        - {x: 10.213989, y: 19.942505}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_15
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 775
+        width: 35
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.949554, y: 16.579285}
+        - {x: 4.899353, y: 17.548218}
+        - {x: -0.8855896, y: 20.514465}
+        - {x: -5.4184875, y: 21}
+        - {x: -8.551636, y: 18.300598}
+        - {x: -11.004242, y: 9.995178}
+        - {x: -11.850769, y: 3.4747925}
+        - {x: -9.817993, y: 0.68670654}
+        - {x: -4.1594543, y: -3.2202148}
+        - {x: -4.866333, y: -5.61084}
+        - {x: -11.999847, y: -3.9389648}
+        - {x: -16.180176, y: -6.3535156}
+        - {x: -17.5, y: -12.976868}
+        - {x: -16.17102, y: -18.946167}
+        - {x: -10.34787, y: -21}
+        - {x: -0.6222534, y: -19.912659}
+        - {x: 8.366394, y: -15.304138}
+        - {x: 12.179077, y: -7.34375}
+        - {x: 12.195923, y: 0.14343262}
+        - {x: 10.68866, y: 4.421875}
+        - {x: 17.319305, y: 8.821167}
+        - {x: 17.5, y: 13.388672}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_16
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 773
+        width: 31
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.0720215, y: 22.5}
+        - {x: -3.2966614, y: 18.700012}
+        - {x: -10.537567, y: 9.13501}
+        - {x: -14.757172, y: -1.8928223}
+        - {x: -15.5, y: -16.700867}
+        - {x: -8.204315, y: -22.5}
+        - {x: 3.7809753, y: -22.258362}
+        - {x: 10.68631, y: -17.92279}
+        - {x: 15.5, y: -10.847229}
+        - {x: 15.137543, y: -2.0446777}
+        - {x: 6.010559, y: 7.0808105}
+        - {x: 6.3887024, y: 9.250488}
+        - {x: 12.273285, y: 15.271118}
+        - {x: 11.271484, y: 21.412659}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_17
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 770
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.125305, y: 21.433899}
+        - {x: -15, y: 19.238037}
+        - {x: -15, y: 12.899536}
+        - {x: -11.979218, y: 11.152771}
+        - {x: -3.7690735, y: 9.31665}
+        - {x: -3.0576782, y: 5.9956055}
+        - {x: -7.289734, y: -8.918579}
+        - {x: -7.3770447, y: -17.342407}
+        - {x: -4.3683167, y: -21.412659}
+        - {x: 3.172943, y: -21.51825}
+        - {x: 6.5429688, y: -17.54663}
+        - {x: 9.417725, y: -1.4554443}
+        - {x: 13.69281, y: 11.623657}
+        - {x: 14.565399, y: 18.867676}
+        - {x: 8.83844, y: 22.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_18
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 775
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.6378784, y: 21.01654}
+        - {x: -1.2270813, y: 21.154297}
+        - {x: -7.8545227, y: 17.995178}
+        - {x: -13.160156, y: 12.37738}
+        - {x: -15, y: 4.100403}
+        - {x: -14.395905, y: -0.32965088}
+        - {x: -9.950928, y: -4.479248}
+        - {x: -11.461761, y: -8.165894}
+        - {x: -11.6171875, y: -13.9053955}
+        - {x: -9.250671, y: -18.674194}
+        - {x: -4.598358, y: -22}
+        - {x: 3.2809448, y: -20.79181}
+        - {x: 10.377838, y: -16.311218}
+        - {x: 15, y: -10.009277}
+        - {x: 14.154297, y: -2.729004}
+        - {x: 10.1640625, y: 1.5805054}
+        - {x: 10.181763, y: 4.890686}
+        - {x: 12.7752075, y: 10.667908}
+        - {x: 12.704529, y: 16.442505}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: DamageSkin_19
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 770
+        width: 28
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.188629, y: 20.255676}
+        - {x: 5.692932, y: 25.21698}
+        - {x: -0.37442017, y: 25.104248}
+        - {x: -7.452301, y: 22.958069}
+        - {x: -13.275085, y: 17.526306}
+        - {x: -13.03421, y: 7.5343018}
+        - {x: -9.824585, y: 2.939087}
+        - {x: -5.531433, y: 2.4745483}
+        - {x: -9.608856, y: -12.656128}
+        - {x: -9.892303, y: -22.237976}
+        - {x: -5.78006, y: -25.045898}
+        - {x: -0.37695312, y: -24.17102}
+        - {x: 4.12619, y: -17.806824}
+        - {x: 6.633148, y: -2.750183}
+        - {x: 12.545258, y: 9.444153}
+        - {x: 13.879181, y: 14.143433}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
