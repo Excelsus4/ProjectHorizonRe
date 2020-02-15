@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This static class gathers data from specDatabase and spriteDatabase 
+/// in the FakeMain Scene and creates this it.
+/// 
+/// During the game, all data can be fetched from here, probably.
+/// </summary>
 public class GlobalDatabase {
 	public static GameObject[] m_BlobTable;
 
@@ -44,6 +50,12 @@ public class GlobalDatabase {
 		return null;
 	}
 
+	/// <summary>
+	/// Use this to target a weapon part and creates a new instance of it.
+	/// 
+	/// </summary>
+	/// <param name="index">Weapon Part Instance Creator</param>
+	/// <returns></returns>
 	public static WeaponPart BasicPartCreator(int index)
 	{
 		return new WeaponPart(index);
@@ -95,6 +107,11 @@ public class GlobalDatabase {
 		return lineCode;
 	}
 
+	/// <summary>
+	/// This is used for getting the offset for gun flare effect.
+	/// </summary>
+	/// <param name="BarrelIndex">The Barrel number, equivalant with sprite.</param>
+	/// <returns></returns>
 	public static float GetBarrelOffset(int BarrelIndex)
 	{
 		int temp = ScanBarrel(BarrelIndex);
@@ -104,6 +121,12 @@ public class GlobalDatabase {
 			return BarrelOffset[temp];
 	}
 
+	/// <summary>
+	/// Similar to get barrel offset but it returns the length of the barrel instead.
+	/// TODO: what is the difference exactly?
+	/// </summary>
+	/// <param name="BarrelIndex">The Barrel number, equivalant with sprite.</param>
+	/// <returns></returns>
 	public static float GetBarrelLength(int BarrelIndex)
 	{
 		int temp = ScanBarrel(BarrelIndex);

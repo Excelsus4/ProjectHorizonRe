@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This weapon renderer is used in armory AND unit's hand
+/// 
+/// </summary>
 public class WeaponRenderer : MonoBehaviour
 {
 	public int m_WeaponNumberIndicator;

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// SpriteDatabase Processes the sprite table and separates it into GlobalDatabase.
+/// </summary>
 public class SpriteDatabase : MonoBehaviour
 {
 	public Sprite[] m_UniversalParts;

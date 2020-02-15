@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+/// <summary>
+/// SpecDatabase reads all data tables, parse and load it
+/// </summary>
 public class SpecDatabase : MonoBehaviour {
 	public GameObject[] m_BlobTable;
 	private WeaponPart.PartGrade m_nextGrade;
@@ -13,7 +16,7 @@ public class SpecDatabase : MonoBehaviour {
 		for (int idi = 0; idi < GlobalDatabase.m_BlobTable.Length; idi++)
 			GlobalDatabase.m_BlobTable = m_BlobTable;
 
-		//RENWEAL SCRIPT
+		// Reading Tabled Data Files
 		string[] SpecRaw = File.ReadAllLines(@"SaveData\SpecTable.csv");
 		string[] DropRaw = File.ReadAllLines(@"SaveData\DropTable.csv");
 		string[] BarrelRaw = File.ReadAllLines(@"SaveData\BarrelTable.csv");
