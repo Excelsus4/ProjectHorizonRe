@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour {
-
+	public Animator CharacterUpperAnimator;
 	
 
 	// Use this for initialization
 	void Start () {
-		
+		CharacterUpperAnimator.SetBool("isTitle", true);
 	}
 	
 	// Update is called once per frame
