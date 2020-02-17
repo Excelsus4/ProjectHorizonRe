@@ -7804,7 +7804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2125993366}
-  - component: {fileID: 1216748101}
+  - component: {fileID: 1216748104}
   - component: {fileID: 1216748100}
   - component: {fileID: 1216748099}
   - component: {fileID: 1216748098}
@@ -7893,23 +7893,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &1216748101
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 70363376200927810, guid: eb813c1873fd2cb458c734a456ea22a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216748097}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -12}
-  m_Size: {x: 10, y: 35}
-  m_Direction: 0
 --- !u!114 &1216748102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7947,6 +7930,32 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   controlEnabled: 1
   upperInputControl: {fileID: 0}
+--- !u!61 &1216748104
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216748097}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -12}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 35}
+  m_EdgeRadius: 0
 --- !u!1 &1230884714
 GameObject:
   m_ObjectHideFlags: 0
