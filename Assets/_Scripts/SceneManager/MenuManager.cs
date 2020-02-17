@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour {
-	public Animator CharacterUpperAnimator;
-	
+	public VoxelAnimationControl characterMannequin;
 
-	// Use this for initialization
-	void Start () {
-		CharacterUpperAnimator.SetBool("isTitle", true);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	private void Awake() {
+		characterMannequin.SetAsMannequin();
 	}
 
 	//Menu Button Click Action Scripts

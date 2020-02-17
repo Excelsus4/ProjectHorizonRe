@@ -94,7 +94,7 @@ public class VoxelInputControl : MonoBehaviour {
 		for (int idi = 0; idi < isUIOn.Length; idi++)
 		{
 			isUIOn[idi] = true;
-			ToggleUI((ExternalUI)idi);
+			//ToggleUI((ExternalUI)idi);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class VoxelInputControl : MonoBehaviour {
 		//CheckGround();
 		//Movement();
 		Action();
-		CheckUIKey();
+		//CheckUIKey();
 	}
 	/*
 	private void CheckGround()
@@ -166,7 +166,7 @@ public class VoxelInputControl : MonoBehaviour {
 		}
 	}
 
-	private void CheckUIKey()
+	/*private void CheckUIKey()
 	{
 		if (Input.GetButtonDown("Inventory"))
 		{
@@ -184,7 +184,7 @@ public class VoxelInputControl : MonoBehaviour {
 		{
 			ToggleSkill();
 		}
-	}
+	}*/
 
 	private void TryFire()
 	{
@@ -338,14 +338,15 @@ public class VoxelInputControl : MonoBehaviour {
 		}
 	}
 
-	public void ToggleUI(ExternalUI ui)
+	/*public void ToggleUI(ExternalUI ui)
 	{
 		if (ui == ExternalUI.Equipment)
 			ToggleEquipment();
 		else
 		{
 			isUIOn[(int)ui] = !isUIOn[(int)ui];
-			UIPanel[(int)ui].SetActive(isUIOn[(int)ui]);
+			if(UIPanel[(int)ui] != null)
+				UIPanel[(int)ui].SetActive(isUIOn[(int)ui]);
 		}
 	}
 
@@ -371,7 +372,7 @@ public class VoxelInputControl : MonoBehaviour {
 	public void ToggleSkill()
 	{
 		ToggleUI(ExternalUI.Skill);
-	}
+	}*/
 
 	public void OnMDown()
 	{

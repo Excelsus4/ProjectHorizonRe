@@ -25,7 +25,7 @@ public class VoxelAnimationControl : MonoBehaviour {
 	private void Awake() {
 		m_rigidbody = GetComponent<Rigidbody2D>();
 		m_HighAnimator.SetInteger("WeaponCode", 0);
-		m_LowAnimator.SetBool("onGround", false);
+		//m_LowAnimator.SetBool("onGround", false);
 	}
 
 	private void Start()
@@ -66,6 +66,19 @@ public class VoxelAnimationControl : MonoBehaviour {
 	public void SetWeapon(int Number)
 	{
 		m_HighAnimator.SetInteger("WeaponCode", Number);
+	}
+
+	/// <summary>
+	/// This will make this player character just a mannequin rather than a character.
+	/// Used probably in the title screen.
+	/// </summary>
+	public void SetAsMannequin() {
+		m_HighAnimator.SetBool("isTitle", true);
+		GetComponent<VoxelInputControl>().enabled = false;
+		GetComponent<com.meiguofandian.platformer.PlayerController>().enabled = false;
+		GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+		m_BulletIndicator.gameObject.SetActive(false);
+		m_LowAnimator.SetBool("onGround", true);
 	}
 
 	public void GenerateShell()
