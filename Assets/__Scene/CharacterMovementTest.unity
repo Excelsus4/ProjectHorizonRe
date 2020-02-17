@@ -7809,6 +7809,7 @@ GameObject:
   - component: {fileID: 1216748099}
   - component: {fileID: 1216748098}
   - component: {fileID: 1216748102}
+  - component: {fileID: 1216748103}
   m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
@@ -7830,12 +7831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AnimationControl: {fileID: 1216748099}
-  m_GroundCheck: {fileID: 2113973014}
-  m_LockMovement: 0
   m_LockAction: 0
-  m_MovementSpeed: 6
-  m_JumpForce: 350
-  m_MaxSpeed: 10
   m_Stability: 0
   m_Accuracy: 0
   m_Recover: 0
@@ -7884,18 +7880,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216748097}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &1216748101
 CapsuleCollider2D:
@@ -7926,6 +7922,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448a104c40ae1ff42864cc71eae7653c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1216748103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216748097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d04c6d648db7114b8a514293081beb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minGroundNormalY: 0.9
+  gravityModifier: 2.5
+  velocity: {x: 0, y: 0}
+  jumpAudio: {fileID: 0}
+  respawnAudio: {fileID: 0}
+  ouchAudio: {fileID: 0}
+  maxSpeed: 3
+  jumpTakeOffSpeed: 5
+  jumpState: 0
+  collider2d: {fileID: 0}
+  audioSource: {fileID: 0}
+  controlEnabled: 1
+  upperInputControl: {fileID: 0}
 --- !u!1 &1230884714
 GameObject:
   m_ObjectHideFlags: 0

@@ -62,6 +62,9 @@ public class WeaponRenderer : MonoBehaviour
 			PartSprites[idr].enabled = false;
 		}
 
+		if (GlobalWeaponData.g_AllWeapon[m_WeaponNumberIndicator] == null)
+			return;
+
 		//이중for문을 이용해 무기데이터와 렌더러를 행렬로 가상화하는 일종의 가상 매트릭스 형성
 		for (int idi = 0; idi < GlobalWeaponData.g_AllWeapon[m_WeaponNumberIndicator].GetPartRequiredLength(); idi++)
 		{

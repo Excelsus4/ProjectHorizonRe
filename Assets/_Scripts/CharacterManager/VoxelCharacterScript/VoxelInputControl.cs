@@ -31,23 +31,23 @@ public class VoxelInputControl : MonoBehaviour {
 	public VoxelAnimationControl m_AnimationControl;
 
 	//GroundCheck
-	private Rigidbody2D m_rigidbody;
-	private LayerMask m_terrainLayerMask;
-	public Transform m_GroundCheck;
+	//private Rigidbody2D m_rigidbody;
+	//private LayerMask m_terrainLayerMask;
+	//public Transform m_GroundCheck;
 
 	//STATUS FLAG
-	private bool m_isLookingLeft;
-	private bool m_isOnGround;
-	[HideInInspector]
-	public bool m_LockMovement;
+	public bool m_isLookingLeft { get; private set; }
+	//private bool m_isOnGround;
+	//[HideInInspector]
+	//public bool m_LockMovement;
 	[HideInInspector]
 	public bool m_LockAction;
-	private float m_horizontalMovement;
+	//private float m_horizontalMovement;
 
 	//FINAL STATS
-	public float m_MovementSpeed;
-	public float m_JumpForce;
-	public float m_MaxSpeed;
+	//public float m_MovementSpeed;
+	//public float m_JumpForce;
+	//public float m_MaxSpeed;
 	//public float m_FireSpeed;
 
 	//public int m_MaxAmmo;		//장탄수
@@ -77,14 +77,16 @@ public class VoxelInputControl : MonoBehaviour {
 
 	private void Awake()
 	{
-		m_rigidbody = GetComponent<Rigidbody2D>();
+		/*m_rigidbody = GetComponent<Rigidbody2D>();
 		m_terrainLayerMask = LayerMask.GetMask("Terrain");
-		m_horizontalMovement = 0f;
+		m_horizontalMovement = 0f;*/
 
 		m_LockAction = false;
-		m_LockMovement = false;
+		//m_LockMovement = false;
 
 		CharacterLocation = transform;
+		if (GlobalWeaponData.g_CurrentWeapon == null)
+			return;
 		m_CurrentAmmo = Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]);
 		m_AnimationControl.UpdateBulletIndicator(Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]), m_CurrentAmmo);
 		m_DelayFire = 0;
@@ -114,12 +116,12 @@ public class VoxelInputControl : MonoBehaviour {
 			}
 		}
 
-		CheckGround();
-		Movement();
+		//CheckGround();
+		//Movement();
 		Action();
 		CheckUIKey();
 	}
-
+	/*
 	private void CheckGround()
 	{
 		RaycastHit2D hit2D = Physics2D.Linecast(transform.position, m_GroundCheck.position, m_terrainLayerMask);
@@ -139,13 +141,14 @@ public class VoxelInputControl : MonoBehaviour {
 	{
 		if (!m_LockMovement)
 		{
+			Move();
 			if (m_isOnGround)
 			{
-				Move();
+				//Move();
 				Jump();
 			}
 		}
-	}
+	}*/
 
 	private void Action()
 	{
@@ -226,7 +229,7 @@ public class VoxelInputControl : MonoBehaviour {
 		}
 	}
 
-	private void Move()
+	/*private void Move()
 	{
 		float horizontalInput = Input.GetAxis("Horizontal");
 
@@ -256,7 +259,7 @@ public class VoxelInputControl : MonoBehaviour {
 			m_isOnGround = false;
 			m_AnimationControl.SetGrounded(false);
 		}
-	}
+	}*/
 
 	private void SwitchWeapon()
 	{
@@ -297,6 +300,8 @@ public class VoxelInputControl : MonoBehaviour {
 	//Callback Function From VoxelHandCallback.cs
 	public void ReloadComplete()
 	{
+		if (GlobalWeaponData.g_CurrentWeapon == null)
+			return;
 		m_CurrentAmmo = Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]);
 		m_AnimationControl.UpdateBulletIndicator(Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]), m_CurrentAmmo);
 	}
