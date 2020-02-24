@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ModName: Item_Mod_AKM_Magazine
   m_Visuals: {fileID: 21300008, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
-  m_DisplacementList: []
+  m_DisplacementList:
+  - targetPart: 8
+    displacement: {x: -0.27, y: -0.42}
   m_Mainly: 8
   m_Requires: 8
   m_Locks: 72

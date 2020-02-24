@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ModName: Item_Mod_Wooden_Stock
   m_Visuals: {fileID: 21300002, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
-  m_DisplacementList: []
+  m_DisplacementList:
+  - targetPart: 4
+    displacement: {x: -0.56, y: -0.23}
   m_Mainly: 4
   m_Requires: 4
   m_Locks: 4

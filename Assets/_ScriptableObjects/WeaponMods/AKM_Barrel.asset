@@ -16,10 +16,19 @@ MonoBehaviour:
   m_Visuals: {fileID: 21300004, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
   m_DisplacementList:
   - targetPart: 16
-    displacement: {x: 0, y: 0}
+    displacement: {x: 0.87, y: 0.03}
   - targetPart: 256
     displacement: {x: 0, y: 0}
   m_Mainly: 16
   m_Requires: 48
   m_Locks: 48
   m_Unlocks: 0
+  m_Stats:
+    damage: 0
+    criticalChance: 0
+    criticalDamage: 0
+    penetration: 0
+    accuracy: 0
+    recoil: 1
+    recoilRecovery: 1
+    spread: 0

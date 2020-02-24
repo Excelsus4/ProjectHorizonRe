@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +18,26 @@ namespace com.meiguofandian.weaponMod {
 			Sidebarrel	= 0x080,
 			Nozzle		= 0x100,
 			Scope		= 0x200
+		}
+
+		/// <summary>
+		/// This Method will return the modpart in normal int way
+		/// It will return receiver as 1 so if you use this for Array index purpose
+		/// add one to it
+		/// </summary>
+		/// <param name="part"></param>
+		/// <returns></returns>
+		public static int GetModPartIDX(ModPart part) {
+			UInt32 flagData = (UInt32)part;
+			int idx = 1;
+			while(flagData > 0) {
+				if (( flagData & 0x1 ) == 0x1) {
+					return idx;
+				}
+				idx++;
+				flagData >>= 1;
+			}
+			return -1;
 		}
 
 		public string m_ModName;
