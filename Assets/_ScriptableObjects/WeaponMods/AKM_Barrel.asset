@@ -15,10 +15,10 @@ MonoBehaviour:
   m_ModName: Item_Mod_AKM_Barrel
   m_Visuals: {fileID: 21300004, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
   m_DisplacementList:
-  - targetPart: 16
+  - targetPart: 1296
     displacement: {x: 0.87, y: 0.03}
-  - targetPart: 256
-    displacement: {x: 0, y: 0}
+  - targetPart: 1280
+    displacement: {x: 0.87, y: 0}
   m_Mainly: 16
   m_Requires: 48
   m_Locks: 48

@@ -6,7 +6,7 @@ using com.meiguofandian.weaponMod;
 namespace com.meiguofandian.weaponRenderer {
 	public class WeaponRenderer : MonoBehaviour {
 		private List<ModSpriteRenderer> listOfSpriteRenderers = new List<ModSpriteRenderer>();
-		private Vector2[] shiftMatrix = new Vector2[Enum.GetNames(typeof(WeaponMod.ModPart)).Length];
+		private Vector2[] shiftMatrix;
 		public weaponMod.Weapon m_WeaponToRender;
 		public GameObject m_RendererPrefab;
 
@@ -15,7 +15,15 @@ namespace com.meiguofandian.weaponRenderer {
 		}
 
 		public void Render() {
+			if (m_WeaponToRender == null) {
+				for(int idx = 0; idx < listOfSpriteRenderers.Count; idx++) {
+					AssignRenderer(listOfSpriteRenderers[idx], null);
+				}
+				return;
+			}
+
 			// Calculate Shift Offsets for each part
+			shiftMatrix = new Vector2[Enum.GetNames(typeof(WeaponMod.ModPart)).Length];
 			for (int mod_idx = 0; mod_idx < m_WeaponToRender.weaponModList.Count; mod_idx++) {
 				for (int dsp_idx = 0; dsp_idx < m_WeaponToRender.weaponModList[mod_idx].m_Reference.m_DisplacementList.Count; dsp_idx++) {
 					CalculateShift(m_WeaponToRender.weaponModList[mod_idx].m_Reference.m_DisplacementList[dsp_idx]);

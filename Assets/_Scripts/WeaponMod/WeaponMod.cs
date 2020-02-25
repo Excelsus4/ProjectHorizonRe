@@ -17,7 +17,8 @@ namespace com.meiguofandian.weaponMod {
 			Underbarrel = 0x040,
 			Sidebarrel	= 0x080,
 			Nozzle		= 0x100,
-			Scope		= 0x200
+			Scope		= 0x200,
+			Flare		= 0x400		// This isn't a part but used for visual displacement
 		}
 
 		/// <summary>
