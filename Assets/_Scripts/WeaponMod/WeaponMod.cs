@@ -21,6 +21,12 @@ namespace com.meiguofandian.weaponMod {
 			Flare		= 0x400		// This isn't a part but used for visual displacement
 		}
 
+		public enum Status : byte {
+			Unused,
+			Unlocked,
+			Locked
+		}
+
 		/// <summary>
 		/// This Method will return the modpart in normal int way
 		/// It will return receiver as 1 so if you use this for Array index purpose

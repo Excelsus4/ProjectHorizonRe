@@ -16,26 +16,19 @@ namespace com.meiguofandian.weaponMod {
 			} else
 				return null;
 		}
-
-		/// <summary>
-		/// Gets the weapon's modding status.
-		/// </summary>
-		/// <param name="WhichOne">Unlocks or Locks in string</param>
-		/// <returns></returns>
-		public WeaponMod.ModPart GetStatus(string WhichOne) {
+		
+		public WeaponMod.ModPart GetStatus(WeaponMod.Status which) {
 			WeaponMod.ModPart status = 0x0;
-			switch (WhichOne) {
-			case "Unlocks":
+			switch (which) {
+			case WeaponMod.Status.Unlocked:
 				status |= WeaponMod.ModPart.Receiver;
 				foreach (ModInstance mod in weaponModList) 
 					status |= mod.m_Reference.m_Unlocks;
-					break;
-			case "Locks":
+				break;
+			case WeaponMod.Status.Locked:
 				foreach (ModInstance mod in weaponModList)
 					status |= mod.m_Reference.m_Locks;
 				break;
-			default:
-				throw new Exception("ITS EITHER Unlocks or Locks");
 			}
 			return status;
 		}
