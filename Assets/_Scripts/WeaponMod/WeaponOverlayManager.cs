@@ -11,6 +11,8 @@ namespace com.meiguofandian.projectHorizon.manager {
 		public weaponMod.Weapon m_WeaponToRender;
 		public GameObject m_IconObject;
 		public Transform m_IconParent;
+		public float m_IconSize;
+		public float m_IconGap;
 
 		public void Render() {
 			UInt32 unlockFlag = (UInt32)m_WeaponToRender.GetStatus(WeaponMod.Status.Unlocked);
@@ -48,7 +50,7 @@ namespace com.meiguofandian.projectHorizon.manager {
 
 		private ModIconRenderer CreateNewIcon(float shift) {
 			Vector3 IconOffset = m_IconParent.position;
-			IconOffset.x += shift * 50f;
+			IconOffset.x += shift * m_IconGap + m_IconSize;
 
 			ModIconRenderer newRenderer = Instantiate(m_IconObject,IconOffset, Quaternion.identity, m_IconParent).GetComponent<ModIconRenderer>();
 			listOfIconRenderers.Add(newRenderer);
