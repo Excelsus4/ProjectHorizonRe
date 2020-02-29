@@ -32,5 +32,13 @@ namespace com.meiguofandian.weaponMod {
 			}
 			return status;
 		}
+
+		public ModInstance GetModInstance(WeaponMod.ModPart target) {
+			foreach(ModInstance mod in weaponModList) {
+				if (( mod.m_Reference.m_Mainly & target ) > 0)
+					return mod;
+			}
+			return null;
+		}
 	}
 }

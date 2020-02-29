@@ -30,10 +30,16 @@ namespace com.meiguofandian.projectHorizon.manager {
 						flag_status = WeaponMod.Status.Unlocked;
 					if(listOfIconRenderers.Count > idx_renderer) {
 						// IconRenderer is left, use whats exist
-						AssignIconRenderer(listOfIconRenderers[idx_renderer], flag_status, null, (WeaponMod.ModPart)( 0x1 << idx_partFlag ));
+						AssignIconRenderer(listOfIconRenderers[idx_renderer], 
+							flag_status, 
+							m_WeaponToRender.GetModInstance((WeaponMod.ModPart)(0x1 << idx_partFlag)), 
+							(WeaponMod.ModPart)( 0x1 << idx_partFlag ));
 					} else {
 						// Not enough Iconrenderer, create more and assign new
-						AssignIconRenderer(CreateNewIcon(idx_renderer), flag_status, null, (WeaponMod.ModPart)(0x1 << idx_partFlag));
+						AssignIconRenderer(CreateNewIcon(idx_renderer), 
+							flag_status,
+							m_WeaponToRender.GetModInstance((WeaponMod.ModPart)( 0x1 << idx_partFlag )), 
+							(WeaponMod.ModPart)(0x1 << idx_partFlag));
 					}
 					idx_renderer++;
 				}
@@ -57,8 +63,9 @@ namespace com.meiguofandian.projectHorizon.manager {
 			return newRenderer;
 		}
 
-		private void AssignIconRenderer(ModIconRenderer iconRenderer, WeaponMod.Status status, ModInstance weaponMod, WeaponMod.ModPart part) {
-
+		private void AssignIconRenderer(ModIconRenderer iconRenderer, WeaponMod.Status status, ModInstance weaponMod, WeaponMod.ModPart part) { 
+			iconRenderer.target = weaponMod;
+			iconRenderer.UpdateImage();
 		}
 	}
 }
