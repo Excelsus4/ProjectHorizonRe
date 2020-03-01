@@ -14,6 +14,7 @@ namespace com.meiguofandian.projectHorizon.manager {
 
 		private List<ModIconRenderer> listOfIconRenderers = new List<ModIconRenderer>();
 		public weaponMod.Weapon m_WeaponToRender;
+		public weaponRenderer.WeaponRenderer m_PrimaryRenderer;
 		public GameObject m_IconObject;
 		public Transform m_IconParent;
 		public float m_IconSize;
@@ -76,8 +77,11 @@ namespace com.meiguofandian.projectHorizon.manager {
 			iconRenderer.UpdateImage();
 		}
 
-		public void ModIconCallback(OverlayIconType iconType, int IDX) {
-			print("callback by " + iconType + " number " + IDX);
+		public void ModIconCallback(OverlayIconType iconType, int IDX, WeaponMod.ModPart part) {
+			print("callback by " + iconType + " number " + IDX + " at " + part);
+			m_WeaponToRender.RemoveMod(part);
+			Render();
+			m_PrimaryRenderer.Render();
 		}
 	}
 }

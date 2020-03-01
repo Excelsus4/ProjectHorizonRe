@@ -1018,6 +1018,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_WeaponToRender: {fileID: 0}
+  m_PrimaryRenderer: {fileID: 611857720}
   m_IconObject: {fileID: 7139835438093636509, guid: aa0c6a856f2e8aa45afa5ca305ac3653,
     type: 3}
   m_IconParent: {fileID: 324800179}

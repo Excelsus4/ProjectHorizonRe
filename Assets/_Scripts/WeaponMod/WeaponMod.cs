@@ -24,7 +24,8 @@ namespace com.meiguofandian.weaponMod {
 		public enum Status : byte {
 			Unused,
 			Unlocked,
-			Locked
+			Locked,
+			Requires
 		}
 
 		/// <summary>

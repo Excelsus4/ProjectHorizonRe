@@ -23,7 +23,10 @@ namespace com.meiguofandian.weaponRenderer {
 		}
 
 		public void ButtonDownCallback() {
-			callbackManager.ModIconCallback(iconType, callbackIndex);
+			if(iconType == projectHorizon.manager.WeaponOverlayManager.OverlayIconType.WeaponMod) {
+				if(target != null)
+					callbackManager.ModIconCallback(iconType, callbackIndex, target.m_Reference.m_Mainly);
+			}
 		}
 	}
 }
