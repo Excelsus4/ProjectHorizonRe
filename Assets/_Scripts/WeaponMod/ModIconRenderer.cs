@@ -6,6 +6,9 @@ namespace com.meiguofandian.weaponRenderer {
 		public ModInstance target;
 		public RectTransform iconTransform;
 		public UnityEngine.UI.Image iconImage;
+		public projectHorizon.manager.WeaponOverlayManager callbackManager;
+		public projectHorizon.manager.WeaponOverlayManager.OverlayIconType iconType;
+		public int callbackIndex;
 
 		private void Start() {
 			UpdateImage();
@@ -17,6 +20,10 @@ namespace com.meiguofandian.weaponRenderer {
 				iconImage.sprite = target.m_Reference.m_Visuals;
 			} else
 				iconImage.sprite = null;
+		}
+
+		public void ButtonDownCallback() {
+			callbackManager.ModIconCallback(iconType, callbackIndex);
 		}
 	}
 }

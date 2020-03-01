@@ -7,6 +7,11 @@ using com.meiguofandian.weaponRenderer;
 
 namespace com.meiguofandian.projectHorizon.manager {
 	public class WeaponOverlayManager : MonoBehaviour {
+		public enum OverlayIconType {
+			WeaponMod,
+			InventoryMod
+		}
+
 		private List<ModIconRenderer> listOfIconRenderers = new List<ModIconRenderer>();
 		public weaponMod.Weapon m_WeaponToRender;
 		public GameObject m_IconObject;
@@ -54,18 +59,25 @@ namespace com.meiguofandian.projectHorizon.manager {
 			}
 		}
 
-		private ModIconRenderer CreateNewIcon(float shift) {
+		private ModIconRenderer CreateNewIcon(int index) {
 			Vector3 IconOffset = m_IconParent.position;
-			IconOffset.x += shift * m_IconGap + m_IconSize;
+			IconOffset.x += index * m_IconGap + m_IconSize;
 
 			ModIconRenderer newRenderer = Instantiate(m_IconObject,IconOffset, Quaternion.identity, m_IconParent).GetComponent<ModIconRenderer>();
+			newRenderer.iconType = OverlayIconType.WeaponMod;
+			newRenderer.callbackIndex = index;
 			listOfIconRenderers.Add(newRenderer);
 			return newRenderer;
 		}
 
-		private void AssignIconRenderer(ModIconRenderer iconRenderer, WeaponMod.Status status, ModInstance weaponMod, WeaponMod.ModPart part) { 
+		private void AssignIconRenderer(ModIconRenderer iconRenderer, WeaponMod.Status status, ModInstance weaponMod, WeaponMod.ModPart part) {
+			iconRenderer.callbackManager = this;
 			iconRenderer.target = weaponMod;
 			iconRenderer.UpdateImage();
+		}
+
+		public void ModIconCallback(OverlayIconType iconType, int IDX) {
+			print("callback by " + iconType + " number " + IDX);
 		}
 	}
 }
