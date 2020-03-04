@@ -7,8 +7,9 @@ TextureImporter:
     21300004: RA47_Barrel
     21300006: RA47_Sight
     21300008: RA47_Magazine
+    21300010: RA47_Handle
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -124,11 +125,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 12
-        width: 150
-        height: 68
-      alignment: 9
-      pivot: {x: 0.74666667, y: 0.7352941}
+        y: 28
+        width: 112
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,8 +148,8 @@ TextureImporter:
         y: 94
         width: 174
         height: 42
-      alignment: 9
-      pivot: {x: 0, y: 0.4047619}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,14 +188,34 @@ TextureImporter:
         y: 2
         width: 68
         height: 84
-      alignment: 9
-      pivot: {x: 0, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 0495f26c6d5803344bef769c5a2ab89a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA47_Handle
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 12
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c59b4c44033794c9c40ea362f73e56
       vertices: []
       indices: 
       edges: []

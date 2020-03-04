@@ -100,16 +100,8 @@ namespace com.meiguofandian.platformer {
 					velocity.y = velocity.y * model.jumpDeceleration;
 				}
 			}
-
-			/*if (move.x > 0.01f)
-				spriteRenderer.flipX = false;
-			else if (move.x < -0.01f)
-				spriteRenderer.flipX = true;*/
-
-
-			//animator.SetBool("grounded", IsGrounded);
+			
 			animator.SetGrounded(IsGrounded);
-			//animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 			if (upperInputControl.m_isLookingLeft) {
 				animator.SetWalkingSpeed(-velocity.x / maxSpeed);
 			} else {
