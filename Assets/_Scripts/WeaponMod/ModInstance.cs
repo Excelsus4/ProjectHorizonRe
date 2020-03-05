@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.projectHorizon.inventory;
 
 namespace com.meiguofandian.weaponMod {
 	[CreateAssetMenu(fileName = "New Mod Instance", menuName = "ProjectHorizon/Weapon/ModInstance")]
-	public class ModInstance : ScriptableObject {
-		public UInt64 m_ItemCode;
+	public class ModInstance : InventoryItem {
 		public WeaponMod m_Reference;
 
 		public static UInt64 GenerateItemCode() {
