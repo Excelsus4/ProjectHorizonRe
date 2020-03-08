@@ -9,19 +9,18 @@ namespace com.meiguofandian.weaponMod {
 	public class ModInstance : InventoryItem {
 		public WeaponMod m_Reference;
 
-		public static UInt64 GenerateItemCode() {
-			return 0;
-		}
-
 		public static ModInstance CreateInstance(WeaponMod reference) {
 			if (reference == null)
 				return null;
 			else {
 				return new ModInstance {
-					m_ItemCode = GenerateItemCode(),
 					m_Reference = reference
 				};
 			}
+		}
+
+		public override string GetReferenceName() {
+			return m_Reference.m_ModName;
 		}
 	}
 }
