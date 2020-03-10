@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using com.meiguofandian.projectHorizon.inventory;
 
 namespace com.meiguofandian.weaponMod {
 	[CreateAssetMenu(fileName = "New Mod", menuName = "ProjectHorizon/Weapon/WeaponMod")]
-	public class WeaponMod : ScriptableObject {
+	public class WeaponMod : ItemReference {
 		[Flags]
 		public enum ModPart : UInt32{
 			Receiver	= 0x001,
@@ -59,6 +59,10 @@ namespace com.meiguofandian.weaponMod {
 		[enumFlagsAsToggleButtons.EnumFlag]
 		public ModPart m_Unlocks;
 		public Statistics m_Stats;
+
+		public override string GetName() {
+			return "Item_Mod_" + m_ModName;
+		}
 
 		public static string DEBUG_PRINT_FLAG(UInt64 flag) {
 			return String.Format("{0,3} - {1:G}", flag, (ModPart)flag);

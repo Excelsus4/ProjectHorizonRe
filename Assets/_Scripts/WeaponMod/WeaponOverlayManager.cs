@@ -79,9 +79,18 @@ namespace com.meiguofandian.projectHorizon.manager {
 
 		public void ModIconCallback(OverlayIconType iconType, int IDX, WeaponMod.ModPart part) {
 			print("callback by " + iconType + " number " + IDX + " at " + part);
-			m_WeaponToRender.RemoveMod(part);
+			List<ModInstance> removedInstances = m_WeaponToRender.RemoveMod(part);
+			inventory.InventoryData inv = inventory.InventoryData.getSingleton();
+			foreach (ModInstance element in removedInstances) {
+				inv.AddItemToInventory(element);
+			}
 			Render();
 			m_PrimaryRenderer.Render();
+
+			//DEBUG CODE
+			foreach (inventory.InventoryItem element in inv.inventoryItems) {
+				Debug.Log(element.GetReferenceName());
+			}
 		}
 	}
 }

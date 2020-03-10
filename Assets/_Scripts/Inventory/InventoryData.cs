@@ -26,7 +26,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 		public InventoryData() {
 			inventoryItems = new List<InventoryItem>();
 			saveID = "inventory";
-			singleton.SynchronizeSaveData(SynchronizeType.Load);
+			SynchronizeSaveData(SynchronizeType.Load);
 		}
 
 		public void AddItemToInventory(InventoryItem item) {
@@ -57,6 +57,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 
 			// TODO: Create a reference book and using the Reference string, create new item instances
 			foreach(SerializableItem itemData in data.serializableItems) {
+				Debug.Log("Loading " + itemData.item_name);
 				inventoryItems.Add(InventoryItem.CreateByReferenceName(itemData.item_name));
 			}
 

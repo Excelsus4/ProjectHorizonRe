@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
   m_Name: AKM_Receiver
   m_EditorClassIdentifier: 
-  m_ModName: Item_Mod_AKM_Receiver
+  m_ModName: AKM_Receiver
   m_Visuals: {fileID: 21300000, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
   m_DisplacementList:
   - targetPart: 2

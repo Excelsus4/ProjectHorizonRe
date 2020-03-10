@@ -20,7 +20,7 @@ namespace com.meiguofandian.weaponMod {
 		}
 
 		public override string GetReferenceName() {
-			return m_Reference.m_ModName;
+			return m_Reference.GetName();
 		}
 	}
 }

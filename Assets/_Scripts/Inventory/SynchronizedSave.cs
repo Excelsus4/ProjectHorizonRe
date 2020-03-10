@@ -21,12 +21,13 @@ namespace com.meiguofandian.synchronizedSaver {
 			if (saveID == "")
 				throw new Exception("saveID Not Set by " + GetType() + "!");
 			string path = Application.persistentDataPath + "/" + saveID + ".exd";
+			FileStream stream;
 
 			// Save or load according to the timestamp
 			switch (action) {
 			case SynchronizeType.Load:
 				if (File.Exists(path)) {
-					FileStream stream = new FileStream(path, FileMode.Open);
+					stream = new FileStream(path, FileMode.Open);
 					LoadItem(stream);
 					stream.Close();
 				} else {
@@ -34,6 +35,9 @@ namespace com.meiguofandian.synchronizedSaver {
 				}
 				break;
 			case SynchronizeType.Save:
+				stream = new FileStream(path, FileMode.Create);
+				SaveItem(stream);
+				stream.Close();
 				break;
 			}
 		}
