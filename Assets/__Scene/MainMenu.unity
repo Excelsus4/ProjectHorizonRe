@@ -1205,36 +1205,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356418655}
   m_CullTransparentMesh: 0
---- !u!1 &444245573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 444245574}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &444245574
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 444245573}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3700905, y: -4.428468, z: 7.324651}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &523760064
 GameObject:
   m_ObjectHideFlags: 0
@@ -2709,7 +2679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1358823755
 MonoBehaviour:
@@ -3391,6 +3361,7 @@ GameObject:
   - component: {fileID: 1694373507}
   - component: {fileID: 1694373506}
   - component: {fileID: 1694373505}
+  - component: {fileID: 1694373508}
   m_Layer: 0
   m_Name: WeaponInspectorCanvas
   m_TagString: Untagged
@@ -3479,6 +3450,28 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1694373508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694373503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcaf8f1543f3a12469a28464ca9d6625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IconObject: {fileID: 7139835438093636509, guid: aa0c6a856f2e8aa45afa5ca305ac3653,
+    type: 3}
+  m_IconParent: {fileID: 1507565879}
+  m_IconSize:
+  - 20
+  - -10
+  m_IconGap:
+  - 10
+  - -10
+  m_IconColumn: 4
 --- !u!1 &1699722360
 GameObject:
   m_ObjectHideFlags: 0

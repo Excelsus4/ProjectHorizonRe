@@ -4,14 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.weaponMod;
 using com.meiguofandian.weaponRenderer;
+using com.meiguofandian.projectHorizon.inventory;
 
 namespace com.meiguofandian.projectHorizon.manager {
-	public class WeaponOverlayManager : MonoBehaviour {
-		public enum OverlayIconType {
-			WeaponMod,
-			InventoryMod
-		}
-
+	public class WeaponOverlayManager : MonoBehaviour, IModIconButtonCallback {
 		private List<ModIconRenderer> listOfIconRenderers = new List<ModIconRenderer>();
 		public weaponMod.Weapon m_WeaponToRender;
 		public weaponRenderer.WeaponRenderer m_PrimaryRenderer;
@@ -65,7 +61,6 @@ namespace com.meiguofandian.projectHorizon.manager {
 			IconOffset.x += index * m_IconGap + m_IconSize;
 
 			ModIconRenderer newRenderer = Instantiate(m_IconObject,IconOffset, Quaternion.identity, m_IconParent).GetComponent<ModIconRenderer>();
-			newRenderer.iconType = OverlayIconType.WeaponMod;
 			newRenderer.callbackIndex = index;
 			listOfIconRenderers.Add(newRenderer);
 			return newRenderer;
@@ -77,19 +72,15 @@ namespace com.meiguofandian.projectHorizon.manager {
 			iconRenderer.UpdateImage();
 		}
 
-		public void ModIconCallback(OverlayIconType iconType, int IDX, WeaponMod.ModPart part) {
-			print("callback by " + iconType + " number " + IDX + " at " + part);
-			List<ModInstance> removedInstances = m_WeaponToRender.RemoveMod(part);
-			inventory.InventoryData inv = inventory.InventoryData.getSingleton();
-			foreach (ModInstance element in removedInstances) {
-				inv.AddItemToInventory(element);
-			}
-			Render();
-			m_PrimaryRenderer.Render();
-
-			//DEBUG CODE
-			foreach (inventory.InventoryItem element in inv.inventoryItems) {
-				Debug.Log(element.GetReferenceName());
+		public void ModIconCallback(int IDX, InventoryItem part) {
+			if(part is ModInstance mod) {
+				List<ModInstance> removedInstances = m_WeaponToRender.RemoveMod(mod.m_Reference.m_Mainly);
+				InventoryData inv = InventoryData.getSingleton();
+				inv.AddItemToInventory(removedInstances.ToArray());
+				Render();
+				m_PrimaryRenderer.Render();
+			} else {
+				throw new Exception("Part bound to the icon is not mod");
 			}
 		}
 	}

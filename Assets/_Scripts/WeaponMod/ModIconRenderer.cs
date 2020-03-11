@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using com.meiguofandian.weaponMod;
+using com.meiguofandian.projectHorizon.manager;
+using com.meiguofandian.projectHorizon.inventory;
 
 namespace com.meiguofandian.weaponRenderer {
 	public class ModIconRenderer : MonoBehaviour {
-		public ModInstance target;
+		public InventoryItem target;
 		public RectTransform iconTransform;
 		public UnityEngine.UI.Image iconImage;
-		public projectHorizon.manager.WeaponOverlayManager callbackManager;
-		public projectHorizon.manager.WeaponOverlayManager.OverlayIconType iconType;
+		public IModIconButtonCallback callbackManager;
 		public int callbackIndex;
 
 		private void Start() {
@@ -15,18 +16,20 @@ namespace com.meiguofandian.weaponRenderer {
 		}
 
 		public void UpdateImage() {
-			if (target != null) {
-				iconTransform.localScale = target.m_Reference.m_Visuals.bounds.extents;
-				iconImage.sprite = target.m_Reference.m_Visuals;
-			} else
+			switch (target) {
+			case null:
 				iconImage.sprite = null;
+				break;
+			case ModInstance mod:
+				iconTransform.localScale = mod.m_Reference.m_Visuals.bounds.extents;
+				iconImage.sprite = mod.m_Reference.m_Visuals;
+				break;
+			}
 		}
 
 		public void ButtonDownCallback() {
-			if(iconType == projectHorizon.manager.WeaponOverlayManager.OverlayIconType.WeaponMod) {
-				if(target != null)
-					callbackManager.ModIconCallback(iconType, callbackIndex, target.m_Reference.m_Mainly);
-			}
+			if (target != null)
+				callbackManager.ModIconCallback(callbackIndex, target);
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.synchronizedSaver;
+using com.meiguofandian.core;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -22,16 +23,24 @@ namespace com.meiguofandian.projectHorizon.inventory {
 		}
 
 		public List<InventoryItem> inventoryItems;
+		private List<IDataUpdateCallback> observers;
 
 		public InventoryData() {
 			inventoryItems = new List<InventoryItem>();
+			observers = new List<IDataUpdateCallback>();
 			saveID = "inventory";
 			SynchronizeSaveData(SynchronizeType.Load);
 		}
 
-		public void AddItemToInventory(InventoryItem item) {
-			inventoryItems.Add(item);
+		public void AddItemToInventory(InventoryItem[] item) {
+			foreach(InventoryItem element in item)
+				inventoryItems.Add(element);
 			SynchronizeSaveData(SynchronizeType.Save);
+			Debug.Log("saved");
+			foreach(IDataUpdateCallback observer in observers) {
+				Debug.Log("observer?");
+				observer.OnDataUpdate();
+			}
 		}
 
 		public void GenerateItemType() {
@@ -40,6 +49,11 @@ namespace com.meiguofandian.projectHorizon.inventory {
 
 		public void SortInventory() {
 
+		}
+
+		public void RegisterObserver(IDataUpdateCallback observer) {
+			Debug.Log("observer registered");
+			observers.Add(observer);
 		}
 
 		protected override void SaveItem(Stream stream) {
@@ -55,9 +69,8 @@ namespace com.meiguofandian.projectHorizon.inventory {
 			// Update Inventory
 			inventoryItems.Clear();
 
-			// TODO: Create a reference book and using the Reference string, create new item instances
+			// Create a reference book and using the Reference string, create new item instances
 			foreach(SerializableItem itemData in data.serializableItems) {
-				Debug.Log("Loading " + itemData.item_name);
 				inventoryItems.Add(InventoryItem.CreateByReferenceName(itemData.item_name));
 			}
 
