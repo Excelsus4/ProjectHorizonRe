@@ -11,7 +11,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 		public static InventoryItem CreateByReferenceName(string referenceName) {
 			// Temporary code. need to add other types when other types of items are implemented
 			if (ItemDictionary.dictionary.ContainsKey(referenceName)) {
-				ModInstance instance = new ModInstance();
+				ModInstance instance = ScriptableObject.CreateInstance<ModInstance>();
 				instance.m_Reference = (WeaponMod)ItemDictionary.dictionary[referenceName];
 				return instance;
 			} else {

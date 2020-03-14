@@ -14,7 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponModList:
   - {fileID: 11400000, guid: a2ded012780588c4caa84557f37945f7, type: 2}
-  - {fileID: 11400000, guid: 0476c50d72daebe4ebaa1e0b2c6409f3, type: 2}
-  - {fileID: 11400000, guid: 9f14d18f473233d44a621a7ed45ab37e, type: 2}
-  - {fileID: 11400000, guid: 26ac7221c727d464990af5755b138631, type: 2}
-  - {fileID: 11400000, guid: 066b2cb2d81929046ab0e410d3127cbf, type: 2}

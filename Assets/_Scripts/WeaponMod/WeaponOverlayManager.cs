@@ -5,20 +5,26 @@ using UnityEngine;
 using com.meiguofandian.weaponMod;
 using com.meiguofandian.weaponRenderer;
 using com.meiguofandian.projectHorizon.inventory;
+using com.meiguofandian.core;
 
 namespace com.meiguofandian.projectHorizon.manager {
-	public class WeaponOverlayManager : MonoBehaviour, IModIconButtonCallback {
+	public class WeaponOverlayManager : MonoBehaviour, IModIconButtonCallback, IDataUpdateCallback {
 		private List<ModIconRenderer> listOfIconRenderers = new List<ModIconRenderer>();
-		public weaponMod.Weapon m_WeaponToRender;
-		public weaponRenderer.WeaponRenderer m_PrimaryRenderer;
+		private UserHandWeaponData GlobalWeaponManager;
+		public weaponMod.Weapon WeaponToRender;
 		public GameObject m_IconObject;
 		public Transform m_IconParent;
 		public float m_IconSize;
 		public float m_IconGap;
 
+		private void Start() {
+			GlobalWeaponManager = UserHandWeaponData.getSingleton();
+			GlobalWeaponManager.RegisterObserver(this);
+		}
+
 		public void Render() {
-			UInt32 unlockFlag = (UInt32)m_WeaponToRender.GetStatus(WeaponMod.Status.Unlocked);
-			UInt32 lockFlag = (UInt32)m_WeaponToRender.GetStatus(WeaponMod.Status.Locked);
+			UInt32 unlockFlag = (UInt32)WeaponToRender.GetStatus(WeaponMod.Status.Unlocked);
+			UInt32 lockFlag = (UInt32)WeaponToRender.GetStatus(WeaponMod.Status.Locked);
 
 			int idx_partFlag = 0;
 			int idx_renderer = 0;
@@ -34,13 +40,13 @@ namespace com.meiguofandian.projectHorizon.manager {
 						// IconRenderer is left, use whats exist
 						AssignIconRenderer(listOfIconRenderers[idx_renderer], 
 							flag_status, 
-							m_WeaponToRender.GetModInstance((WeaponMod.ModPart)(0x1 << idx_partFlag)), 
+							WeaponToRender.GetModInstance((WeaponMod.ModPart)(0x1 << idx_partFlag)), 
 							(WeaponMod.ModPart)( 0x1 << idx_partFlag ));
 					} else {
 						// Not enough Iconrenderer, create more and assign new
 						AssignIconRenderer(CreateNewIcon(idx_renderer), 
 							flag_status,
-							m_WeaponToRender.GetModInstance((WeaponMod.ModPart)( 0x1 << idx_partFlag )), 
+							WeaponToRender.GetModInstance((WeaponMod.ModPart)( 0x1 << idx_partFlag )), 
 							(WeaponMod.ModPart)(0x1 << idx_partFlag));
 					}
 					idx_renderer++;
@@ -52,7 +58,8 @@ namespace com.meiguofandian.projectHorizon.manager {
 
 			for (; idx_renderer < listOfIconRenderers.Count;idx_renderer++) {
 				// Renderer is left after assigning all unlocks, so disenable renderers
-				AssignIconRenderer(listOfIconRenderers[idx_renderer], WeaponMod.Status.Unused, null, 0x0);
+				listOfIconRenderers[idx_renderer].IconAble(false);
+				//AssignIconRenderer(listOfIconRenderers[idx_renderer], WeaponMod.Status.Unused, null, 0x0);
 			}
 		}
 
@@ -67,6 +74,7 @@ namespace com.meiguofandian.projectHorizon.manager {
 		}
 
 		private void AssignIconRenderer(ModIconRenderer iconRenderer, WeaponMod.Status status, ModInstance weaponMod, WeaponMod.ModPart part) {
+			iconRenderer.IconAble(true);
 			iconRenderer.callbackManager = this;
 			iconRenderer.target = weaponMod;
 			iconRenderer.UpdateImage();
@@ -74,14 +82,15 @@ namespace com.meiguofandian.projectHorizon.manager {
 
 		public void ModIconCallback(int IDX, InventoryItem part) {
 			if(part is ModInstance mod) {
-				List<ModInstance> removedInstances = m_WeaponToRender.RemoveMod(mod.m_Reference.m_Mainly);
-				InventoryData inv = InventoryData.getSingleton();
-				inv.AddItemToInventory(removedInstances.ToArray());
-				Render();
-				m_PrimaryRenderer.Render();
+				GlobalWeaponManager.RemoveModFromWeapon(mod.m_Reference.m_Mainly);
 			} else {
 				throw new Exception("Part bound to the icon is not mod");
 			}
+		}
+
+		public void OnDataUpdate() {
+			WeaponToRender = GlobalWeaponManager.weapon;
+			Render();
 		}
 	}
 }

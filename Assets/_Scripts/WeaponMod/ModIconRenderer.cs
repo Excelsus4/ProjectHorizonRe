@@ -8,6 +8,8 @@ namespace com.meiguofandian.weaponRenderer {
 		public InventoryItem target;
 		public RectTransform iconTransform;
 		public UnityEngine.UI.Image iconImage;
+		public UnityEngine.UI.Image frameImage;
+		public UnityEngine.UI.Image buttonImage;
 		public IModIconButtonCallback callbackManager;
 		public int callbackIndex;
 
@@ -30,6 +32,13 @@ namespace com.meiguofandian.weaponRenderer {
 		public void ButtonDownCallback() {
 			if (target != null)
 				callbackManager.ModIconCallback(callbackIndex, target);
+		}
+
+		public void IconAble(bool isEnable) {
+			Color tempColor = isEnable ? Color.white : Color.clear;
+			buttonImage.color = tempColor;
+			iconImage.color = tempColor;
+			frameImage.color = tempColor;
 		}
 	}
 }

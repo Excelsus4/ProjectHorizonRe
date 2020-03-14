@@ -6,16 +6,6 @@ namespace com.meiguofandian.weaponMod {
 	[CreateAssetMenu(fileName = "New Weapon", menuName = "ProjectHorizon/Weapon/Weapon")]
 	public class Weapon:ScriptableObject {
 		public List<ModInstance> weaponModList = new List<ModInstance>();
-
-		public Weapon CreateNewWeapon(ModInstance receiver) {
-			// An object of weapon only get created by receiver.
-			if(receiver.m_Reference.m_Mainly == WeaponMod.ModPart.Receiver) {
-				Weapon newWeapon = new Weapon();
-				newWeapon.weaponModList.Add(receiver);
-				return newWeapon;
-			} else
-				return null;
-		}
 		
 		public WeaponMod.ModPart GetStatus(WeaponMod.Status which) {
 			return GetStatus(weaponModList, which);
@@ -55,6 +45,15 @@ namespace com.meiguofandian.weaponMod {
 
 		private bool CheckModAvailability(List<ModInstance> modsAlready, ModInstance modToAdd) {
 			if (( GetStatus(modsAlready, WeaponMod.Status.Unlocked) & ~GetStatus(modsAlready, WeaponMod.Status.Locked) & modToAdd.m_Reference.m_Requires ) > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		public bool AddMod(ModInstance modToAdd) {
+			if (CheckModAvailability(modToAdd)) {
+				weaponModList.Add(modToAdd);
 				return true;
 			} else {
 				return false;

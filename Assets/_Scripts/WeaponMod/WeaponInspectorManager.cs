@@ -6,7 +6,6 @@ using com.meiguofandian.weaponMod;
 
 namespace com.meiguofandian.projectHorizon.manager {
 	public class WeaponInspectorManager : MonoBehaviour {
-		public weaponMod.Weapon WeaponOnInspect;
 		public weaponRenderer.WeaponRenderer WeaponRenderer;
 		public WeaponOverlayManager IconRenderer;
 		public Canvas Underlay;
@@ -16,10 +15,8 @@ namespace com.meiguofandian.projectHorizon.manager {
 		}
 
 		public void UpdateInspector() {
-			WeaponRenderer.m_WeaponToRender = WeaponOnInspect;
 			WeaponRenderer.Render();
-
-			IconRenderer.m_WeaponToRender = WeaponOnInspect;
+			
 			IconRenderer.Render();
 		}
 	}

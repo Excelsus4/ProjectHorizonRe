@@ -9,6 +9,7 @@ using com.meiguofandian.projectHorizon.inventory;
 
 namespace com.meiguofandian.projectHorizon.inventory {
 	public class InventoryDisplay : MonoBehaviour, IDataUpdateCallback, IModIconButtonCallback {
+		private UserHandWeaponData weaponData;
 		private InventoryData data;
 
 		private List<ModIconRenderer> listOfIconRenderers = new List<ModIconRenderer>();
@@ -20,6 +21,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 		public int m_IconColumn;
 
 		private void Start() {
+			weaponData = UserHandWeaponData.getSingleton();
 			data = InventoryData.getSingleton();
 			data.RegisterObserver(this);
 			InventoryRender();
@@ -47,7 +49,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 
 			// Left over icons
 			for(; idx < listOfIconRenderers.Count; idx++) {
-
+				listOfIconRenderers[idx].IconAble(false);
 			}
 		}
 
@@ -63,6 +65,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 		}
 
 		private void AssignIconRenderer(ModIconRenderer iconRenderer,InventoryItem weaponMod) {
+			iconRenderer.IconAble(true);
 			iconRenderer.callbackManager = this;
 			iconRenderer.target = weaponMod;
 			iconRenderer.UpdateImage();
@@ -70,7 +73,10 @@ namespace com.meiguofandian.projectHorizon.inventory {
 
 		public void ModIconCallback(int IDX, InventoryItem part) {
 			if (part is ModInstance mod) {
-				// TODO: Apply the mod to the weapon
+				ModInstance[] mods = new ModInstance[1];
+				mods[0] = mod;
+				if(weaponData.AddModToInventory(mods).Count > 0)
+					data.RemoveItemFromInventory(IDX);
 			} else {
 				// Do whatever the item is suppose to do. probably an inspect window
 			}
