@@ -6,7 +6,8 @@ namespace com.meiguofandian.weaponMod {
 	[CreateAssetMenu(fileName = "New Weapon", menuName = "ProjectHorizon/Weapon/Weapon")]
 	public class Weapon:ScriptableObject {
 		public List<ModInstance> weaponModList = new List<ModInstance>();
-		
+		private Statistics weaponStats = new Statistics();
+
 		public WeaponMod.ModPart GetStatus(WeaponMod.Status which) {
 			return GetStatus(weaponModList, which);
 		}
@@ -54,10 +55,19 @@ namespace com.meiguofandian.weaponMod {
 		public bool AddMod(ModInstance modToAdd) {
 			if (CheckModAvailability(modToAdd)) {
 				weaponModList.Add(modToAdd);
+				weaponStats.Merge(modToAdd.m_Reference.m_Stats);
 				return true;
 			} else {
 				return false;
 			}
+		}
+
+		private Statistics RecalculateStat() {
+			weaponStats = new Statistics();
+			foreach(ModInstance element in weaponModList) {
+				weaponStats.Merge(element.m_Reference.m_Stats);
+			}
+			return weaponStats;
 		}
 
 		/// <summary>
@@ -71,6 +81,7 @@ namespace com.meiguofandian.weaponMod {
 				weaponModList.Remove(removed);
 				List<ModInstance> linkRemoved = ValidateModdingStatus();
 				linkRemoved.Add(removed);
+				RecalculateStat();
 				return linkRemoved;
 			}
 			return null;

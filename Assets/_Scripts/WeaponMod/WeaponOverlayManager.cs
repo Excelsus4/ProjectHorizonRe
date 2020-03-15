@@ -64,7 +64,11 @@ namespace com.meiguofandian.projectHorizon.manager {
 		}
 
 		private ModIconRenderer CreateNewIcon(int index) {
+			Debug.Log(m_IconParent.position);
 			Vector3 IconOffset = m_IconParent.position;
+			if(index > 0) {
+				IconOffset.y = listOfIconRenderers[0].transform.position.y;
+			}
 			IconOffset.x += index * m_IconGap + m_IconSize;
 
 			ModIconRenderer newRenderer = Instantiate(m_IconObject,IconOffset, Quaternion.identity, m_IconParent).GetComponent<ModIconRenderer>();

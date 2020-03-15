@@ -86,7 +86,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 			SerializableInventory data = formatter.Deserialize(stream) as SerializableInventory;
 
 			// Update Inventory
-			weapon = new weaponMod.Weapon();
+			weapon = ScriptableObject.CreateInstance<weaponMod.Weapon>();
 			//inventoryItems.Clear();
 
 			// Create a reference book and using the Reference string, create new item instances
@@ -99,7 +99,7 @@ namespace com.meiguofandian.projectHorizon.inventory {
 
 		protected override void LoadItem() {
 			// Load A Default Weapon
-			weapon = new weaponMod.Weapon();
+			weapon = ScriptableObject.CreateInstance<weaponMod.Weapon>();
 			foreach(ModInstance element in ItemDictionary.defaultWeapon) {
 				weapon.AddMod(element);
 			}

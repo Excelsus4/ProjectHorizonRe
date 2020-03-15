@@ -35,7 +35,6 @@ namespace com.meiguofandian.projectHorizon.inventory {
 		}
 
 		public void InventoryRender() {
-			print("This is called?");
 			int idx;
 			for(idx = 0; idx < data.inventoryItems.Count; idx++) {
 				if(listOfIconRenderers.Count <= idx) {
