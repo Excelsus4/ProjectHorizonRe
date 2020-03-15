@@ -14,5 +14,12 @@ namespace com.meiguofandian.projectHorizon.inventory {
 				serializableItems[idx] = new SerializableItem(data.inventoryItems[idx]);
 			}
 		}
+
+		public SerializableInventory(UserHandWeaponData data) {
+			serializableItems = new SerializableItem[data.weapon.weaponModList.Count];
+			for (int idx = 0; idx < serializableItems.Length; idx++) {
+				serializableItems[idx] = new SerializableItem(data.weapon.weaponModList[idx]);
+			}
+		}
 	}
 }

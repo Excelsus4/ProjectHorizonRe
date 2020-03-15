@@ -72,25 +72,27 @@ namespace com.meiguofandian.projectHorizon.inventory {
 
 		protected override void SaveItem(Stream stream) {
 			BinaryFormatter formatter = new BinaryFormatter();
-			//SerializableInventory data = new SerializableInventory(this);
-			//formatter.Serialize(stream, data);
+			SerializableInventory data = new SerializableInventory(this);
+			formatter.Serialize(stream, data);
 		}
 
 		protected override void LoadItem(Stream stream) {
 			BinaryFormatter formatter = new BinaryFormatter();
 
-
 			// Temporary For now
-			LoadItem();
-			//SerializableInventory data = formatter.Deserialize(stream) as SerializableInventory;
+			//LoadItem();
+
+
+			SerializableInventory data = formatter.Deserialize(stream) as SerializableInventory;
 
 			// Update Inventory
+			weapon = new weaponMod.Weapon();
 			//inventoryItems.Clear();
 
 			// Create a reference book and using the Reference string, create new item instances
-			//foreach (SerializableItem itemData in data.serializableItems) {
-			//	inventoryItems.Add(InventoryItem.CreateByReferenceName(itemData.item_name));
-			//}
+			foreach (SerializableItem itemData in data.serializableItems) {
+				weapon.AddMod(InventoryItem.CreateByReferenceName(itemData.item_name) as ModInstance);
+			}
 
 			// Note that stream will be closed from the called parent 
 		}
