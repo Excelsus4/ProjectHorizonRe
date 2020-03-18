@@ -10,29 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
-  m_Name: AKM_Barrel
+  m_Name: M4A1_Magazine
   m_EditorClassIdentifier: 
-  m_ModName: AKM_Barrel
-  m_Visuals: {fileID: 21300004, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
+  m_ModName: M4A1_Magazine
+  m_Visuals: {fileID: 21300008, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
   m_DisplacementList:
-  - targetPart: 1296
-    displacement: {x: 0.87, y: 0.03}
-  - targetPart: 1280
-    displacement: {x: 0.87, y: 0}
-  m_Mainly: 16
-  m_Requires: 48
-  m_Locks: 48
+  - targetPart: 8
+    displacement: {x: -0.27, y: -0.42}
+  m_Mainly: 8
+  m_Requires: 8
+  m_Locks: 72
   m_Unlocks: 0
   m_Stats:
-    damage: 0
-    damageCap: 83
+    damage: 44
+    damageCap: 300
     attackSpeed: 0
-    penetration: 0
+    penetration: 40
     recoil: 1
-    recoilRecovery: 4
-    accuracy: 2.06
+    recoilRecovery: -4
+    accuracy: 0
     spread: 1
-    rounds: 0
+    rounds: 30
     reloadSpeed: 1
-    criticalChance: 0
+    criticalChance: 0.24
     criticalDamage: 0

@@ -23,10 +23,14 @@ MonoBehaviour:
   m_Unlocks: 0
   m_Stats:
     damage: 0
+    damageCap: 300
+    attackSpeed: 0
+    penetration: 0
+    recoil: 1
+    recoilRecovery: 5
+    accuracy: 0
+    spread: 1
+    rounds: 0
+    reloadSpeed: 1
     criticalChance: 0
     criticalDamage: 0
-    penetration: 0
-    accuracy: 0
-    recoil: 1
-    recoilRecovery: 1
-    spread: 0

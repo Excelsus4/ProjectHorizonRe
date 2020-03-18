@@ -75,7 +75,7 @@ public class VoxelAnimationControl : MonoBehaviour {
 	public void SetAsMannequin() {
 		m_HighAnimator.SetBool("isTitle", true);
 		GetComponent<VoxelInputControl>().enabled = false;
-		GetComponent<com.meiguofandian.platformer.PlayerController>().enabled = false;
+		GetComponent<com.meiguofandian.ProjectHorizon.GamePlay.Platformer.PlayerController>().enabled = false;
 		GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 		m_BulletIndicator.gameObject.SetActive(false);
 		m_LowAnimator.SetBool("onGround", true);
