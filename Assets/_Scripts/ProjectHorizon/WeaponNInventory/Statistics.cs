@@ -67,8 +67,17 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		public void DisplayStat(StatDisplay[] displays) {
-
 			displays[0].SetStatus(300, Math.Min(damage, damageCap), damage, Math.Min(damage, damageCap).ToString());
+			displays[1].SetStatus(1200, attackSpeed, 0f, attackSpeed.ToString());
+			displays[2].SetStatus(100, penetration, 0f, penetration.ToString());
+			displays[3].SetStatus(300, recoil, 0f, recoil.ToString());
+			displays[4].SetStatus(300, recoilRecovery, 0f, recoilRecovery.ToString());
+			displays[5].SetStatus(30, 30 - accuracy, 0f, accuracy.ToString());
+			displays[6].SetStatus(10, 10 - spread, 0f, spread.ToString());
+			displays[7].SetStatus(100, rounds, 0f, rounds.ToString());
+			displays[8].SetStatus(4, reloadSpeed, 0f, reloadSpeed.ToString());
+			displays[9].SetStatus(1, criticalChance, 0f, ( criticalChance * 100 ) + "%");
+			displays[10].SetStatus(3, criticalDamage, 0f, ( criticalDamage * 100 ) + "%");
 		}
 	}
 }
