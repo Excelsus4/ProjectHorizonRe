@@ -349,7 +349,6 @@ GameObject:
   - component: {fileID: 117854237936452165}
   - component: {fileID: 117854237936452162}
   - component: {fileID: 117854237936452163}
-  - component: {fileID: 117854237936452167}
   - component: {fileID: 117854237936452166}
   m_Layer: 9
   m_Name: Character
@@ -442,7 +441,7 @@ MonoBehaviour:
   m_CallbackScript: {fileID: 4107678281012495123}
   m_ShellRenderer: {fileID: 1003096887422550, guid: 9d278e3d1e220014994556b98ab707ac,
     type: 3}
-  m_Receiver: {fileID: 120487063123771457}
+  m_Receiver: {fileID: 0}
   m_ShellUpForce: 0.03
   m_ShellBackForce: -0.01
   m_BulletIndicator: {fileID: 117854238934649846}
@@ -465,8 +464,8 @@ MonoBehaviour:
   m_Recover: 0
   m_Recoil: 0
   m_MuzzleLocation:
-  - {fileID: 120999534788884355}
-  - {fileID: 120999534788884355}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   m_BulletLine: {fileID: 0}
   UIPanel:
@@ -474,19 +473,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  m_MainWeapon: {fileID: 15665454119323879}
---- !u!114 &117854237936452167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117854237936452160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448a104c40ae1ff42864cc71eae7653c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_MainWeapon: {fileID: 0}
 --- !u!114 &117854237936452166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,6 +1153,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpperWhole
       objectReference: {fileID: 0}
+    - target: {fileID: 114954077380047732, guid: eb813c1873fd2cb458c734a456ea22a4,
+        type: 3}
+      propertyPath: m_VoxelInputControl
+      value: 
+      objectReference: {fileID: 117854237936452163}
+    - target: {fileID: 114954077380047732, guid: eb813c1873fd2cb458c734a456ea22a4,
+        type: 3}
+      propertyPath: m_VoxelAnimationControl
+      value: 
+      objectReference: {fileID: 117854237936452162}
     - target: {fileID: 4258795620131726, guid: eb813c1873fd2cb458c734a456ea22a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1210,36 +1207,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114954077380047732, guid: eb813c1873fd2cb458c734a456ea22a4,
-        type: 3}
-      propertyPath: m_VoxelInputControl
-      value: 
-      objectReference: {fileID: 117854237936452163}
-    - target: {fileID: 114954077380047732, guid: eb813c1873fd2cb458c734a456ea22a4,
-        type: 3}
-      propertyPath: m_VoxelAnimationControl
-      value: 
-      objectReference: {fileID: 117854237936452162}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb813c1873fd2cb458c734a456ea22a4, type: 3}
---- !u!4 &120487063123771457 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4122218513126125606, guid: eb813c1873fd2cb458c734a456ea22a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4078292852125085799}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &15665454119323879 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4084384534096328832, guid: eb813c1873fd2cb458c734a456ea22a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4078292852125085799}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8ff1e21bba11cd43a8c19d31c783f18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4107678281012495123 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114954077380047732, guid: eb813c1873fd2cb458c734a456ea22a4,
@@ -1261,12 +1230,6 @@ Animator:
 --- !u!4 &4077482692981412841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4258795620131726, guid: eb813c1873fd2cb458c734a456ea22a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4078292852125085799}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &120999534788884355 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4122167852452677604, guid: eb813c1873fd2cb458c734a456ea22a4,
     type: 3}
   m_PrefabInstance: {fileID: 4078292852125085799}
   m_PrefabAsset: {fileID: 0}

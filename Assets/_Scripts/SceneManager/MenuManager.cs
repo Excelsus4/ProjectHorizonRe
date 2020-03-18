@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.ProjectHorizon.GamePlay.Shooting;
 
 public class MenuManager : MonoBehaviour {
 	public VoxelAnimationControl characterMannequin;

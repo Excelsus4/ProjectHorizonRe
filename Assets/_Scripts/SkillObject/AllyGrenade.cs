@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.ProjectHorizon.GamePlay.Shootables;
 
 public class AllyGrenade : MonoBehaviour {
 	public UnityEngine.UI.Slider m_TimeLeftSlider;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.ProjectHorizon.GamePlay.Shooting;
 
 // Code modified from unity MicrogamePlatformer Tutorial
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Platformer {

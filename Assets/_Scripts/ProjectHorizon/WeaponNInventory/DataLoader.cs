@@ -10,7 +10,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		private void Awake() {
 			foreach(ItemReference item in itemReferences) {
 				ItemDictionary.dictionary.Add(item.GetName(), item);
-				Debug.Log(item.GetName());
 			}
 			ItemDictionary.defaultWeapon = defaultWeaponData;
 		}
