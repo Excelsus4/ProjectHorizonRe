@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
-  m_Name: AKM_Barrel
+  m_Name: M16A1_Barrel
   m_EditorClassIdentifier: 
-  m_ModName: AKM_Barrel
+  m_ModName: M16A1_Barrel
   m_Visuals: {fileID: 21300004, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
   m_DisplacementList:
   - targetPart: 1296
@@ -25,12 +25,12 @@ MonoBehaviour:
   m_Unlocks: 0
   m_Stats:
     damage: 0
-    damageCap: 83
+    damageCap: 85
     attackSpeed: 0
     penetration: 0
     recoil: 1
     recoilRecovery: 4
-    accuracy: 2.06
+    accuracy: 1.05
     spread: 1
     rounds: 0
     reloadSpeed: 1

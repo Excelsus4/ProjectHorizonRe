@@ -11274,6 +11274,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 117854238212331162, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117854238212331162, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
         type: 3}
       propertyPath: m_BulletLine
@@ -11299,15 +11309,5 @@ PrefabInstance:
       propertyPath: UIPanel.Array.data[3]
       value: 
       objectReference: {fileID: 619274233}
-    - target: {fileID: 117854238212331162, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 117854238212331162, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e8bafa6b9f2cb4faf486434364714b, type: 3}

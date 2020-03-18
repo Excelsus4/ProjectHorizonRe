@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
   m_Name: Wooden_Stock
   m_EditorClassIdentifier: 
-  m_ModName: Item_Mod_Wooden_Stock
+  m_ModName: Wooden_Stock
   m_Visuals: {fileID: 21300002, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
   m_DisplacementList:
   - targetPart: 4
@@ -23,10 +23,14 @@ MonoBehaviour:
   m_Unlocks: 0
   m_Stats:
     damage: 0
+    damageCap: 300
+    attackSpeed: 0
+    penetration: 0
+    recoil: 0.63
+    recoilRecovery: 2
+    accuracy: 0
+    spread: 1
+    rounds: 0
+    reloadSpeed: 1
     criticalChance: 0
     criticalDamage: 0
-    penetration: 0
-    accuracy: 0
-    recoil: 1
-    recoilRecovery: 1
-    spread: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryNewManager : MonoBehaviour {
 	public GameObject m_ItemDisplayPrefab;
+	public Transform m_InventoryDisplayParent;
 	[HideInInspector]
 	public GameObject[] m_ItemDisplay;
 

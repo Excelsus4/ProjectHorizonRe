@@ -56,8 +56,8 @@ MonoBehaviour:
   target: {fileID: 11400000, guid: 066b2cb2d81929046ab0e410d3127cbf, type: 2}
   iconTransform: {fileID: 7139835438718879651}
   iconImage: {fileID: 7139835438718879648}
-  callbackManager: {fileID: 0}
-  iconType: 0
+  frameImage: {fileID: 7139835439445863748}
+  buttonImage: {fileID: 7139835438093636480}
   callbackIndex: 0
 --- !u!114 &7139835438093636486
 MonoBehaviour:
