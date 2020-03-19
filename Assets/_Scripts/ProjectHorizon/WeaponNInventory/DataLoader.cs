@@ -8,10 +8,13 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		public ModInstance[] defaultWeaponData;
 
 		private void Awake() {
-			foreach(ItemReference item in itemReferences) {
-				ItemDictionary.dictionary.Add(item.GetName(), item);
+			if (!ItemDictionary.isLoaded) {
+				foreach (ItemReference item in itemReferences) {
+					ItemDictionary.dictionary.Add(item.GetName(), item);
+				}
+				ItemDictionary.defaultWeapon = defaultWeaponData;
+				ItemDictionary.isLoaded = true;
 			}
-			ItemDictionary.defaultWeapon = defaultWeaponData;
 		}
 	}
 }
