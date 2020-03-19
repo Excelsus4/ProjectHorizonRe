@@ -57,6 +57,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 180f : 0f, m_LowBody.rotation.eulerAngles.z);
 		}
 
+		public void SetUnstability(float Angle) {
+
+		}
+
 		/// <summary>
 		/// This will make this player character just a mannequin rather than a character.
 		/// Used probably in the title screen.

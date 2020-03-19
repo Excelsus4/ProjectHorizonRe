@@ -7249,6 +7249,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114019818353852544, guid: d611e472b3f3e4941992d9c2bd6e9cba,
+        type: 3}
+      propertyPath: m_WeaponNumberIndicator
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4314079485575140, guid: d611e472b3f3e4941992d9c2bd6e9cba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.59
@@ -7256,11 +7261,6 @@ PrefabInstance:
     - target: {fileID: 4314079485575140, guid: d611e472b3f3e4941992d9c2bd6e9cba, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 114019818353852544, guid: d611e472b3f3e4941992d9c2bd6e9cba,
-        type: 3}
-      propertyPath: m_WeaponNumberIndicator
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 212295367822469618, guid: d611e472b3f3e4941992d9c2bd6e9cba,
         type: 3}
@@ -11295,6 +11295,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: m_MuzzleLocation.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: m_BulletLine
+      value: 
+      objectReference: {fileID: 2107309069}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: UIPanel.Array.data[0]
+      value: 
+      objectReference: {fileID: 1139280623}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: UIPanel.Array.data[1]
+      value: 
+      objectReference: {fileID: 1735823282}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: UIPanel.Array.data[2]
+      value: 
+      objectReference: {fileID: 135571264}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: UIPanel.Array.data[3]
+      value: 
+      objectReference: {fileID: 619274233}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: m_MuzzleLocation.Array.data[0]
+      value: 
+      objectReference: {fileID: 1130445239}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: recoilMultiplier
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: reccoveryMultiplier
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: softMultiplier
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
+        type: 3}
+      propertyPath: accuracyMultiplier
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 117854238234906007, guid: 14e8bafa6b9f2cb4faf486434364714b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11360,40 +11415,5 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: m_MuzzleLocation.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: m_BulletLine
-      value: 
-      objectReference: {fileID: 2107309069}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: UIPanel.Array.data[0]
-      value: 
-      objectReference: {fileID: 1139280623}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: UIPanel.Array.data[1]
-      value: 
-      objectReference: {fileID: 1735823282}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: UIPanel.Array.data[2]
-      value: 
-      objectReference: {fileID: 135571264}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: UIPanel.Array.data[3]
-      value: 
-      objectReference: {fileID: 619274233}
-    - target: {fileID: 117854237936452163, guid: 14e8bafa6b9f2cb4faf486434364714b,
-        type: 3}
-      propertyPath: m_MuzzleLocation.Array.data[0]
-      value: 
-      objectReference: {fileID: 1130445239}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e8bafa6b9f2cb4faf486434364714b, type: 3}

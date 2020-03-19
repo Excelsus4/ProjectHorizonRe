@@ -33,9 +33,14 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		//FIRE CONTROL
 		private int m_CurrentAmmo;
-		private float m_RecoilAngle;//현재 반동값
+		private float m_unstableDegree;
+		private float m_delayedUnstable;
 		public Transform[] m_MuzzleLocation;
 		public LineRenderer m_BulletLine;
+		public float recoilMultiplier;
+		public float reccoveryMultiplier;
+		public float softMultiplier;
+		public float accuracyMultiplier;
 
 		private FireMode m_CurrentFireMode;
 		private bool m_MouseState;
@@ -52,7 +57,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 			m_LockAction = false;
 			//m_LockMovement = false;
-
 			CharacterLocation = transform;
 
 			m_weaponManager = UserHandWeaponData.getSingleton();
@@ -89,9 +93,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Action() {
+			Aim();
 			if (!m_LockAction) {
 				//SwitchWeapon();
-				Aim();
 				FireModeChecker();
 
 				if (Input.GetButtonDown("Reload")) {
@@ -99,6 +103,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 					m_LockAction = true;
 				}
 			}
+
 		}
 
 		private void TryFire() {
@@ -116,6 +121,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			//m_AnimationControl.Fire((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.AttackSpeed] / 300f);
 			m_AnimationControl.GenerateShell();
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, --m_CurrentAmmo);
+			float recoilAmount = Random.Range(-m_stats.recoil * recoilMultiplier, m_stats.recoil * recoilMultiplier);
+			recoilAmount += recoilAmount > 0 ? m_stats.recoil * recoilMultiplier : -m_stats.recoil * recoilMultiplier;
+			m_delayedUnstable += recoilAmount;
 			//m_AnimationControl.UpdateBulletIndicator(Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]), m_CurrentAmmo);
 
 			RaycastHit2D hitdata = Physics2D.Raycast(m_MuzzleLocation[0].position, -m_MuzzleLocation[0].forward, 100f, LayerMask.GetMask("Mob", "Terrain"));
@@ -133,8 +141,29 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		private void Aim() {
 			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector3 difference = worldPos - transform.position;
+
 			m_isLookingLeft = difference.x < 0;
-			m_AnimationControl.LookAt(Mathf.Rad2Deg * Mathf.Atan(difference.y / difference.x), m_isLookingLeft);
+
+			// DelayShift
+			//부드러운 반동효과
+			if (m_delayedUnstable > 0.1f || m_delayedUnstable < -0.1f) {
+				m_unstableDegree += m_delayedUnstable / softMultiplier;
+				m_delayedUnstable -= m_delayedUnstable / softMultiplier;
+			}
+
+			// Shift
+			//반동제어 효과
+			Debug.Log(m_unstableDegree);
+			if (m_unstableDegree > m_stats.accuracy*accuracyMultiplier || m_unstableDegree < -m_stats.accuracy*accuracyMultiplier) {
+				if (m_unstableDegree > m_stats.recoilRecovery * Time.deltaTime * reccoveryMultiplier)
+					m_unstableDegree -= m_stats.recoilRecovery * Time.deltaTime * reccoveryMultiplier;
+				else if (m_unstableDegree < m_stats.recoilRecovery * Time.deltaTime * reccoveryMultiplier)
+					m_unstableDegree += m_stats.recoilRecovery * Time.deltaTime * reccoveryMultiplier;
+				else if (m_unstableDegree != 0)
+					m_unstableDegree = 0;
+			}
+
+			m_AnimationControl.LookAt(Mathf.Rad2Deg * (Mathf.Atan(difference.y / difference.x) + ( m_isLookingLeft ? m_unstableDegree : -m_unstableDegree )), m_isLookingLeft);
 		}
 
 		//Callback Function From VoxelHandCallback.cs
