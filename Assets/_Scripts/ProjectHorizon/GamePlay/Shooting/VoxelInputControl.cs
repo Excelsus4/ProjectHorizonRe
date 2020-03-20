@@ -153,7 +153,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 			// Shift
 			//반동제어 효과
-			Debug.Log(m_unstableDegree);
+			// Debug.Log(m_unstableDegree);
 			if (m_unstableDegree > m_stats.accuracy*accuracyMultiplier || m_unstableDegree < -m_stats.accuracy*accuracyMultiplier) {
 				if (m_unstableDegree > m_stats.recoilRecovery * Time.deltaTime * reccoveryMultiplier)
 					m_unstableDegree -= m_stats.recoilRecovery * Time.deltaTime * reccoveryMultiplier;
