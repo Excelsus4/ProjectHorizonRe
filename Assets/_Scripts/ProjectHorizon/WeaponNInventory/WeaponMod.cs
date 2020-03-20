@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.Modules.EnumFlagsAsToggleButtons;
 
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	[CreateAssetMenu(fileName = "New Mod", menuName = "ProjectHorizon/Weapon/WeaponMod")]
@@ -51,11 +52,11 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		public Sprite m_Visuals;
 		public List<VisualDisplacement> m_DisplacementList;
 		public ModPart m_Mainly;
-		[enumFlagsAsToggleButtons.EnumFlag]
+		[EnumFlag]
 		public ModPart m_Requires;
-		[enumFlagsAsToggleButtons.EnumFlag]
+		[EnumFlag]
 		public ModPart m_Locks;
-		[enumFlagsAsToggleButtons.EnumFlag]
+		[EnumFlag]
 		public ModPart m_Unlocks;
 		public Statistics m_Stats;
 

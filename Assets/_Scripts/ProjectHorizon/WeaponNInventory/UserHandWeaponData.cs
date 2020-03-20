@@ -63,7 +63,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		public void RegisterObserver(IDataUpdateCallback observer) {
-			Debug.Log("observer registered");
 			observers.Add(observer);
 			observer.OnDataUpdate();
 		}

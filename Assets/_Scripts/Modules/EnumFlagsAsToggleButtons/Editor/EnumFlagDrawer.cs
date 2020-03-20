@@ -5,7 +5,7 @@ using UnityEngine;
 /// Code fetched from www.sharkbombs.com/2015/02/17/unity-editor-enum-flags-as-toggle-buttons/
 /// Thanks to Sharkbomb Studios
 /// </summary>
-namespace com.meiguofandian.enumFlagsAsToggleButtons {
+namespace com.meiguofandian.Modules.EnumFlagsAsToggleButtons{
 	[CustomPropertyDrawer(typeof(EnumFlagAttribute))]
 	public class EnumFlagsAttributeDrawer : PropertyDrawer {
 

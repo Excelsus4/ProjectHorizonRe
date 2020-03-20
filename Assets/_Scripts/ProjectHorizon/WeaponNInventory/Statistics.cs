@@ -45,9 +45,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		public void Merge(Statistics target) {
-			Debug.Log("======");
-			Debug.Log(damageCap);
-			Debug.Log(target.damageCap);
 			damage += target.damage;
 			damageCap = Math.Min(damageCap, target.damageCap);
 			attackSpeed += target.attackSpeed;
@@ -62,8 +59,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 
 			criticalChance += target.criticalChance;
 			criticalDamage += target.criticalDamage;
-			Debug.Log(damageCap);
-			Debug.Log("======");
 		}
 
 		public void DisplayStat(StatDisplay[] displays) {
