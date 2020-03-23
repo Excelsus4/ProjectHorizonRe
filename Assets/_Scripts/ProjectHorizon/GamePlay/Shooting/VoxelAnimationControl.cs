@@ -12,7 +12,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public Transform m_LowBody;
 
 		private Rigidbody2D m_rigidbody;
-		public VoxelHandCallback m_CallbackScript;
 
 		//Shell Animation Control
 		public GameObject m_ShellRenderer;
@@ -37,7 +36,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public void Fire(float Speed) {
 			m_HighAnimator.SetInteger("Fire", m_HighAnimator.GetInteger("Fire") + 1);
 			m_HighAnimator.speed = Speed;
-			m_CallbackScript.m_State = VoxelHandCallback.CallBackAnimationState.Fire;
 		}
 
 		public void SetWalkingSpeed(float speed) {
@@ -85,7 +83,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void Reload() {
 			m_HighAnimator.SetTrigger("Reload");
-			m_CallbackScript.m_State = VoxelHandCallback.CallBackAnimationState.Reload;
 		}
 	}
 }
