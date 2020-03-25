@@ -9,6 +9,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void OnPointerDown(PointerEventData eventData) {
 			movementScript.OnMDown();
+			print("Hello!");
 		}
 
 		public void OnPointerUp(PointerEventData eventData) {

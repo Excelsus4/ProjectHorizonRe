@@ -71,6 +71,14 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, m_CurrentAmmo);
 		}
 
+		private void Update() {
+			if (Input.GetButtonUp("Fire")) {
+				OnMUp();
+			} else if (Input.GetButtonDown("Fire")) {
+				OnMDown();
+			}
+		}
+
 		private void FixedUpdate() {
 			if (Input.GetButtonDown("FireMode")) {
 				switch (m_CurrentFireMode) {
@@ -93,26 +101,35 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Action() {
+			
 			Aim();
 			if (!m_LockAction) {
+
 				//SwitchWeapon();
 				FireModeChecker();
 
 				if (Input.GetButtonDown("Reload")) {
-					m_AnimationControl.Reload();
-					m_LockAction = true;
+					TryReload();
 				}
 			}
-
 		}
 
 		private void TryFire() {
+			if (m_LockAction)
+				return;
+
 			if (m_CurrentAmmo > 0) {
 				FireMethod();
 			} else if (m_CurrentAmmo == 0) {
-				m_AnimationControl.Reload();
-				m_LockAction = true;
+				TryReload();
 			}
+		}
+
+		private void TryReload() {
+			m_DelayFire = 0;
+			m_AnimationControl.Reload();
+			m_LockAction = true;
+			Invoke("ReloadComplete", 1.9f);
 		}
 
 		private void FireMethod() {
@@ -136,6 +153,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 				DealDamageToThisMob(target);
 			} else
 				m_BulletLine.SetPosition(1, m_MuzzleLocation[0].position - m_MuzzleLocation[0].forward * 100f);
+
+			Invoke("UnlockAction", 60 / m_stats.attackSpeed);
 		}
 
 		private void Aim() {
@@ -168,6 +187,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		//Callback Function From VoxelHandCallback.cs
 		public void ReloadComplete() {
+			print("HelloAA");
+			m_LockAction = false;
 			m_CurrentAmmo = m_stats.rounds;
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, m_CurrentAmmo);
 		}
@@ -201,6 +222,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void OnMDown() {
+			print("Mouse Down");
 			m_MouseState = true;
 			if (m_CurrentFireMode == FireMode.Burst) {
 				m_DelayFire += 3;
@@ -210,6 +232,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void OnMUp() {
+			print("Mouse Up");
 			m_MouseState = false;
 		}
 
@@ -224,6 +247,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void OnDataUpdate() {
 			UpdateWeapon();
+		}
+
+		public void UnlockAction() {
+			m_LockAction = false;
 		}
 	}
 }

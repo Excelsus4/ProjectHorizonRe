@@ -34,7 +34,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void Fire(float Speed) {
-			m_HighAnimator.SetInteger("Fire", m_HighAnimator.GetInteger("Fire") + 1);
+			m_HighAnimator.SetTrigger("Fire");
 			m_HighAnimator.speed = Speed;
 		}
 
@@ -51,8 +51,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void LookAt(float Angle, bool LookBack) {
-			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 180f : 0f, LookBack ? -Angle : Angle);
-			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 180f : 0f, m_LowBody.rotation.eulerAngles.z);
+			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, LookBack ? Angle : -Angle);
+			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, 0f);
 		}
 
 		public void SetUnstability(float Angle) {
