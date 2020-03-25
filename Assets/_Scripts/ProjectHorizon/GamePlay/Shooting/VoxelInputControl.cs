@@ -41,6 +41,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public float reccoveryMultiplier;
 		public float softMultiplier;
 		public float accuracyMultiplier;
+		public float minimumRecoilMultiplier;
 
 		private FireMode m_CurrentFireMode;
 		private bool m_MouseState;
@@ -101,7 +102,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Action() {
-			
 			Aim();
 			if (!m_LockAction) {
 
@@ -138,9 +138,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			//m_AnimationControl.Fire((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.AttackSpeed] / 300f);
 			m_AnimationControl.GenerateShell();
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, --m_CurrentAmmo);
-			float recoilAmount = Random.Range(-m_stats.recoil * recoilMultiplier, m_stats.recoil * recoilMultiplier);
-			recoilAmount += recoilAmount > 0 ? m_stats.recoil * recoilMultiplier : -m_stats.recoil * recoilMultiplier;
-			m_delayedUnstable += recoilAmount;
+			float recoilAmount = Random.Range(m_stats.recoil * recoilMultiplier*minimumRecoilMultiplier, m_stats.recoil * recoilMultiplier);
+			m_delayedUnstable -= recoilAmount;
 			//m_AnimationControl.UpdateBulletIndicator(Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]), m_CurrentAmmo);
 
 			RaycastHit2D hitdata = Physics2D.Raycast(m_MuzzleLocation[0].position, -m_MuzzleLocation[0].forward, 100f, LayerMask.GetMask("Mob", "Terrain"));
@@ -153,8 +152,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 				DealDamageToThisMob(target);
 			} else
 				m_BulletLine.SetPosition(1, m_MuzzleLocation[0].position - m_MuzzleLocation[0].forward * 100f);
-
-			Invoke("UnlockAction", 60 / m_stats.attackSpeed);
+			
+			Invoke("UnlockAction", 60f / m_stats.attackSpeed);
 		}
 
 		private void Aim() {
@@ -165,7 +164,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 			// DelayShift
 			//부드러운 반동효과
-			if (m_delayedUnstable > 0.1f || m_delayedUnstable < -0.1f) {
+			if (m_delayedUnstable > m_stats.accuracy * accuracyMultiplier || m_delayedUnstable < -m_stats.accuracy * accuracyMultiplier) {
 				m_unstableDegree += m_delayedUnstable / softMultiplier;
 				m_delayedUnstable -= m_delayedUnstable / softMultiplier;
 			}
@@ -187,7 +186,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		//Callback Function From VoxelHandCallback.cs
 		public void ReloadComplete() {
-			print("HelloAA");
 			m_LockAction = false;
 			m_CurrentAmmo = m_stats.rounds;
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, m_CurrentAmmo);
@@ -222,7 +220,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void OnMDown() {
-			print("Mouse Down");
 			m_MouseState = true;
 			if (m_CurrentFireMode == FireMode.Burst) {
 				m_DelayFire += 3;
@@ -232,7 +229,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void OnMUp() {
-			print("Mouse Up");
 			m_MouseState = false;
 		}
 

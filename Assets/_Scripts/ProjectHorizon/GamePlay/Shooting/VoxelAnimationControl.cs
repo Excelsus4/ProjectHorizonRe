@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.ProjectHorizon.GamePlay.Platformer;
+using com.meiguofandian.Modules.SmallCharacter;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelAnimationControl : MonoBehaviour {
+		public PaperFlipper m_Flipper;
+
 		public Animator m_HighAnimator;
 		public Animator m_LowAnimator;
 
@@ -22,9 +25,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		//Character Bound UI
 		public UnityEngine.UI.Slider m_BulletIndicator;
 
+		private bool PrevLookBack;
+
 		// Use this for initialization
 		private void Awake() {
 			m_rigidbody = GetComponent<Rigidbody2D>();
+			PrevLookBack = false;
 		}
 
 		private void Start() {
@@ -51,6 +57,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void LookAt(float Angle, bool LookBack) {
+			if(LookBack != PrevLookBack) {
+				PrevLookBack = LookBack;
+				m_Flipper.Flip();
+			}
 			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, LookBack ? Angle : -Angle);
 			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, 0f);
 		}
@@ -73,7 +83,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void GenerateShell() {
-			//Instantiate(m_ShellRenderer, m_Receiver.position, Quaternion.Euler(0, 0, 0)).GetComponent<Rigidbody2D>().AddForce(Random.Range(0.9f, 1.1f) * m_Receiver.up * m_ShellUpForce - m_Receiver.forward * m_ShellBackForce);
+			Instantiate(m_ShellRenderer, m_Receiver.position, Quaternion.Euler(0, 0, 0)).GetComponent<Rigidbody2D>().AddForce(Random.Range(0.9f, 1.1f) * m_Receiver.up * m_ShellUpForce - m_Receiver.forward * m_ShellBackForce);
 		}
 
 		public void UpdateBulletIndicator(int Max, int Current) {
