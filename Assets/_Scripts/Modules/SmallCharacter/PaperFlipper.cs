@@ -12,7 +12,6 @@ namespace com.meiguofandian.Modules.SmallCharacter {
 		}
 
 		private void Start() {
-			Flip();
 		}
 
 		public void Flip() {

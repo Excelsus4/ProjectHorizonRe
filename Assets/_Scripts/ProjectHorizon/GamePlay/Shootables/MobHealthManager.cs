@@ -10,7 +10,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		public int m_Armor;
 		public int m_CritResistance;
 		public GameObject m_DamagePrefab;
-		public MobAnimationManager m_AnimationManager;
+		private IMobAnimation m_AnimationManager;
 
 		//드랍테이블
 		public CharacterData.ResourceType m_DropResource;
@@ -28,6 +28,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		// Use this for initialization
 		void Start() {
 			m_currentHealth = m_MaxHealth;
+			m_AnimationManager = GetComponent<IMobAnimation>();
 		}
 
 		private void Update() {

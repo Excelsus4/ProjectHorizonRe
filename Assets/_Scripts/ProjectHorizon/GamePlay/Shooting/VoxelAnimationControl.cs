@@ -30,7 +30,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		// Use this for initialization
 		private void Awake() {
 			m_rigidbody = GetComponent<Rigidbody2D>();
-			PrevLookBack = false;
+			PrevLookBack = true;
 		}
 
 		private void Start() {
