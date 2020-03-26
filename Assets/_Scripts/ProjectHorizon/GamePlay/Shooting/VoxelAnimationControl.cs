@@ -57,11 +57,16 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void LookAt(float Angle, bool LookBack) {
-			if(LookBack != PrevLookBack) {
+			if (LookBack != PrevLookBack) {
 				PrevLookBack = LookBack;
 				m_Flipper.Flip();
 			}
-			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, LookBack ? Angle : -Angle);
+			float AngleClip = Angle;
+			if (AngleClip > 60f)
+				AngleClip = 60f;
+			else if (AngleClip < -60f)
+				AngleClip = -60f;
+			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, LookBack ? AngleClip : -AngleClip);
 			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, 0f);
 		}
 
