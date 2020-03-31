@@ -82,6 +82,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 			}
 			m_HealthBar.value = (float)m_currentHealth / (float)m_MaxHealth;
 			m_fastHit = 0;
+
+			m_AnimationManager.Attacked();
 		}
 
 		public void DealMultipleDamage(int damage) {
@@ -103,7 +105,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 			//blob.Target = com.meiguofandian.ProjectHorizon.GamePlay.Shooting.VoxelInputControl.CharacterLocation;
 			//blob.ResourceAmount = m_DropAmount;
 
-			Destroy(gameObject);
+			m_AnimationManager.Death();
+
+			Destroy(gameObject, 2);
 		}
 	}
 }

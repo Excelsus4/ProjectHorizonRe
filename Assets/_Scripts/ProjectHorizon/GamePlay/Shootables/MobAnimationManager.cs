@@ -32,5 +32,11 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 
 		public void Death() {
 		}
+
+		public void StartMelee() {
+		}
+
+		public void StopMelee() {
+		}
 	}
 }
