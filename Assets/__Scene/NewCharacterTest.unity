@@ -2149,6 +2149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c9e6cb4b0e7854f9ae6be1ef5f8484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSkin: {fileID: 11400000, guid: f8bca461af0ffe041bf3fd5042c6d54d, type: 2}
 --- !u!1 &1149274346
 GameObject:
   m_ObjectHideFlags: 0
@@ -4715,6 +4716,7 @@ MonoBehaviour:
   softMultiplier: 0.6
   accuracyMultiplier: 0.004
   minimumRecoilMultiplier: 0.5
+  basicAttackSkin: {fileID: 11400000, guid: e25230de84d6b034091c8a05deffeb5d, type: 2}
 --- !u!50 &3237963817900138221
 Rigidbody2D:
   serializedVersion: 4

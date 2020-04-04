@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 using com.meiguofandian.ProjectHorizon.GamePlay.Shootables;
+using com.meiguofandian.Modules.NumberedDamage;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelInputControl : MonoBehaviour, IDataUpdateCallback {
@@ -46,6 +47,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		private FireMode m_CurrentFireMode;
 		private bool m_MouseState;
 		private int m_DelayFire;
+
+		public DamageSkin basicAttackSkin;
 
 		//External UI Control
 		//private bool[] isUIOn = new bool[4];
@@ -193,7 +196,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void DealDamageToThisMob(MobHealthManager target) {
 			if (target != null) {
-				target.DealDamage(m_stats.damage, DamageRenderer.DamageType.Normal);
+				target.DealDamage(m_stats.damage, basicAttackSkin);
 				//피해량 공식
 				/*float TempPenetrationDamage =
 					(float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.AttackDamage] *
