@@ -8,6 +8,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 	public class PlayerBindStat {
 		// Defensive
 		public int maxHP;
+		public float immuneTime;
 
 		public PlayerBindStat() {
 			Reset();
@@ -15,6 +16,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 
 		public void Reset() {
 			maxHP = 30;
+			immuneTime = 2f;
 		}
 	}
 }

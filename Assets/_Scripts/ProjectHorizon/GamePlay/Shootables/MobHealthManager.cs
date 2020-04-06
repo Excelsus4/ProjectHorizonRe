@@ -9,7 +9,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		public UnityEngine.UI.Slider m_HealthBar;
 		public int m_MaxHealth;
 		public int m_Armor;
-		public int m_CritResistance;
 		public GameObject m_DamagePrefab;
 		private IMobAnimation m_AnimationManager;
 
