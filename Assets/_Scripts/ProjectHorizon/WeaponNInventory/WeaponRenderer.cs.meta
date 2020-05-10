@@ -3,7 +3,10 @@ guid: 06ec202af3c208c44b925a9e94f34593
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - WeaponToRender: {instanceID: 0}
+  - m_RendererPrefab: {fileID: 5026833704053969734, guid: ea3b71270a76aa146be1fdb547b2ddd2,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

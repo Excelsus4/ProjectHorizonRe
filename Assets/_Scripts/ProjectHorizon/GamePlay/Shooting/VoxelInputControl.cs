@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 using com.meiguofandian.ProjectHorizon.GamePlay.Shootables;
+using com.meiguofandian.Modules.NumberedDamage;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelInputControl : MonoBehaviour, IDataUpdateCallback {
@@ -41,10 +42,13 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public float reccoveryMultiplier;
 		public float softMultiplier;
 		public float accuracyMultiplier;
+		public float minimumRecoilMultiplier;
 
 		private FireMode m_CurrentFireMode;
 		private bool m_MouseState;
 		private int m_DelayFire;
+
+		public DamageSkin basicAttackSkin;
 
 		//External UI Control
 		//private bool[] isUIOn = new bool[4];
@@ -71,6 +75,14 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, m_CurrentAmmo);
 		}
 
+		private void Update() {
+			if (Input.GetButtonUp("Fire")) {
+				OnMUp();
+			} else if (Input.GetButtonDown("Fire")) {
+				OnMDown();
+			}
+		}
+
 		private void FixedUpdate() {
 			if (Input.GetButtonDown("FireMode")) {
 				switch (m_CurrentFireMode) {
@@ -95,24 +107,32 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		private void Action() {
 			Aim();
 			if (!m_LockAction) {
+
 				//SwitchWeapon();
 				FireModeChecker();
 
 				if (Input.GetButtonDown("Reload")) {
-					m_AnimationControl.Reload();
-					m_LockAction = true;
+					TryReload();
 				}
 			}
-
 		}
 
 		private void TryFire() {
+			if (m_LockAction)
+				return;
+
 			if (m_CurrentAmmo > 0) {
 				FireMethod();
 			} else if (m_CurrentAmmo == 0) {
-				m_AnimationControl.Reload();
-				m_LockAction = true;
+				TryReload();
 			}
+		}
+
+		private void TryReload() {
+			m_DelayFire = 0;
+			m_AnimationControl.Reload();
+			m_LockAction = true;
+			Invoke("ReloadComplete", 1.9f);
 		}
 
 		private void FireMethod() {
@@ -121,9 +141,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			//m_AnimationControl.Fire((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.AttackSpeed] / 300f);
 			m_AnimationControl.GenerateShell();
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, --m_CurrentAmmo);
-			float recoilAmount = Random.Range(-m_stats.recoil * recoilMultiplier, m_stats.recoil * recoilMultiplier);
-			recoilAmount += recoilAmount > 0 ? m_stats.recoil * recoilMultiplier : -m_stats.recoil * recoilMultiplier;
-			m_delayedUnstable += recoilAmount;
+			float recoilAmount = Random.Range(m_stats.recoil * recoilMultiplier*minimumRecoilMultiplier, m_stats.recoil * recoilMultiplier);
+			m_delayedUnstable -= recoilAmount;
 			//m_AnimationControl.UpdateBulletIndicator(Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]), m_CurrentAmmo);
 
 			RaycastHit2D hitdata = Physics2D.Raycast(m_MuzzleLocation[0].position, -m_MuzzleLocation[0].forward, 100f, LayerMask.GetMask("Mob", "Terrain"));
@@ -136,6 +155,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 				DealDamageToThisMob(target);
 			} else
 				m_BulletLine.SetPosition(1, m_MuzzleLocation[0].position - m_MuzzleLocation[0].forward * 100f);
+			
+			Invoke("UnlockAction", 60f / m_stats.attackSpeed);
 		}
 
 		private void Aim() {
@@ -146,7 +167,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 			// DelayShift
 			//부드러운 반동효과
-			if (m_delayedUnstable > 0.1f || m_delayedUnstable < -0.1f) {
+			if (m_delayedUnstable > m_stats.accuracy * accuracyMultiplier || m_delayedUnstable < -m_stats.accuracy * accuracyMultiplier) {
 				m_unstableDegree += m_delayedUnstable / softMultiplier;
 				m_delayedUnstable -= m_delayedUnstable / softMultiplier;
 			}
@@ -168,13 +189,14 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		//Callback Function From VoxelHandCallback.cs
 		public void ReloadComplete() {
+			m_LockAction = false;
 			m_CurrentAmmo = m_stats.rounds;
 			m_AnimationControl.UpdateBulletIndicator(m_stats.rounds, m_CurrentAmmo);
 		}
 
 		public void DealDamageToThisMob(MobHealthManager target) {
 			if (target != null) {
-				target.DealDamage(m_stats.damage, DamageRenderer.DamageType.Normal);
+				target.DealDamage(m_stats.damage, basicAttackSkin);
 				//피해량 공식
 				/*float TempPenetrationDamage =
 					(float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.AttackDamage] *
@@ -224,6 +246,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void OnDataUpdate() {
 			UpdateWeapon();
+		}
+
+		public void UnlockAction() {
+			m_LockAction = false;
 		}
 	}
 }

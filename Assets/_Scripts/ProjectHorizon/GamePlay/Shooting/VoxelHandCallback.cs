@@ -15,6 +15,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public CallBackAnimationState m_State;
 
 		private void OnEnable() {
+			print("Arghh");
 			switch (m_State) {
 			case CallBackAnimationState.Fire:
 				m_VoxelAnimationControl.m_HighAnimator.SetInteger("Fire", m_VoxelAnimationControl.m_HighAnimator.GetInteger("Fire") - 1);
@@ -29,7 +30,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 				m_VoxelAnimationControl.m_HighAnimator.speed = 1f;
 				break;
 			}
-			//this.enabled = false;
+			this.enabled = false;
 		}
 	}
 }

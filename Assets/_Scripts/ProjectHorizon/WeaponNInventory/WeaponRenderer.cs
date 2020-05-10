@@ -9,6 +9,8 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		private UserHandWeaponData GlobalWeaponManager;
 		public WeaponInstance WeaponToRender;
 		public GameObject m_RendererPrefab;
+		public Transform m_MuzzleLocation;
+		public Transform m_ReceiverLocation;
 
 		private void Start() {
 			GlobalWeaponManager = UserHandWeaponData.getSingleton();
@@ -49,6 +51,13 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 					AssignRenderer(listOfSpriteRenderers[idx], WeaponToRender.weaponModList[idx]);
 				}
 			}
+
+			SetLocationObjects();
+		}
+
+		private void SetLocationObjects() {
+			m_MuzzleLocation.localPosition = shiftMatrix[WeaponMod.GetModPartIDX(WeaponMod.ModPart.Nozzle) - 1];
+			m_ReceiverLocation.localPosition = shiftMatrix[WeaponMod.GetModPartIDX(WeaponMod.ModPart.Receiver) - 1];
 		}
 
 		private void CalculateShift(VisualDisplacement shiftData) {

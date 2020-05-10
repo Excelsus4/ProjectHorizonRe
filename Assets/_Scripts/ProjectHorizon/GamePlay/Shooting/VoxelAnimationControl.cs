@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.ProjectHorizon.GamePlay.Platformer;
+using com.meiguofandian.Modules.SmallCharacter;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelAnimationControl : MonoBehaviour {
+		public PaperFlipper m_Flipper;
+
 		public Animator m_HighAnimator;
 		public Animator m_LowAnimator;
 
@@ -12,7 +15,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public Transform m_LowBody;
 
 		private Rigidbody2D m_rigidbody;
-		public VoxelHandCallback m_CallbackScript;
 
 		//Shell Animation Control
 		public GameObject m_ShellRenderer;
@@ -23,9 +25,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		//Character Bound UI
 		public UnityEngine.UI.Slider m_BulletIndicator;
 
+		private bool PrevLookBack;
+
 		// Use this for initialization
 		private void Awake() {
 			m_rigidbody = GetComponent<Rigidbody2D>();
+			PrevLookBack = true;
 		}
 
 		private void Start() {
@@ -35,9 +40,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void Fire(float Speed) {
-			m_HighAnimator.SetInteger("Fire", m_HighAnimator.GetInteger("Fire") + 1);
+			m_HighAnimator.SetTrigger("Fire");
 			m_HighAnimator.speed = Speed;
-			m_CallbackScript.m_State = VoxelHandCallback.CallBackAnimationState.Fire;
 		}
 
 		public void SetWalkingSpeed(float speed) {
@@ -53,8 +57,17 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void LookAt(float Angle, bool LookBack) {
-			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 180f : 0f, LookBack ? -Angle : Angle);
-			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 180f : 0f, m_LowBody.rotation.eulerAngles.z);
+			if (LookBack != PrevLookBack) {
+				PrevLookBack = LookBack;
+				m_Flipper.Flip();
+			}
+			float AngleClip = Angle;
+			if (AngleClip > 60f)
+				AngleClip = 60f;
+			else if (AngleClip < -60f)
+				AngleClip = -60f;
+			m_HighBody.rotation = Quaternion.Euler(m_HighBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, LookBack ? AngleClip : -AngleClip);
+			m_LowBody.rotation = Quaternion.Euler(m_LowBody.rotation.eulerAngles.x, LookBack ? 0f : 180f, 0f);
 		}
 
 		public void SetUnstability(float Angle) {
@@ -75,7 +88,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void GenerateShell() {
-			//Instantiate(m_ShellRenderer, m_Receiver.position, Quaternion.Euler(0, 0, 0)).GetComponent<Rigidbody2D>().AddForce(Random.Range(0.9f, 1.1f) * m_Receiver.up * m_ShellUpForce - m_Receiver.forward * m_ShellBackForce);
+			Instantiate(m_ShellRenderer, m_Receiver.position, Quaternion.Euler(0, 0, 0)).GetComponent<Rigidbody2D>().AddForce(Random.Range(0.9f, 1.1f) * m_Receiver.up * m_ShellUpForce - m_Receiver.forward * m_ShellBackForce);
 		}
 
 		public void UpdateBulletIndicator(int Max, int Current) {
@@ -85,7 +98,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void Reload() {
 			m_HighAnimator.SetTrigger("Reload");
-			m_CallbackScript.m_State = VoxelHandCallback.CallBackAnimationState.Reload;
 		}
 	}
 }

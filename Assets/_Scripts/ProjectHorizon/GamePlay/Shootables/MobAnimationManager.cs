@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
-	public class MobAnimationManager : MonoBehaviour {
+	public class MobAnimationManager : MonoBehaviour, IMobAnimation {
 		public SpriteRenderer MobRenderer;
 
 		public Sprite MobIdle;
@@ -31,6 +31,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		}
 
 		public void Death() {
+		}
+
+		public void StartMelee() {
+		}
+
+		public void StopMelee() {
 		}
 	}
 }

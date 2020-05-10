@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.ProjectHorizon.GamePlay.Miscellaneous;
+using com.meiguofandian.Modules.NumberedDamage;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 	public class MobHealthManager : MonoBehaviour {
 		public UnityEngine.UI.Slider m_HealthBar;
 		public int m_MaxHealth;
 		public int m_Armor;
-		public int m_CritResistance;
 		public GameObject m_DamagePrefab;
-		public MobAnimationManager m_AnimationManager;
+		private IMobAnimation m_AnimationManager;
 
 		//드랍테이블
 		public CharacterData.ResourceType m_DropResource;
@@ -28,11 +28,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		// Use this for initialization
 		void Start() {
 			m_currentHealth = m_MaxHealth;
+			m_AnimationManager = GetComponent<IMobAnimation>();
 		}
 
 		private void Update() {
 			if (m_multipleTimes > 0) {
-				DealDamage(m_multipleDamage * (int)Mathf.Pow((float)m_multipleTimes, 2), DamageRenderer.DamageType.Normal);
+				DealDamage(m_multipleDamage * (int)Mathf.Pow((float)m_multipleTimes, 2), null);
 				m_multipleDamage = 0;
 				m_multipleTimes = 0;
 			}
@@ -47,26 +48,14 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 			}
 		}
 
-		public void DealDamage(float damage, DamageRenderer.DamageType damageType) {
+		public void DealDamage(float damage, DamageSkin damageSkin) {
 			if (m_damageRenderer == null) {
 				m_damageRenderer = Instantiate(m_DamagePrefab, transform.position + new Vector3(0, 1.6f), Quaternion.Euler(0, 0, 0)).GetComponent<DamageRenderer>();
 				m_fastHit = 0;
 			}
-
-			float fakeDamage = damage;
-			switch (damageType) {
-			case DamageRenderer.DamageType.Critical:
-				m_damageRenderer.SetCritical();
-				fakeDamage *= 100 / ( 100 + m_CritResistance );
-				fakeDamage *= 100 / ( 100 + m_Armor );
-				break;
-			case DamageRenderer.DamageType.Normal:
-				fakeDamage *= 100 / ( 100 + m_Armor );
-				break;
-			case DamageRenderer.DamageType.Penetration:
-				m_damageRenderer.SetPenetration();
-				break;
-			}
+			
+			if(damageSkin!=null)
+				m_damageRenderer.SetDamageSkin(damageSkin);
 			int realDamage = Mathf.CeilToInt(Random.Range(damage * 0.9f, damage));
 
 			m_currentHealth -= realDamage;
@@ -81,13 +70,15 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 			}
 			m_HealthBar.value = (float)m_currentHealth / (float)m_MaxHealth;
 			m_fastHit = 0;
+
+			m_AnimationManager.Attacked();
 		}
 
 		public void DealMultipleDamage(int damage) {
 			if (damage == m_multipleDamage)
 				m_multipleTimes++;
 			else {
-				DealDamage(m_multipleDamage * (int)Mathf.Pow((float)m_multipleTimes, 2), DamageRenderer.DamageType.Normal);
+				DealDamage(m_multipleDamage * (int)Mathf.Pow((float)m_multipleTimes, 2), null);
 				m_multipleDamage = damage;
 				m_multipleTimes = 1;
 			}
@@ -102,7 +93,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 			//blob.Target = com.meiguofandian.ProjectHorizon.GamePlay.Shooting.VoxelInputControl.CharacterLocation;
 			//blob.ResourceAmount = m_DropAmount;
 
-			Destroy(gameObject);
+			m_AnimationManager.Death();
+
+			Destroy(gameObject, 2);
 		}
 	}
 }
