@@ -33,8 +33,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 			} else {
 				velocity.y = 0f;
 			}
-
-			print(velocity * Time.deltaTime);
+			
 			transform.Translate(velocity*Time.deltaTime);
 		}
 
