@@ -12,13 +12,15 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		private Vector2 velocity;
 
 		private void FixedUpdate() {
-			RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, Vector2.down, FootLength, FloorMask);
-			if (raycastHit.collider) {
-				transform.Translate(0f, (FootLength/2) - raycastHit.distance, 0f);
-				IsGrounded = true;
-				groundNormal = raycastHit.normal;
-			} else {
-				IsGrounded = false;
+			if(velocity.y <= 0) {
+				RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, Vector2.down, FootLength, FloorMask);
+				if (raycastHit.collider) {
+					transform.Translate(0f, ( FootLength / 2 ) - raycastHit.distance, 0f);
+					IsGrounded = true;
+					groundNormal = raycastHit.normal;
+				} else {
+					IsGrounded = false;
+				}
 			}
 
 			PerformTranslation();
@@ -44,8 +46,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		}
 
 		public void Jump(float Force) {
+			print(groundNormal);
 			velocity += groundNormal * Force;
-			transform.Translate(0f, FootLength / 2, 0f);
+			transform.Translate(0f, FootLength, 0f);
+			IsGrounded = false;
 		}
 	}
 }
