@@ -54,9 +54,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void SetWalkingSpeed(float speed) {
-			m_LowAnimator.SetFloat("MovingSpeed", speed);
-			if (Mathf.Abs(speed) > 1)
-				m_LowAnimator.speed = Mathf.Abs(speed);
+			float tempSpeed = PrevLookBack ? -speed : speed;
+			m_LowAnimator.SetFloat("MovingSpeed", tempSpeed);
+			if (Mathf.Abs(tempSpeed) > 1)
+				m_LowAnimator.speed = Mathf.Abs(tempSpeed);
 			else
 				m_LowAnimator.speed = 1;
 		}
