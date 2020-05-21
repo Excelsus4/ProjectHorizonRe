@@ -50,15 +50,23 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 
 			// Wall Check when moving sideways
 			if(velocity.x != 0) {
-				RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, new Vector2(velocity.x > 0 ? 1: -1,0), BodySize, WallMask);
+				float rayDistance = BodySize + Mathf.Abs(velocity.x) * Time.deltaTime;
+				RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, new Vector2(velocity.x > 0 ? 1: -1,0), rayDistance, WallMask);
 				if (raycastHit.collider) {
-					velocity.x = 0f;
+					rayDistance = ( raycastHit.distance - BodySize ) / Time.deltaTime;
+					velocity.x = velocity.x > 0 ? rayDistance : -rayDistance ;
 					// transform.Translate(0f, ( BodySize / 2 ) - raycastHit.distance, 0f);
 				}
 			}
 
-			if (velocity.x != 0)
-				transform.Translate(velocity.x * Time.deltaTime, 0, 0);
+			if (velocity.x != 0) {
+				if (!IsGrounded) {
+					transform.Translate(velocity.x * Time.deltaTime, 0, 0);
+				} else {
+					Vector2 tangent = new Vector2(groundNormal.y, -groundNormal.x);
+					transform.Translate(velocity.x * Time.deltaTime * tangent);
+				}
+			}
 		}
 
 		public void Move(float xVelocity) {
