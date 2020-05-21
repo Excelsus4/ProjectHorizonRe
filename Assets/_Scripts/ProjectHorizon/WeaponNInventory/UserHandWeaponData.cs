@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using com.meiguofandian.Modules.SynchronizedSaver;
+using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class UserHandWeaponData : SynchronizedSave {
@@ -32,7 +33,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 
 		private void NotifyObservers() {
 			foreach (IDataUpdateCallback observer in observers) {
-				observer.OnDataUpdate();
+				observer.OnDataUpdate("UserHandWeaponData");
 			}
 		}
 
@@ -64,7 +65,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 
 		public void RegisterObserver(IDataUpdateCallback observer) {
 			observers.Add(observer);
-			observer.OnDataUpdate();
+			observer.OnDataUpdate("UserHandWeaponData");
 		}
 
 		protected override void SaveItem(Stream stream) {

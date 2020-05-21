@@ -695,6 +695,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3f5f500b9cef61b4c9f18918a58e705d, type: 2}
   - {fileID: 2100000, guid: 3f5f500b9cef61b4c9f18918a58e705d, type: 2}
   - {fileID: 2100000, guid: d72399bf1a4eff449b997c3f8183ed03, type: 2}
+  LayerName:
+  - Floor
+  - Wall
+  - Wall
+  - Floor
 --- !u!4 &722634268
 Transform:
   m_ObjectHideFlags: 0
@@ -1352,6 +1357,7 @@ MonoBehaviour:
   m_ShellUpForce: 0.03
   m_ShellBackForce: -0.01
   m_BulletIndicator: {fileID: 1188691191}
+  gravitational: {fileID: 0}
 --- !u!50 &1417648499
 Rigidbody2D:
   serializedVersion: 4
@@ -1428,8 +1434,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravitational: {fileID: 1684706945}
+  animationControl: {fileID: 0}
   tempMoveSpeed: 5
   tempJumpForce: 13
+  tempAerialSpeed: 1
 --- !u!4 &1438136664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5016979514106944721, guid: 6be1d8c45bdb5254799696fcf5656e56,
@@ -1904,7 +1912,11 @@ MonoBehaviour:
   FloorMask:
     serializedVersion: 2
     m_Bits: 32768
+  WallMask:
+    serializedVersion: 2
+    m_Bits: 65536
   FootLength: 0.5
+  BodySize: 0.2
   gravity: 0.98
 --- !u!4 &1684706946
 Transform:

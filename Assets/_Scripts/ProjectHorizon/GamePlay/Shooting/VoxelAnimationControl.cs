@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using com.meiguofandian.ProjectHorizon.GamePlay.Platformer;
+//using com.meiguofandian.ProjectHorizon.GamePlay.Platformer;
+using com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer;
 using com.meiguofandian.Modules.SmallCharacter;
+using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
-	public class VoxelAnimationControl : MonoBehaviour {
+	public class VoxelAnimationControl : MonoBehaviour, IDataUpdateCallback {
 		public PaperFlipper m_Flipper;
 
 		public Animator m_HighAnimator;
@@ -25,12 +27,19 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		//Character Bound UI
 		public UnityEngine.UI.Slider m_BulletIndicator;
 
+		//LPlatformer Link
+		public Gravitational gravitational;
+
 		private bool PrevLookBack;
 
 		// Use this for initialization
 		private void Awake() {
 			m_rigidbody = GetComponent<Rigidbody2D>();
 			PrevLookBack = true;
+
+			if (!gravitational)
+				gravitational = GetComponentInParent<Gravitational>();
+			gravitational.AddGroundingObserver(this);
 		}
 
 		private void Start() {
@@ -81,7 +90,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public void SetAsMannequin() {
 			m_HighAnimator.SetBool("isTitle", true);
 			GetComponent<VoxelInputControl>().enabled = false;
-			GetComponent<PlayerController>().enabled = false;
 			GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 			m_BulletIndicator.gameObject.SetActive(false);
 			m_LowAnimator.SetBool("onGround", true);
@@ -98,6 +106,15 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public void Reload() {
 			m_HighAnimator.SetTrigger("Reload");
+		}
+
+		public void OnDataUpdate(string data) {
+			string[] tokens = data.Split(' ');
+			switch (tokens[0]) {
+			case "Gravitational":
+				SetGrounded(gravitational.IsGrounded);
+				break;
+			}
 		}
 	}
 }
