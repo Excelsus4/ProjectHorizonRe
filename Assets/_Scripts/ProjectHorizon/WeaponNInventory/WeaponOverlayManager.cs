@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class WeaponOverlayManager : MonoBehaviour, IModIconButtonCallback, IDataUpdateCallback {
@@ -91,9 +92,14 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			}
 		}
 
-		public void OnDataUpdate() {
-			WeaponToRender = GlobalWeaponManager.weapon;
-			Render();
+		public void OnDataUpdate(string data) {
+			string[] tokens = data.Split(' ');
+			switch (tokens[0]) {
+			case "UserHandWeaponData":
+				WeaponToRender = GlobalWeaponManager.weapon;
+				Render();
+				break;
+			}
 		}
 	}
 }

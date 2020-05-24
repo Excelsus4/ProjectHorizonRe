@@ -4,6 +4,7 @@ using UnityEngine;
 using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 using com.meiguofandian.ProjectHorizon.GamePlay.Shootables;
 using com.meiguofandian.Modules.NumberedDamage;
+using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelInputControl : MonoBehaviour, IDataUpdateCallback {
@@ -244,8 +245,13 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			}
 		}
 
-		public void OnDataUpdate() {
-			UpdateWeapon();
+		public void OnDataUpdate(string data) {
+			string[] tokens = data.Split(' ');
+			switch (tokens[0]) {
+			case "UserHandWeaponData":
+				UpdateWeapon();
+				break;
+			}
 		}
 
 		public void UnlockAction() {

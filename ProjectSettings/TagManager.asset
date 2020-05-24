@@ -21,9 +21,9 @@ TagManager:
   - Terrain
   - MobAttack
   - 
-  - 
-  - 
-  - 
+  - Floor
+  - Wall
+  - Lava
   - 
   - 
   - 

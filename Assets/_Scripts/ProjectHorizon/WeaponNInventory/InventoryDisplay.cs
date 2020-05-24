@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class InventoryDisplay : MonoBehaviour, IDataUpdateCallback, IModIconButtonCallback {
@@ -26,8 +27,13 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		/// <summary>
 		/// This will be called by inventory data when data is updated.
 		/// </summary>
-		public void OnDataUpdate() {
-			InventoryRender();
+		public void OnDataUpdate(string data) {
+			string[] tokens = data.Split(' ');
+			switch (tokens[0]) {
+			case "InventoryData":
+				InventoryRender();
+				break;
+			}
 		}
 
 		public void InventoryRender() {

@@ -4,6 +4,7 @@ using UnityEngine;
 using com.meiguofandian.Modules.SynchronizedSaver;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class InventoryData : SynchronizedSave {
@@ -33,7 +34,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 
 		private void NotifyObservers() {
 			foreach (IDataUpdateCallback observer in observers) {
-				observer.OnDataUpdate();
+				observer.OnDataUpdate("InventoryData");
 			}
 		}
 
