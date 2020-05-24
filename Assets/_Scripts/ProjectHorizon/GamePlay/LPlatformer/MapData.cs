@@ -8,12 +8,13 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 	public class MapData:ScriptableObject {
 		public MapComponent[] Components;
 
-		public const int COMPONENT_TYPE_SIZE = 4; 
+		public const int COMPONENT_TYPE_SIZE = 5; 
 		public enum ComponentType {
 			FLOOR,		// BLOCKS FALLING
 			CEILING,	// BLOCKS JUMPING OVER IT
 			WALL,		// BLOCKS SIDEWAY MOVEMENTS
-			BEDROCK		// BLOCKS DOWNWARD JUMPING
+			BEDROCK,	// BLOCKS DOWNWARD JUMPING
+			LAVA		// WILL KILL THE PLAYER INSTANTLY
 		}
 
 		[Serializable]

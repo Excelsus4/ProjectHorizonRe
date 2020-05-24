@@ -695,11 +695,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3f5f500b9cef61b4c9f18918a58e705d, type: 2}
   - {fileID: 2100000, guid: 3f5f500b9cef61b4c9f18918a58e705d, type: 2}
   - {fileID: 2100000, guid: d72399bf1a4eff449b997c3f8183ed03, type: 2}
+  - {fileID: 2100000, guid: 9acee050327a66e4ba0461ef786c67f9, type: 2}
   LayerName:
   - Floor
   - Wall
   - Wall
   - Floor
+  - Lava
 --- !u!4 &722634268
 Transform:
   m_ObjectHideFlags: 0

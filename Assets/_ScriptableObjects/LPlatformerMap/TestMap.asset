@@ -17,15 +17,15 @@ MonoBehaviour:
     Points:
     - {x: -3, y: -2}
     - {x: 0, y: -2}
-    - {x: 3, y: -1}
+    - {x: 3, y: -10}
   - CType: 2
     Points:
     - {x: -3, y: -2}
-    - {x: -3, y: 4}
+    - {x: -3, y: 3}
   - CType: 2
     Points:
-    - {x: 3, y: -1}
-    - {x: 3, y: 0}
+    - {x: 3, y: -10}
+    - {x: 3, y: 10}
   - CType: 0
     Points:
     - {x: 3, y: 0}
