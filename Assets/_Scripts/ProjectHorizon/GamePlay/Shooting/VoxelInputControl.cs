@@ -5,6 +5,7 @@ using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 using com.meiguofandian.ProjectHorizon.GamePlay.Shootables;
 using com.meiguofandian.Modules.NumberedDamage;
 using com.meiguofandian.Modules.ObserverPattern;
+using TouchControlsKit;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelInputControl : MonoBehaviour, IDataUpdateCallback {
@@ -77,9 +78,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Update() {
-			if (Input.GetButtonUp("Fire")) {
+			if (TCKInput.GetAction("Fire", EActionEvent.Up)) {
 				OnMUp();
-			} else if (Input.GetButtonDown("Fire")) {
+			} else if (TCKInput.GetAction("Fire", EActionEvent.Down)) {
 				OnMDown();
 			}
 		}
@@ -112,7 +113,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 				//SwitchWeapon();
 				FireModeChecker();
 
-				if (Input.GetButtonDown("Reload")) {
+				if (TCKInput.GetAction("Reload", EActionEvent.Press)) {
 					TryReload();
 				}
 			}

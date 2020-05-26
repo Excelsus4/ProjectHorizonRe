@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using com.meiguofandian.ProjectHorizon.GamePlay.Shooting;
+using TouchControlsKit;
 
 	namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 	public class PlayerControl : MonoBehaviour {
@@ -10,6 +11,7 @@ using com.meiguofandian.ProjectHorizon.GamePlay.Shooting;
 		public float tempMoveSpeed;
 		public float tempJumpForce;
 		public float tempAerialSpeed;
+		public float moveJoystickThreshold;
 
 		private void Awake() {
 			if (!gravitational)
@@ -21,15 +23,15 @@ using com.meiguofandian.ProjectHorizon.GamePlay.Shooting;
 		private void Update() {
 			// This if is for isControllable
 			if (true) {
+				float xMovement = TCKInput.GetAxis("LJoystick").x;
+				xMovement = Mathf.Abs(xMovement) > moveJoystickThreshold ? xMovement : 0f;
 				if (gravitational.IsGrounded) {
-					float xMovement = Input.GetAxis("Horizontal");
 					animationControl.SetWalkingSpeed(xMovement);
 					xMovement *= tempMoveSpeed;
 					gravitational.Move(xMovement);
-					if (Input.GetButton("Jump"))
+					if (TCKInput.GetAction("Jump", EActionEvent.Press))
 						gravitational.Jump(tempJumpForce);
 				} else {
-					float xMovement = Input.GetAxis("Horizontal");
 					xMovement *= tempAerialSpeed * Time.deltaTime;
 					gravitational.Move(xMovement);
 				}
