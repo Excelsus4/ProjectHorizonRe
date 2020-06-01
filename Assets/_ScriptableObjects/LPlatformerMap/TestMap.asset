@@ -30,3 +30,8 @@ MonoBehaviour:
     Points:
     - {x: 3, y: 0}
     - {x: 6, y: 0}
+  Triggers:
+  - TType: 0
+    Position: {x: 0, y: 0.72}
+  - TType: 1
+    Position: {x: 0, y: 0}
