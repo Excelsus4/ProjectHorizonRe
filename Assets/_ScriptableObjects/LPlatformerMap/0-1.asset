@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 830267694e984974db18021e807b6dde, type: 3}
-  m_Name: TestMap
+  m_Name: 0-1
   m_EditorClassIdentifier: 
-  Title: Test Map
-  Description: This is purely for testing.
+  Title: First Drop
+  Description: Your first recon in the fantasy world.
   Components:
   - CType: 3
     Points:

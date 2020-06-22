@@ -6,6 +6,8 @@ using UnityEngine;
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 	[CreateAssetMenu(fileName = "New Map", menuName = "ProjectHorizon/LPlatformer/Map")]
 	public class MapData:ScriptableObject {
+		public string Title;
+		public string Description;
 		public MapComponent[] Components;
 		public TriggerComponent[] Triggers;
 

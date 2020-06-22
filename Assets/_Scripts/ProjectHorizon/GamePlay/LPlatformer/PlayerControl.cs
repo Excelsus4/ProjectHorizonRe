@@ -13,6 +13,10 @@ using TouchControlsKit;
 		public float tempJumpForce;
 		public float tempAerialSpeed;
 		public float moveJoystickThreshold;
+		public float crouchDepth;
+
+		private bool isCrouch;
+		private Vector3 aimMemory;
 
 		private void Awake() {
 			if (!gravitational)
@@ -21,6 +25,7 @@ using TouchControlsKit;
 				animationControl = GetComponent<VoxelAnimationControl>();
 			if (!legacyInputControl)
 				legacyInputControl = GetComponent<VoxelInputControl>();
+			aimMemory = new Vector3(1f, 0f, 0f);
 		}
 
 		private void Update() {
@@ -28,8 +33,11 @@ using TouchControlsKit;
 			if (true) {
 				float xMovement = TCKInput.GetAxis("LJoystick").x;
 				float yMovement = TCKInput.GetAxis("LJoystick").y;
-				if(xMovement != 0 && yMovement != 0)
-					legacyInputControl.Aim(new Vector3(xMovement, yMovement));
+				if (xMovement != 0f || yMovement != 0f) {
+					aimMemory.x = xMovement;
+					aimMemory.y = yMovement;
+				}
+				legacyInputControl.Aim(aimMemory);
 				xMovement = Mathf.Abs(xMovement) > moveJoystickThreshold ? xMovement : 0f;
 				if (gravitational.IsGrounded) {
 					animationControl.SetWalkingSpeed(xMovement);
@@ -41,7 +49,15 @@ using TouchControlsKit;
 					xMovement *= tempAerialSpeed * Time.deltaTime;
 					gravitational.Move(xMovement);
 				}
+				if (TCKInput.GetAction("Crouch", EActionEvent.Click))
+					ToggleCrouch();
 			}
+		}
+
+		private void ToggleCrouch() {
+			isCrouch = !isCrouch;
+			animationControl.SetCrouch(isCrouch);
+			transform.Translate(.0f, isCrouch ? -crouchDepth : crouchDepth, .0f);
 		}
 	}
 }

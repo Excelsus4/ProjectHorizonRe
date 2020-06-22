@@ -2031,7 +2031,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.617257, g: 0.75251406, b: 0.9150943, a: 0}
+  m_BackGroundColor: {r: 0.7490196, g: 0.80392164, b: 0.85098046, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -2807,6 +2807,7 @@ MonoBehaviour:
   tempJumpForce: 13
   tempAerialSpeed: 1
   moveJoystickThreshold: 0.5
+  crouchDepth: 0.4
 --- !u!4 &1438136664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5016979514106944721, guid: 6be1d8c45bdb5254799696fcf5656e56,
