@@ -107,7 +107,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Action() {
-			Aim();
+			//Aim();
 			if (!m_LockAction) {
 
 				//SwitchWeapon();
@@ -161,9 +161,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			Invoke("UnlockAction", 60f / m_stats.attackSpeed);
 		}
 
-		private void Aim() {
-			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector3 difference = worldPos - transform.position;
+		public void Aim(Vector3 aim){
+			// This code is aiming with mouse...
+			//Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			//Vector3 difference = worldPos - transform.position;
+
+			Vector3 difference = aim;
 
 			m_isLookingLeft = difference.x < 0;
 

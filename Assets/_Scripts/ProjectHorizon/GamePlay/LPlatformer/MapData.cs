@@ -34,6 +34,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		public class TriggerComponent {
 			public TriggerType TType;
 			public Vector2 Position;
+			public GameObject Instantiatable;
 		}
 	}
 }

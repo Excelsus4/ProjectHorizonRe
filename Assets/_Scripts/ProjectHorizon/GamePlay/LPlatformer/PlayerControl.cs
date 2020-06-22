@@ -8,6 +8,7 @@ using TouchControlsKit;
 	public class PlayerControl : MonoBehaviour {
 		public Gravitational gravitational;
 		public VoxelAnimationControl animationControl;
+		public VoxelInputControl legacyInputControl;
 		public float tempMoveSpeed;
 		public float tempJumpForce;
 		public float tempAerialSpeed;
@@ -18,12 +19,17 @@ using TouchControlsKit;
 				gravitational = GetComponentInParent<Gravitational>();
 			if (!animationControl)
 				animationControl = GetComponent<VoxelAnimationControl>();
+			if (!legacyInputControl)
+				legacyInputControl = GetComponent<VoxelInputControl>();
 		}
 
 		private void Update() {
 			// This if is for isControllable
 			if (true) {
 				float xMovement = TCKInput.GetAxis("LJoystick").x;
+				float yMovement = TCKInput.GetAxis("LJoystick").y;
+				if(xMovement != 0 && yMovement != 0)
+					legacyInputControl.Aim(new Vector3(xMovement, yMovement));
 				xMovement = Mathf.Abs(xMovement) > moveJoystickThreshold ? xMovement : 0f;
 				if (gravitational.IsGrounded) {
 					animationControl.SetWalkingSpeed(xMovement);
