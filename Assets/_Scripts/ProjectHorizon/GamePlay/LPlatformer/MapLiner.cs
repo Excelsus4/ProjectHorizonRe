@@ -17,6 +17,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 				LineLayers[idx] = LayerMask.NameToLayer(LayerName[idx]);
 			}
 
+			if (UI.ScenarioSelector.ScenarioSelector.loadedMap) {
+				testMapData = UI.ScenarioSelector.ScenarioSelector.loadedMap;
+			}
+
 			if (isTest) {
 				foreach(MapData.MapComponent component in testMapData.Components) {
 					GameObject instantiatedObject = Instantiate(testLiners, transform);

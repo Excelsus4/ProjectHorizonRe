@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830267694e984974db18021e807b6dde, type: 3}
+  m_Name: 0-1
+  m_EditorClassIdentifier: 
+  Title: First Drop
+  Description: Your first recon in the fantasy world.
+  Components:
+  - CType: 3
+    Points:
+    - {x: -3, y: -2}
+    - {x: 0, y: -2}
+    - {x: 3, y: -10}
+  - CType: 2
+    Points:
+    - {x: -3, y: -2}
+    - {x: -3, y: 3}
+  - CType: 2
+    Points:
+    - {x: 3, y: -10}
+    - {x: 3, y: 10}
+  - CType: 0
+    Points:
+    - {x: 3, y: 0}
+    - {x: 6, y: 0}
+  Triggers:
+  - TType: 0
+    Position: {x: 0, y: 0.72}
+    Instantiatable: {fileID: 0}
+  - TType: 1
+    Position: {x: 0, y: 0}
+    Instantiatable: {fileID: 0}

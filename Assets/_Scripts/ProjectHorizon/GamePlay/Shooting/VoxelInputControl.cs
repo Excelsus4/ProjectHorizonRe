@@ -5,6 +5,7 @@ using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 using com.meiguofandian.ProjectHorizon.GamePlay.Shootables;
 using com.meiguofandian.Modules.NumberedDamage;
 using com.meiguofandian.Modules.ObserverPattern;
+using TouchControlsKit;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelInputControl : MonoBehaviour, IDataUpdateCallback {
@@ -77,9 +78,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Update() {
-			if (Input.GetButtonUp("Fire")) {
+			if (TCKInput.GetAction("Fire", EActionEvent.Up)) {
 				OnMUp();
-			} else if (Input.GetButtonDown("Fire")) {
+			} else if (TCKInput.GetAction("Fire", EActionEvent.Down)) {
 				OnMDown();
 			}
 		}
@@ -106,13 +107,13 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void Action() {
-			Aim();
+			//Aim();
 			if (!m_LockAction) {
 
 				//SwitchWeapon();
 				FireModeChecker();
 
-				if (Input.GetButtonDown("Reload")) {
+				if (TCKInput.GetAction("Reload", EActionEvent.Press)) {
 					TryReload();
 				}
 			}
@@ -160,9 +161,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			Invoke("UnlockAction", 60f / m_stats.attackSpeed);
 		}
 
-		private void Aim() {
-			Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Vector3 difference = worldPos - transform.position;
+		public void Aim(Vector3 aim){
+			// This code is aiming with mouse...
+			//Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			//Vector3 difference = worldPos - transform.position;
+
+			Vector3 difference = aim;
 
 			m_isLookingLeft = difference.x < 0;
 

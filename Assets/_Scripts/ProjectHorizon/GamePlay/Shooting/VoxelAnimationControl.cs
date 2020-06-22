@@ -117,5 +117,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 				break;
 			}
 		}
+
+		public void SetCrouch(bool isCrouch) {
+			m_LowAnimator.SetBool("isCrouch", isCrouch);
+		}
 	}
 }

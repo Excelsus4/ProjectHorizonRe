@@ -1,2 +1,2 @@
 @echo off
-Assets\__Scene\FakeMain.unity
+Assets\__Scene\MainMenu.unity

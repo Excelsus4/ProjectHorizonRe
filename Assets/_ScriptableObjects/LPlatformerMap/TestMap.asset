@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830267694e984974db18021e807b6dde, type: 3}
   m_Name: TestMap
   m_EditorClassIdentifier: 
+  Title: Test Map
+  Description: This is purely for testing.
   Components:
   - CType: 3
     Points:
@@ -30,3 +32,10 @@ MonoBehaviour:
     Points:
     - {x: 3, y: 0}
     - {x: 6, y: 0}
+  Triggers:
+  - TType: 0
+    Position: {x: 0, y: 0.72}
+    Instantiatable: {fileID: 0}
+  - TType: 1
+    Position: {x: 0, y: 0}
+    Instantiatable: {fileID: 0}

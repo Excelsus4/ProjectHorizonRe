@@ -6,7 +6,10 @@ using UnityEngine;
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 	[CreateAssetMenu(fileName = "New Map", menuName = "ProjectHorizon/LPlatformer/Map")]
 	public class MapData:ScriptableObject {
+		public string Title;
+		public string Description;
 		public MapComponent[] Components;
+		public TriggerComponent[] Triggers;
 
 		public const int COMPONENT_TYPE_SIZE = 5; 
 		public enum ComponentType {
@@ -17,10 +20,23 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 			LAVA		// WILL KILL THE PLAYER INSTANTLY
 		}
 
+		public const int TRIGGER_TYPE_SIZE = 2;
+		public enum TriggerType {
+			PLAYER_START,
+			HOSTILE_MOB
+		}
+
 		[Serializable]
 		public class MapComponent {
 			public ComponentType CType;
 			public Vector2[] Points;
+		}
+
+		[Serializable]
+		public class TriggerComponent {
+			public TriggerType TType;
+			public Vector2 Position;
+			public GameObject Instantiatable;
 		}
 	}
 }
