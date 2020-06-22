@@ -71,6 +71,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_DelayFire = 0;
 		}
 
+		private void Start() {
+			m_BulletLine = FindObjectOfType<BulletLineRenderer>().GetComponent<LineRenderer>();
+		}
+
 		private void UpdateWeapon() {
 			m_weapon = m_weaponManager.weapon;
 			m_stats = m_weapon.weaponStats;
