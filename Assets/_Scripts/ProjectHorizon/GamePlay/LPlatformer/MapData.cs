@@ -41,7 +41,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 			public void InitiateTrigger() {
 				switch (TType) {
 				case TriggerType.PLAYER_START:
-					Instantiate(Instantiatable, Position, Quaternion.identity);
+					GameObject.Find("PlayerCharacter").transform.localPosition = Position;
 					break;
 				case TriggerType.HOSTILE_MOB:
 					Instantiate(Instantiatable, Position, Quaternion.identity);

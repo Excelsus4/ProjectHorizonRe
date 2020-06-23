@@ -142,6 +142,7 @@ Transform:
   m_Children:
   - {fileID: 209223476257091785}
   - {fileID: 209223476474744362}
+  - {fileID: 1227394985257750088}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1640,6 +1641,36 @@ MonoBehaviour:
   m_FillClockwise: 0
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!1 &5446099448299435182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227394985257750088}
+  m_Layer: 0
+  m_Name: Heart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227394985257750088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446099448299435182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 209223475987808062}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &209223476930410991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1709,9 +1740,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be1d8c45bdb5254799696fcf5656e56, type: 3}
---- !u!95 &209223477395437095 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 633884616, guid: 6be1d8c45bdb5254799696fcf5656e56,
+--- !u!4 &5150055211428635966 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5016979514106944721, guid: 6be1d8c45bdb5254799696fcf5656e56,
     type: 3}
   m_PrefabInstance: {fileID: 209223476930410991}
   m_PrefabAsset: {fileID: 0}
@@ -1745,9 +1776,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 209223476930410991}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5150055211428635966 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5016979514106944721, guid: 6be1d8c45bdb5254799696fcf5656e56,
+--- !u!95 &209223477395437095 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 633884616, guid: 6be1d8c45bdb5254799696fcf5656e56,
     type: 3}
   m_PrefabInstance: {fileID: 209223476930410991}
   m_PrefabAsset: {fileID: 0}
