@@ -69,8 +69,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_weaponManager.RegisterObserver(this);
 			m_CurrentAmmo = m_stats.rounds;
 			m_DelayFire = 0;
-
-			print("abc");
+			
 			m_BulletLine = FindObjectOfType<BulletLineRenderer>().GetComponent<LineRenderer>();
 		}
 
