@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4e065261c7c5046a676a115c953bda, type: 3}
   m_Name: TestMagazine
   m_EditorClassIdentifier: 
-  m_ItemCode: 0
   m_Reference: {fileID: 11400000, guid: 3d6f67d812be421479a3aeadf4f8a5b3, type: 2}

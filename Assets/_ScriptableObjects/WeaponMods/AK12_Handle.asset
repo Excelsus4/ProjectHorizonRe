@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
-  m_Name: M16A1_Magazine
+  m_Name: AK12_Handle
   m_EditorClassIdentifier: 
-  m_ModName: M16A1_Magazine
-  m_Visuals: {fileID: 21300014, guid: 13fbda4589548834eb4299709155cc17, type: 3}
+  m_ModName: AK12_Handle
+  m_Visuals: {fileID: 21300006, guid: c9f401d63804f394599a078cbdb4213a, type: 3}
   m_DisplacementList:
-  - targetPart: 8
-    displacement: {x: -0.27, y: -0.42}
-  m_Mainly: 8
-  m_Requires: 8
-  m_Locks: 72
+  - targetPart: 2
+    displacement: {x: 0.135, y: -0.26}
+  m_Mainly: 2
+  m_Requires: 2
+  m_Locks: 2
   m_Unlocks: 0
   m_Stats:
-    damage: 52
+    damage: 0
     damageCap: 300
     attackSpeed: 0
-    penetration: 24
+    penetration: 0
     recoil: 1
-    recoilRecovery: -4
+    recoilRecovery: 5
     accuracy: 0
     spread: 1
-    rounds: 30
+    rounds: 0
     reloadSpeed: 1
-    criticalChance: 0.4
+    criticalChance: 0
     criticalDamage: 0

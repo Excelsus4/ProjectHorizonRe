@@ -1,18 +1,15 @@
 fileFormatVersion: 2
-guid: 381e8a2707875aa4ca319a3231c4b1ca
-timeCreated: 1533275099
-licenseType: Free
+guid: c9f401d63804f394599a078cbdb4213a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dirt_grass
-    21300002: dirt_grass_slope
-    21300004: dirt_0
-    21300006: dirt_1
-    21300008: dirt_2
-    21300010: dirt_3
-    21300012: dirt_4
-    21300014: dirt_slope
-  serializedVersion: 4
+    21300000: RA12_Receiver
+    21300002: RA12_Barrel
+    21300004: RA12_Stock
+    21300006: RA12_Handle
+    21300008: RA12_Magazine
+    21300010: RA12_Flashhider
+  externalObjects: {}
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -30,6 +27,8 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -40,7 +39,7 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
-    mipBias: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -52,172 +51,186 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dirt_grass
+      name: RA12_Receiver
       rect:
         serializedVersion: 2
-        x: 135
-        y: 742
-        width: 275
-        height: 57
+        x: 1
+        y: 71
+        width: 130
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -137.5, y: 28.5}
-        - {x: -137.5, y: -22.65625}
-        - {x: 137.5, y: -28.5}
-        - {x: 137.5, y: 24.117188}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 89f3ffe85ab5dbf4db31bd02bec31cfe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: dirt_0
+      name: RA12_Barrel
       rect:
         serializedVersion: 2
-        x: 820
-        y: 497
-        width: 100
-        height: 100
+        x: 132
+        y: 74
+        width: 122
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6b0042f8d9f3bbe4b8e35253e070a4cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: dirt_1
+      name: RA12_Stock
       rect:
         serializedVersion: 2
-        x: 719
-        y: 497
-        width: 100
-        height: 100
+        x: 1
+        y: 12
+        width: 107
+        height: 58
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7e0add4fa5edbcf48aacddaf4653e31c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: dirt_2
+      name: RA12_Handle
       rect:
         serializedVersion: 2
-        x: 618
-        y: 497
-        width: 100
-        height: 100
+        x: 109
+        y: 20
+        width: 34
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 05bd3d74351781946a5b5fd0f5413216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: dirt_3
+      name: RA12_Magazine
       rect:
         serializedVersion: 2
-        x: 517
-        y: 497
-        width: 100
-        height: 100
+        x: 143
+        y: 1
+        width: 53
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 75211407bb901b54b82aadee222574ee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
-      name: dirt_4
+      name: RA12_Flashhider
       rect:
         serializedVersion: 2
-        x: 416
-        y: 497
-        width: 100
-        height: 100
+        x: 197
+        y: 63
+        width: 34
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
-    - serializedVersion: 2
-      name: dirt_slope
-      rect:
-        serializedVersion: 2
-        x: 315
-        y: 497
-        width: 100
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
-      physicsShape: []
-      tessellationDetail: 0
+      bones: []
+      spriteID: 221f14ab7644fe24f9665838993dd26c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: e043c1ad7af946e4e9394004ad4c7fac
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

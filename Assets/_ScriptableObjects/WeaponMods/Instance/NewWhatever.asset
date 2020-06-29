@@ -10,7 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4e065261c7c5046a676a115c953bda, type: 3}
-  m_Name: TestStock
+  m_Name: NewWhatever
   m_EditorClassIdentifier: 
-  m_ItemCode: 0
-  m_Reference: {fileID: 11400000, guid: 516449f9701543d4a91b0d1f30a9c4dd, type: 2}
+  m_Reference: {fileID: 11400000, guid: abe5cc73ce65e8e4fb094c11e8e23587, type: 2}
