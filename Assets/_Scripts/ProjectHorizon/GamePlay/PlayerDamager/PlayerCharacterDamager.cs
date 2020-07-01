@@ -14,6 +14,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 		private void Awake() {
 			stat = PlayerStatData.getSingleton().playerData;
 			currentHP = stat.maxHP;
+			m_HealthBar.maxValue = stat.maxHP;
+			m_HealthBar.minValue = 0;
+			m_HealthBar.value = currentHP;
 		}
 
 		private void FixedUpdate() {
@@ -28,9 +31,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 				damageBalloon.SetDamageText(Damage);
 				damageBalloon.SetLoose();
 				immunity = stat.immuneTime;
+
+				currentHP -= Damage;
+				m_HealthBar.value = currentHP;
 			}
-
-
 		}
 	}
 }
