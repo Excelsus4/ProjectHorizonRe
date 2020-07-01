@@ -29,6 +29,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 				damageBalloon.SetLoose();
 				immunity = stat.immuneTime;
 			}
+
+
 		}
 	}
 }

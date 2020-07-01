@@ -20,7 +20,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Projectile {
 		}
 
 		public void DirectToward(Vector3 target) {
-			transform.LookAt(target);
+			transform.parent.LookAt(target);
 		}
 
 		private void OnTriggerEnter2D(Collider2D collision) {
@@ -30,7 +30,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Projectile {
 
 			// Call Destructor
 			// Add Destruction Effect HERE
-			Destroy(gameObject);
+			Destroy(transform.parent.gameObject);
 		}
 	}
 }
