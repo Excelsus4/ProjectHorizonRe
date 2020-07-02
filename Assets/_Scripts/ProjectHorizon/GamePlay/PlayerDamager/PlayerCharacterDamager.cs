@@ -34,7 +34,19 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 
 				currentHP -= Damage;
 				m_HealthBar.value = currentHP;
+
+				if (currentHP < 0)
+					Death();
 			}
+		}
+
+		public void Death() {
+			GameObject.Find("Death_Screen").GetComponent<com.meiguofandian.Modules.SimpleUIOnNOff.SimpleUIOnNOff>().Activate();
+			Invoke("ExitGame", 3);
+		}
+
+		public void ExitGame() {
+			UnityEngine.SceneManagement.SceneManager.LoadScene("__Scene/MainMenu");
 		}
 	}
 }
