@@ -41,3 +41,12 @@ MonoBehaviour:
     Position: {x: 4.5, y: 0}
     Instantiatable: {fileID: 5625091769318949837, guid: 768a2710fd2597e45a0110ca2893d997,
       type: 3}
+  DropTable:
+  - ItemInstance: {fileID: 11400000, guid: c3e162686d7a71c4c96299478e56fac0, type: 2}
+    DropChance: 100
+    MinAmount: 1
+    MaxAmount: 9
+  - ItemInstance: {fileID: 11400000, guid: dcfdde3fe54fc7d48801dcf6c02448d1, type: 2}
+    DropChance: 30
+    MinAmount: 1
+    MaxAmount: 1

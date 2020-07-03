@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 	[CreateAssetMenu(fileName = "New Map", menuName = "ProjectHorizon/LPlatformer/Map")]
@@ -10,6 +11,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		public string Description;
 		public MapComponent[] Components;
 		public TriggerComponent[] Triggers;
+		public DropElement[] DropTable;
 
 		public const int COMPONENT_TYPE_SIZE = 5; 
 		public enum ComponentType {
@@ -48,6 +50,14 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 					break;
 				}
 			}
+		}
+
+		[Serializable]
+		public class DropElement {
+			public InventoryItem ItemInstance;
+			public float DropChance;
+			public int MinAmount;
+			public int MaxAmount;
 		}
 	}
 }
