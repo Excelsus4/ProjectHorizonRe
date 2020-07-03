@@ -1,19 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using com.meiguofandian.Modules.NumberedDamage;
 using com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
-	public class MobCollidingAttack : MonoBehaviour {
-		public IMobAnimation anim;
-		public DamageSkin damageSkin;
+	public class MobCollidingAttack : MobAttack {
 		public int damage;
-
 		private PlayerCharacterDamager targetDamager;
 
 		private void Awake() {
-			anim = GetComponentInParent<IMobAnimation>();
 		}
 
 		private void OnTriggerEnter2D(Collider2D collision) {
@@ -26,6 +21,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		}
 
 		private void OnTriggerExit2D(Collider2D collision) {
+			targetDamager = null;
 			anim.StopMelee();
 		}
 	}

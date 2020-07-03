@@ -14,6 +14,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 		private void Awake() {
 			stat = PlayerStatData.getSingleton().playerData;
 			currentHP = stat.maxHP;
+			m_HealthBar.maxValue = stat.maxHP;
+			m_HealthBar.minValue = 0;
+			m_HealthBar.value = currentHP;
 		}
 
 		private void FixedUpdate() {
@@ -28,7 +31,22 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.PlayerDamager {
 				damageBalloon.SetDamageText(Damage);
 				damageBalloon.SetLoose();
 				immunity = stat.immuneTime;
+
+				currentHP -= Damage;
+				m_HealthBar.value = currentHP;
+
+				if (currentHP < 0)
+					Death();
 			}
+		}
+
+		public void Death() {
+			GameObject.Find("Death_Screen").GetComponent<com.meiguofandian.Modules.SimpleUIOnNOff.SimpleUIOnNOff>().Activate();
+			Invoke("ExitGame", 3);
+		}
+
+		public void ExitGame() {
+			UnityEngine.SceneManagement.SceneManager.LoadScene("__Scene/MainMenu");
 		}
 	}
 }

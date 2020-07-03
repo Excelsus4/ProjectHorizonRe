@@ -33,9 +33,7 @@ MonoBehaviour:
     - {x: 3, y: 0}
     - {x: 6, y: 0}
   Triggers:
-  - TType: 0
-    Position: {x: 0, y: 0.72}
-    Instantiatable: {fileID: 0}
   - TType: 1
-    Position: {x: 0, y: 0}
-    Instantiatable: {fileID: 0}
+    Position: {x: 4.5, y: 0}
+    Instantiatable: {fileID: 5625091769318949837, guid: 768a2710fd2597e45a0110ca2893d997,
+      type: 3}

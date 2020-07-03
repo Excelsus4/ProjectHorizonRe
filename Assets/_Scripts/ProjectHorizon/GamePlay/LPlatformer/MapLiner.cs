@@ -36,6 +36,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 						lr.SetPosition(idx, component.Points[idx]);
 					}
 				}
+
+				foreach(MapData.TriggerComponent trigger in testMapData.Triggers) {
+					trigger.InitiateTrigger();
+				}
 			}
 		}
 

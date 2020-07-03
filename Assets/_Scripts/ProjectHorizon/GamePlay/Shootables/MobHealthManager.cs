@@ -85,6 +85,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		}
 
 		private void Death() {
+			GetComponentInParent<MobAttack>().enabled = false;
+			GetComponent<MobHealthManager>().enabled = false;
+			GetComponent<Collider2D>().enabled = false;
 			if (m_damageRenderer != null) {
 				m_damageRenderer.SetLoose();
 			}

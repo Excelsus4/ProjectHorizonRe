@@ -18,11 +18,11 @@ MonoBehaviour:
   - targetPart: 1296
     displacement: {x: 0.87, y: 0.03}
   - targetPart: 1280
-    displacement: {x: 0.87, y: 0}
+    displacement: {x: 0.87, y: -0.03}
   m_Mainly: 16
   m_Requires: 48
   m_Locks: 48
-  m_Unlocks: 0
+  m_Unlocks: 256
   m_Stats:
     damage: 0
     damageCap: 83

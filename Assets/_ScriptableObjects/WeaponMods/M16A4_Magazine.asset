@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: M16A4_Magazine
   m_EditorClassIdentifier: 
   m_ModName: M16A4_Magazine
-  m_Visuals: {fileID: 21300008, guid: f023f5248d9ec7542bbc44264e02320d, type: 3}
+  m_Visuals: {fileID: 21300016, guid: 13fbda4589548834eb4299709155cc17, type: 3}
   m_DisplacementList:
   - targetPart: 8
     displacement: {x: -0.27, y: -0.42}

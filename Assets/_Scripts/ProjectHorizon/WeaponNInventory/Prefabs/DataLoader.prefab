@@ -49,9 +49,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62e0939748429294a8a38579361959b4, type: 2}
   - {fileID: 11400000, guid: 6905e8be9d5eb6c4b8d05c794bb2fb0d, type: 2}
   - {fileID: 11400000, guid: 516449f9701543d4a91b0d1f30a9c4dd, type: 2}
+  - {fileID: 11400000, guid: 9d551d24cdd69814f912329429219b84, type: 2}
+  - {fileID: 11400000, guid: f0ce5d02e98905e4eb71a7e56d939597, type: 2}
+  - {fileID: 11400000, guid: 027be5231301f9048b0af2afe0ac4436, type: 2}
+  - {fileID: 11400000, guid: 459c2e2fb8352074ca14256991940066, type: 2}
+  - {fileID: 11400000, guid: 83c5c6b0fb866ca4d80e706afef11323, type: 2}
+  - {fileID: 11400000, guid: 79103d8fcc9ce13499afe1956ece8b0f, type: 2}
+  - {fileID: 11400000, guid: e15f82649fe41a04082b159f95fc2aff, type: 2}
+  - {fileID: 11400000, guid: 8032520021e73e84381b9937b0781895, type: 2}
+  - {fileID: 11400000, guid: 5ef7ed0bda1c26340923c61d8a078648, type: 2}
+  - {fileID: 11400000, guid: 47efeb7aa7beb0d47a02305a11e5cd44, type: 2}
+  - {fileID: 11400000, guid: abe5cc73ce65e8e4fb094c11e8e23587, type: 2}
   defaultWeaponData:
   - {fileID: 11400000, guid: a2ded012780588c4caa84557f37945f7, type: 2}
   - {fileID: 11400000, guid: 0476c50d72daebe4ebaa1e0b2c6409f3, type: 2}
   - {fileID: 11400000, guid: 9f14d18f473233d44a621a7ed45ab37e, type: 2}
   - {fileID: 11400000, guid: 066b2cb2d81929046ab0e410d3127cbf, type: 2}
   - {fileID: 11400000, guid: 26ac7221c727d464990af5755b138631, type: 2}
+  debugAddingList: []
