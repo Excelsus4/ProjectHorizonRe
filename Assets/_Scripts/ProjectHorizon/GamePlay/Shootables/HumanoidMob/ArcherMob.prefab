@@ -139,12 +139,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HealthBar: {fileID: 5625091770214966173}
-  m_MaxHealth: 500
-  m_Armor: 0
+  Stat: {fileID: 11400000, guid: fecfceac7aff1714181f590bc0b1cabd, type: 2}
   m_DamagePrefab: {fileID: 1949202687806990, guid: db26501f4eb7b124eb10f7b18a40714b,
     type: 3}
-  m_DropResource: 0
-  m_DropAmount: 0
 --- !u!1 &5625091769318949837
 GameObject:
   m_ObjectHideFlags: 0
