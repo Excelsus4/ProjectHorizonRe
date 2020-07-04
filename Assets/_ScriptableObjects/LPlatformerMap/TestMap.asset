@@ -15,25 +15,22 @@ MonoBehaviour:
   Title: Test Map
   Description: This is purely for testing.
   Components:
-  - CType: 3
+  - Type: 0
     Points:
     - {x: -3, y: -2}
     - {x: 0, y: -2}
     - {x: 3, y: -10}
-  - CType: 2
+  - Type: 0
     Points:
     - {x: -3, y: -2}
     - {x: -3, y: 3}
-  - CType: 2
+  - Type: 0
     Points:
     - {x: 3, y: -10}
     - {x: 3, y: 10}
-  - CType: 0
+  - Type: 0
     Points:
     - {x: 3, y: 0}
     - {x: 6, y: 0}
-  Triggers:
-  - TType: 1
-    Position: {x: 4.5, y: 0}
-    Instantiatable: {fileID: 5625091769318949837, guid: 768a2710fd2597e45a0110ca2893d997,
-      type: 3}
+  Triggers: []
+  DropTable: []

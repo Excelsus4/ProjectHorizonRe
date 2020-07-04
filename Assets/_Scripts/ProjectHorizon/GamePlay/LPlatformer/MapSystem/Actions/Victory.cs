@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer.MapSystem.Actions {
-	[Serializable]
+	[CreateAssetMenu(fileName = "New Action", menuName = "ProjectHorizon/LPlatformer/Action/Victory")]
 	public class Victory : ActionComponent {
 		public override void Activate() {
 			Debug.Log("Victory!");

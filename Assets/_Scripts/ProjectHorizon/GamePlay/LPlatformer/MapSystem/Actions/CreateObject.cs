@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer.MapSystem.Actions {
-	[Serializable]
+	[CreateAssetMenu(fileName = "New Action", menuName = "ProjectHorizon/LPlatformer/Action/CreateObject")]
 	public class CreateObject : ActionComponent {
 		public Vector2 CertainPosition;
 		public GameObject CertainObject;

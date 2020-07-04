@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer.MapSystem.Actions {
-	[Serializable]
+	[CreateAssetMenu(fileName = "New Action", menuName = "ProjectHorizon/LPlatformer/Action/PlayerTeleport")]
 	public class PlayerTeleport : ActionComponent {
-		Vector2 CertainPosition;
+		public Vector2 CertainPosition;
 
 		public override void Activate() {
 			GameObject.Find("PlayerCharacter").transform.localPosition = CertainPosition;

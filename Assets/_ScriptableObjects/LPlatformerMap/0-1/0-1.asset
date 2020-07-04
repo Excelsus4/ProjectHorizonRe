@@ -33,24 +33,8 @@ MonoBehaviour:
     - {x: 3, y: 0}
     - {x: 6, y: 0}
   Triggers:
-  - Condition:
-      Type: 0
-    Action:
-      Type: 0
-      CertainPosition: {x: 0, y: 0}
-      Instantiatable: {fileID: 0}
-  - Condition:
-      Type: 0
-    Action:
-      Type: 1
-      CertainPosition: {x: 0, y: 0}
-      Instantiatable: {fileID: 0}
-  - Condition:
-      Type: 0
-    Action:
-      Type: 2
-      CertainPosition: {x: 0, y: 0}
-      Instantiatable: {fileID: 0}
+  - {fileID: 11400000, guid: 59c29017adb466445a3173047b365be1, type: 2}
+  - {fileID: 11400000, guid: 8fa57840c1a2a5e4eaea0a591b00710e, type: 2}
   DropTable:
   - ItemInstance: {fileID: 11400000, guid: c3e162686d7a71c4c96299478e56fac0, type: 2}
     DropChance: 100
