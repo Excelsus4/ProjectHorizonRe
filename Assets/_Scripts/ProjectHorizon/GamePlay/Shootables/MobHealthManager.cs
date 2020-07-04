@@ -87,9 +87,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 				m_damageRenderer.SetLoose();
 			}
 
-			//BlobManager blob = Instantiate(GlobalDatabase.m_BlobTable[(int)m_DropResource], transform.position, Quaternion.identity).GetComponent<BlobManager>();
-			//blob.Target = com.meiguofandian.ProjectHorizon.GamePlay.Shooting.VoxelInputControl.CharacterLocation;
-			//blob.ResourceAmount = m_DropAmount;
+			GameObject.Find("MapLiner").GetComponent<LPlatformer.MapLiner>().KillCount(transform.parent.name);
 
 			m_AnimationManager.Death();
 

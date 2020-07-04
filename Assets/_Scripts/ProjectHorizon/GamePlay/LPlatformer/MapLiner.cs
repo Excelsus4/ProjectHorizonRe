@@ -64,7 +64,11 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		}
 
 		public void KillCount(string ShootableName) {
-			footprints.KillTable[ShootableName]++;
+			print(ShootableName);
+			if (footprints.KillTable.ContainsKey(ShootableName))
+				footprints.KillTable[ShootableName]++;
+			else
+				footprints.KillTable.Add(ShootableName, 1);
 		}
 	}
 }
