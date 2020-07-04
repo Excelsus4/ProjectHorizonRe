@@ -10,10 +10,13 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		public Material[] testMaterials = new Material[MapData.COMPONENT_TYPE_SIZE];
 		public string[] LayerName = new string[MapData.COMPONENT_TYPE_SIZE];
 		private int[] LineLayers = new int[MapData.COMPONENT_TYPE_SIZE];
+		private List<MapSystem.Trigger> triggers;
+		private MapSystem.ConditionComponent.Footprint footprints;
+		private Transform playerTransform;
 
 		// Start is called before the first frame update
 		void Start() {
-			for(int idx = 0; idx < MapData.COMPONENT_TYPE_SIZE; idx++) {
+			for (int idx = 0; idx < MapData.COMPONENT_TYPE_SIZE; idx++) {
 				LineLayers[idx] = LayerMask.NameToLayer(LayerName[idx]);
 			}
 
@@ -21,33 +24,47 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 				testMapData = UI.ScenarioSelector.ScenarioSelector.loadedMap;
 			}
 
-			if (isTest) {
-				foreach(MapData.MapComponent component in testMapData.Components) {
-					GameObject instantiatedObject = Instantiate(testLiners, transform);
-					LineRenderer lr = instantiatedObject.GetComponent<LineRenderer>();
-					EdgeCollider2D ec = instantiatedObject.GetComponent<EdgeCollider2D>();
+			foreach (MapData.MapComponent component in testMapData.Components) {
+				GameObject instantiatedObject = Instantiate(testLiners, transform);
+				EdgeCollider2D ec = instantiatedObject.GetComponent<EdgeCollider2D>();
+				LineRenderer lr = instantiatedObject.GetComponent<LineRenderer>();
+				instantiatedObject.layer = LineLayers[(int)component.Type];
+				ec.points = component.Points;
 
-					instantiatedObject.layer = LineLayers[(int)component.Type];
+				if (isTest) {
 					lr.material = testMaterials[(int)component.Type];
-					lr.positionCount =component.Points.Length;
-					ec.points = component.Points;
-
-					for(int idx = 0; idx < component.Points.Length; idx++) {
+					lr.positionCount = component.Points.Length;
+					for (int idx = 0; idx < component.Points.Length; idx++) {
 						lr.SetPosition(idx, component.Points[idx]);
 					}
 				}
+			}
 
-				foreach(MapSystem.Trigger trigger in testMapData.Triggers) {
-					// Activate all awake type triggers.
-					if(trigger.Condition.GetType() == typeof(MapSystem.Conditions.Awake))
-						trigger.Action.Activate();
+			triggers = new List<MapSystem.Trigger>();
+			foreach (MapSystem.Trigger trigger in testMapData.Triggers) {
+				triggers.Add(trigger);
+			}
+			footprints = new MapSystem.ConditionComponent.Footprint();
+			playerTransform = GameObject.Find("PlayerCharacter").transform;
+		}
+		
+		void Update() {
+			//Maybe this is checking the trigger too often. Find a better way if it cause lag.
+			CheckTrigger();
+		}
+
+		private void CheckTrigger() {
+			footprints.PlayerPosition = playerTransform.position;
+			for (int idx = triggers.Count - 1; idx >= 0; idx--) {
+				if (triggers[idx].Check(footprints)) {
+					triggers[idx].Activate();
+					triggers.RemoveAt(idx);
 				}
 			}
 		}
 
-		// Update is called once per frame
-		void Update() {
-
+		public void KillCount(string ShootableName) {
+			footprints.KillTable[ShootableName]++;
 		}
 	}
 }

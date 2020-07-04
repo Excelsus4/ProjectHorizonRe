@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using com.meiguofandian.ProjectHorizon.GamePlay.Miscellaneous;
 using com.meiguofandian.Modules.NumberedDamage;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
@@ -11,10 +10,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		public int m_Armor;
 		public GameObject m_DamagePrefab;
 		private IMobAnimation m_AnimationManager;
-
-		//드랍테이블
-		public CharacterData.ResourceType m_DropResource;
-		public int m_DropAmount;
 
 		private DamageRenderer m_damageRenderer;
 		private int m_damageSum;
