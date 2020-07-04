@@ -27,8 +27,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 					LineRenderer lr = instantiatedObject.GetComponent<LineRenderer>();
 					EdgeCollider2D ec = instantiatedObject.GetComponent<EdgeCollider2D>();
 
-					instantiatedObject.layer = LineLayers[(int)component.CType];
-					lr.material = testMaterials[(int)component.CType];
+					instantiatedObject.layer = LineLayers[(int)component.Type];
+					lr.material = testMaterials[(int)component.Type];
 					lr.positionCount =component.Points.Length;
 					ec.points = component.Points;
 
@@ -37,8 +37,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 					}
 				}
 
-				foreach(MapData.TriggerComponent trigger in testMapData.Triggers) {
-					trigger.InitiateTrigger();
+				foreach(MapSystem.Trigger trigger in testMapData.Triggers) {
+					// Activate all awake type triggers.
+					if(trigger.Condition.GetType() == typeof(MapSystem.Conditions.Awake))
+						trigger.Action.Activate();
 				}
 			}
 		}
