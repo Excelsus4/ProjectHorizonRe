@@ -16,6 +16,8 @@ namespace com.meiguofandian.Modules.SmallCharacter {
 
 		public void Flip() {
 			foreach (Transform t in transforms) {
+				if(t.name == "Stomach")
+					print(t.localPosition);
 				Vector3 p = t.localPosition;
 				p.z = -p.z;
 				t.localPosition = p;

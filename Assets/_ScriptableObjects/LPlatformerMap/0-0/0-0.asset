@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830267694e984974db18021e807b6dde, type: 3}
+  m_Name: 0-0
+  m_EditorClassIdentifier: 
+  Title: Bootcamp
+  Description: 
+  Components: []
+  Triggers:
+  - {fileID: 11400000, guid: a6aba43d557116543bdae72d4c206953, type: 2}
+  DropTable:
+  - ItemInstance: {fileID: 11400000, guid: c3e162686d7a71c4c96299478e56fac0, type: 2}
+    DropChance: 1
+    MinAmount: 3
+    MaxAmount: 3
