@@ -1504,6 +1504,11 @@ PrefabInstance:
       propertyPath: zoomMultiplier
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 209223476257091786, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: moveJoystickThreshold
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 209223477348074766, guid: 30ce1e3993437f846b6c21ce3f868dd3,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -4066,7 +4071,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 230, y: 280}
+  m_SizeDelta: {x: 330, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2117419751
 GameObject:
