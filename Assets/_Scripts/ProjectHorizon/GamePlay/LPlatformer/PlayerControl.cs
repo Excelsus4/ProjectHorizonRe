@@ -14,6 +14,9 @@ using TouchControlsKit;
 		public float tempAerialSpeed;
 		public float moveJoystickThreshold;
 		public float crouchDepth;
+		public Modules.CameraControl.CameraControl cameraControl;
+		public float defaultCameraSize;
+		public float zoomMultiplier;
 
 		private bool isCrouch;
 		private Vector3 aimMemory;
@@ -26,6 +29,7 @@ using TouchControlsKit;
 			if (!legacyInputControl)
 				legacyInputControl = GetComponent<VoxelInputControl>();
 			aimMemory = new Vector3(1f, 0f, 0f);
+			CameraControl();
 		}
 
 		private void Update() {
@@ -37,6 +41,13 @@ using TouchControlsKit;
 					aimMemory.x = xMovement;
 					aimMemory.y = yMovement;
 				}
+
+				if (TCKInput.GetAction("Crouch", EActionEvent.Click)) {
+					ToggleCrouch();
+					CameraControl();
+				} else if (xMovement != 0f)
+					CameraControl();
+
 				legacyInputControl.Aim(aimMemory);
 				xMovement = Mathf.Abs(xMovement) > moveJoystickThreshold ? xMovement : 0f;
 				if (gravitational.IsGrounded) {
@@ -49,8 +60,6 @@ using TouchControlsKit;
 					xMovement *= tempAerialSpeed * Time.deltaTime;
 					gravitational.Move(xMovement);
 				}
-				if (TCKInput.GetAction("Crouch", EActionEvent.Click))
-					ToggleCrouch();
 			}
 		}
 
@@ -58,6 +67,11 @@ using TouchControlsKit;
 			isCrouch = !isCrouch;
 			animationControl.SetCrouch(isCrouch);
 			transform.Translate(.0f, isCrouch ? -crouchDepth : crouchDepth, .0f);
+		}
+
+		private void CameraControl() {
+			cameraControl.SetSize(isCrouch ? defaultCameraSize*zoomMultiplier : defaultCameraSize);
+			cameraControl.offset.x = isCrouch ? ( aimMemory.x > 0 ? defaultCameraSize * zoomMultiplier : -defaultCameraSize * zoomMultiplier ) : 0f;
 		}
 	}
 }

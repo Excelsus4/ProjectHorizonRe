@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 152691619}
   - component: {fileID: 152691622}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: FollowerCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &152691622
 MonoBehaviour:
@@ -288,8 +288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1736400241}
-  speed: 9999
+  speed: 10
   offset: {x: 0, y: 1.5, z: -10}
+  size: 5
+  cameraComponent: {fileID: 0}
 --- !u!1 &181240146
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boundedToBeON:
-  - {fileID: 1553161588}
+  - {fileID: 346041668}
   - {fileID: 645599100}
   boundedToBeOFF:
   - {fileID: 121739042}
@@ -1136,7 +1138,7 @@ RectTransform:
   - {fileID: 1987362437}
   - {fileID: 1441670036}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1274,7 +1276,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757498006
 GameObject:
@@ -1449,7 +1451,7 @@ PrefabInstance:
     - target: {fileID: 209223475987808062, guid: 30ce1e3993437f846b6c21ce3f868dd3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 209223475987808062, guid: 30ce1e3993437f846b6c21ce3f868dd3,
         type: 3}
@@ -1486,6 +1488,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209223476257091786, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: cameraControl
+      value: 
+      objectReference: {fileID: 152691622}
+    - target: {fileID: 209223476257091786, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: defaultCameraSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 209223476257091786, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: zoomMultiplier
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 209223477348074766, guid: 30ce1e3993437f846b6c21ce3f868dd3,
         type: 3}
@@ -1698,7 +1715,7 @@ MonoBehaviour:
   boundedToBeON:
   - {fileID: 121739042}
   boundedToBeOFF:
-  - {fileID: 1553161588}
+  - {fileID: 346041668}
   - {fileID: 645599100}
   includeSelf: 0
 --- !u!114 &928669694
@@ -2226,7 +2243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264215516
 GameObject:
@@ -2861,7 +2878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512695697
 GameObject:
@@ -2987,7 +3004,7 @@ PrefabInstance:
     - target: {fileID: 1275477927179566081, guid: 6b61f937f06f03a46861878b3b51b05f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1275477927179566081, guid: 6b61f937f06f03a46861878b3b51b05f,
         type: 3}
@@ -3117,7 +3134,7 @@ RectTransform:
   - {fileID: 636309663}
   - {fileID: 284059325}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3333,7 +3350,7 @@ PrefabInstance:
     - target: {fileID: 4157362004619565137, guid: f7eb311d520bb6149bcdbcb08e67bbe4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4157362004619565137, guid: f7eb311d520bb6149bcdbcb08e67bbe4,
         type: 3}
