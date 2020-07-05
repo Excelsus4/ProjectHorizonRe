@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 //using com.meiguofandian.ProjectHorizon.GamePlay.Platformer;
 using com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer;
-using com.meiguofandian.Modules.SmallCharacter;
 using com.meiguofandian.Modules.ObserverPattern;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 	public class VoxelAnimationControl : MonoBehaviour, IDataUpdateCallback {
-		public PaperFlipper m_Flipper;
-
 		public Animator m_HighAnimator;
 		public Animator m_LowAnimator;
 
@@ -69,7 +66,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		public void LookAt(float Angle, bool LookBack) {
 			if (LookBack != PrevLookBack) {
 				PrevLookBack = LookBack;
-				m_Flipper.Flip();
 			}
 			float AngleClip = Angle;
 			if (AngleClip > 60f)
