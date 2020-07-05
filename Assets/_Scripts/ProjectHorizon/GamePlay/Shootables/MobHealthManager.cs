@@ -1,20 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using com.meiguofandian.ProjectHorizon.GamePlay.Miscellaneous;
 using com.meiguofandian.Modules.NumberedDamage;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 	public class MobHealthManager : MonoBehaviour {
 		public UnityEngine.UI.Slider m_HealthBar;
-		public int m_MaxHealth;
-		public int m_Armor;
+
+		public Numerics.MobDefensiveStat Stat;
+		
 		public GameObject m_DamagePrefab;
 		private IMobAnimation m_AnimationManager;
-
-		//드랍테이블
-		public CharacterData.ResourceType m_DropResource;
-		public int m_DropAmount;
 
 		private DamageRenderer m_damageRenderer;
 		private int m_damageSum;
@@ -27,7 +23,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 
 		// Use this for initialization
 		void Start() {
-			m_currentHealth = m_MaxHealth;
+			m_currentHealth = Stat.Health;
 			m_AnimationManager = GetComponent<IMobAnimation>();
 		}
 
@@ -68,7 +64,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 				m_currentHealth = 0;
 				Death();
 			}
-			m_HealthBar.value = (float)m_currentHealth / (float)m_MaxHealth;
+			m_HealthBar.value = (float)m_currentHealth / (float)Stat.Health;
 			m_fastHit = 0;
 
 			m_AnimationManager.Attacked();
@@ -92,9 +88,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 				m_damageRenderer.SetLoose();
 			}
 
-			//BlobManager blob = Instantiate(GlobalDatabase.m_BlobTable[(int)m_DropResource], transform.position, Quaternion.identity).GetComponent<BlobManager>();
-			//blob.Target = com.meiguofandian.ProjectHorizon.GamePlay.Shooting.VoxelInputControl.CharacterLocation;
-			//blob.ResourceAmount = m_DropAmount;
+			LPlatformer.MapLiner a = GameObject.Find("MapLiner").GetComponent<LPlatformer.MapLiner>();
+			foreach (string b in Stat.Tags)
+				a.KillCount(b);
 
 			m_AnimationManager.Death();
 

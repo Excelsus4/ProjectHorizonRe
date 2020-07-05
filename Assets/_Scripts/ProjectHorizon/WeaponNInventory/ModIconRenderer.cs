@@ -23,6 +23,10 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 				iconTransform.localScale = mod.m_Reference.m_Visuals.bounds.extents;
 				iconImage.sprite = mod.m_Reference.m_Visuals;
 				break;
+			case MaterialInstance resource:
+				iconTransform.localScale = resource.m_Reference.m_Visuals.bounds.extents;
+				iconImage.sprite = resource.m_Reference.m_Visuals;
+				break;
 			}
 		}
 

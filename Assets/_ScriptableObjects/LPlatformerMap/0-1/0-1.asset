@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830267694e984974db18021e807b6dde, type: 3}
+  m_Name: 0-1
+  m_EditorClassIdentifier: 
+  Title: First Drop
+  Description: Your first recon in the fantasy world.
+  Components:
+  - Type: 0
+    Points:
+    - {x: -3, y: -2}
+    - {x: 0, y: -2}
+    - {x: 3, y: -10}
+  - Type: 2
+    Points:
+    - {x: -3, y: -2}
+    - {x: -3, y: 3}
+  - Type: 2
+    Points:
+    - {x: 3, y: -10}
+    - {x: 3, y: 10}
+  - Type: 0
+    Points:
+    - {x: 3, y: 0}
+    - {x: 6, y: 0}
+  Triggers:
+  - {fileID: 11400000, guid: 8fa57840c1a2a5e4eaea0a591b00710e, type: 2}
+  DropTable:
+  - ItemInstance: {fileID: 11400000, guid: c3e162686d7a71c4c96299478e56fac0, type: 2}
+    DropChance: 100
+    MinAmount: 1
+    MaxAmount: 9
+  - ItemInstance: {fileID: 11400000, guid: dcfdde3fe54fc7d48801dcf6c02448d1, type: 2}
+    DropChance: 30
+    MinAmount: 1
+    MaxAmount: 1

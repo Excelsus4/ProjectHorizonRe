@@ -45,3 +45,9 @@ TagManager:
   - name: Terrain
     uniqueID: 2707851219
     locked: 0
+  - name: FX
+    uniqueID: 881397447
+    locked: 0
+  - name: Characters
+    uniqueID: 2603445793
+    locked: 0

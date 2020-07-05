@@ -18,7 +18,8 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			Sidebarrel	= 0x080,
 			Nozzle		= 0x100,
 			Scope		= 0x200,
-			Flare		= 0x400		// This isn't a part but used for visual displacement
+			Flare		= 0x400,	// This isn't a part but used for visual displacement
+			Mount		= 0x800		// For Russian Side Mount
 		}
 
 		public enum Status : byte {
@@ -33,8 +34,8 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		/// It will return receiver as 1 so if you use this for Array index purpose
 		/// add one to it
 		/// </summary>
-		/// <param name="part"></param>
-		/// <returns></returns>
+		/// <param name="part">The ModPart</param>
+		/// <returns>Index of Modpart</returns>
 		public static int GetModPartIDX(ModPart part) {
 			UInt32 flagData = (UInt32)part;
 			int idx = 1;
