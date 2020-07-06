@@ -32,6 +32,9 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			}
 		}
 
+		public void PresentRewards(InventoryItem Drops) {
+
+		}
 
 		private ModIconRenderer CreateNewIcon(int index) {
 			Vector3 IconOffset = m_IconParent.position;
