@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TestBarrel
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: 62e0939748429294a8a38579361959b4, type: 2}
+  m_Upgrades: 00000000

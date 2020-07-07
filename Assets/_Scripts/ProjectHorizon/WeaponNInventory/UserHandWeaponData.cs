@@ -89,7 +89,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 
 			// Create a reference book and using the Reference string, create new item instances
 			foreach (SerializableItem itemData in data.serializableItems) {
-				weapon.AddMod(InventoryItem.CreateByReferenceName(itemData.item_name) as ModInstance);
+				weapon.AddMod(InventoryItem.CreateByReferenceName(itemData.item_name, itemData.item_data) as ModInstance);
 			}
 
 			// Note that stream will be closed from the called parent 

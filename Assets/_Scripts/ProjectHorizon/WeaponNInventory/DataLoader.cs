@@ -7,7 +7,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		public ItemReference[] itemReferences;
 		public ModInstance[] defaultWeaponData;
 
-		public ModInstance[] debugAddingList;
+		public InventoryItem[] debugAddingList;
 
 		private void Awake() {
 			if (!ItemDictionary.isLoaded) {
@@ -20,9 +20,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		private void Start() {
-			foreach(ModInstance a in debugAddingList) {
-				InventoryData.getSingleton().AddItemToInventory(new InventoryItem[] { a });
-			}
+			InventoryData.getSingleton().AddItemToInventory(debugAddingList);
 		}
 	}
 }

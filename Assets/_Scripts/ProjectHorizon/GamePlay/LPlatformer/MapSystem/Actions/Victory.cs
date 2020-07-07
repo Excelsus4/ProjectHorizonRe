@@ -9,8 +9,16 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer.MapSystem.Action
 	[CreateAssetMenu(fileName = "New Action", menuName = "ProjectHorizon/LPlatformer/Action/Victory")]
 	public class Victory : ActionComponent {
 		public override void Activate() {
-			Debug.Log("Victory!");
-			GameObject.Find("Victory_Screen").GetComponent<SimpleUIOnNOff>().Activate();
+			GameObject victoryScreen = GameObject.Find("Victory_Screen");
+			MapLiner liner = GameObject.Find("MapLiner").GetComponent<MapLiner>();
+			victoryScreen.GetComponent<SimpleUIOnNOff>().Activate();
+			liner.ShutTrigger();
+
+			InventoryItem[] drops = victoryScreen.GetComponent<RewardManager.RewardManager>().GetReward();
+			// 1. Display Rewards
+			victoryScreen.GetComponent<LootBarManager>().PresentRewards(drops);
+			// 2. Actually Give the Rewards
+			InventoryData.getSingleton().AddItemToInventory(drops);
 		}
 	}
 }

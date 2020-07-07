@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InfoViewer: {fileID: 751756984}
   ScenarioList:
-  - {fileID: 11400000, guid: bb32be12e6a6f6343af6c13528e17d36, type: 2}
+  - {fileID: 11400000, guid: 720c4d04ad0ed504289299797909418b, type: 2}
 --- !u!1 &1676947659
 GameObject:
   m_ObjectHideFlags: 0
@@ -4455,6 +4455,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1275477927179566080, guid: 6b61f937f06f03a46861878b3b51b05f,
+        type: 3}
+      propertyPath: debugAddingList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1275477927179566080, guid: 6b61f937f06f03a46861878b3b51b05f,
+        type: 3}
+      propertyPath: debugAddingList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: dcfdde3fe54fc7d48801dcf6c02448d1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b61f937f06f03a46861878b3b51b05f, type: 3}
 --- !u!1001 &4157362004284027639

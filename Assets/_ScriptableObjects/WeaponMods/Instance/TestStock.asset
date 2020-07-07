@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TestStock
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: 516449f9701543d4a91b0d1f30a9c4dd, type: 2}
+  m_Upgrades: 00000000

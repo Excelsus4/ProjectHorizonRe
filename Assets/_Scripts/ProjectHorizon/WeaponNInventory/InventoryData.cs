@@ -79,7 +79,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 
 			// Create a reference book and using the Reference string, create new item instances
 			foreach(SerializableItem itemData in data.serializableItems) {
-				inventoryItems.Add(InventoryItem.CreateByReferenceName(itemData.item_name));
+				inventoryItems.Add(InventoryItem.CreateByReferenceName(itemData.item_name, itemData.item_data));
 			}
 
 			// Note that stream will be closed from the called parent 

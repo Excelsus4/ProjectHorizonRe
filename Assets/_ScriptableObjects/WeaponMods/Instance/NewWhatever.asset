@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: NewWhatever
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: abe5cc73ce65e8e4fb094c11e8e23587, type: 2}
+  m_Upgrades: 00000000

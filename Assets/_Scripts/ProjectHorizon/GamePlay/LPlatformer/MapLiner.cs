@@ -13,6 +13,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		private List<MapSystem.Trigger> triggers;
 		private MapSystem.ConditionComponent.Footprint footprints;
 		private Transform playerTransform;
+		private int triggerInterval = 5;
+		private int triggerCooltime = 1;
 
 		// Start is called before the first frame update
 		void Start() {
@@ -49,8 +51,9 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		}
 		
 		void Update() {
-			//Maybe this is checking the trigger too often. Find a better way if it cause lag.
-			CheckTrigger();
+			triggerCooltime = ( triggerCooltime + 1 ) % triggerInterval;
+			if(triggerCooltime==0)
+				CheckTrigger();
 		}
 
 		private void CheckTrigger() {
@@ -69,6 +72,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 				footprints.KillTable[ShootableName]++;
 			else
 				footprints.KillTable.Add(ShootableName, 1);
+		}
+
+		public void ShutTrigger() {
+			triggerInterval = int.MaxValue;
 		}
 	}
 }

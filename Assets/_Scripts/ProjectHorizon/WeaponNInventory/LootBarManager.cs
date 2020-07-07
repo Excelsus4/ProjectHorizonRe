@@ -19,10 +19,10 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			for (idx = 0; idx < DropTable.Length; idx++) {
 				if (listOfIconRenderers.Count <= idx) {
 					// Not Enough Icons
-					AssignIconRenderer(CreateNewIcon(idx), DropTable[idx].ItemInstance);
+					AssignIconRenderer(CreateNewIcon(idx), DropTable[idx]);
 				} else {
 					// Prepared Icons
-					AssignIconRenderer(listOfIconRenderers[idx], DropTable[idx].ItemInstance);
+					AssignIconRenderer(listOfIconRenderers[idx], DropTable[idx]);
 				}
 			}
 
@@ -32,8 +32,23 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			}
 		}
 
-		public void PresentRewards(InventoryItem Drops) {
+		public void PresentRewards(InventoryItem[] Drops) {
+			int idx;
 
+			for (idx = 0; idx < Drops.Length; idx++) {
+				if (listOfIconRenderers.Count <= idx) {
+					// Not Enough Icons
+					AssignIconRenderer(CreateNewIcon(idx), Drops[idx]);
+				} else {
+					// Prepared Icons
+					AssignIconRenderer(listOfIconRenderers[idx], Drops[idx]);
+				}
+			}
+
+			// Left over icons
+			for (; idx < listOfIconRenderers.Count; idx++) {
+				listOfIconRenderers[idx].IconAble(false);
+			}
 		}
 
 		private ModIconRenderer CreateNewIcon(int index) {
@@ -52,6 +67,11 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			iconRenderer.callbackManager = this;
 			iconRenderer.target = weaponMod;
 			iconRenderer.UpdateImage();
+		}
+
+		private void AssignIconRenderer(ModIconRenderer iconRenderer, MapData.DropElement dropElement) {
+			AssignIconRenderer(iconRenderer, dropElement.ItemInstance);
+			iconRenderer.SetDropTableText(dropElement);
 		}
 
 		public void ModIconCallback(int IDX, InventoryItem part) {

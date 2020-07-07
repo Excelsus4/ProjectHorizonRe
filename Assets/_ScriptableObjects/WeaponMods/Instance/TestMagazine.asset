@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TestMagazine
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: 3d6f67d812be421479a3aeadf4f8a5b3, type: 2}
+  m_Upgrades: 00000000

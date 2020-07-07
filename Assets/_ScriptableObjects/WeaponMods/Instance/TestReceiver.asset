@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TestReceiver
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: e6135bd69a9229b4d8955b2685f86672, type: 2}
+  m_Upgrades: 00000000

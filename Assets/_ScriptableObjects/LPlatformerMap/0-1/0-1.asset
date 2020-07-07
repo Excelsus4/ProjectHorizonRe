@@ -36,10 +36,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8fa57840c1a2a5e4eaea0a591b00710e, type: 2}
   DropTable:
   - ItemInstance: {fileID: 11400000, guid: c3e162686d7a71c4c96299478e56fac0, type: 2}
-    DropChance: 100
+    DropChance: 1
     MinAmount: 1
     MaxAmount: 9
   - ItemInstance: {fileID: 11400000, guid: dcfdde3fe54fc7d48801dcf6c02448d1, type: 2}
-    DropChance: 30
+    DropChance: 0.3
     MinAmount: 1
     MaxAmount: 1

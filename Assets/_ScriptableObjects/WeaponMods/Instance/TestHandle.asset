@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: TestHandle
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: 6905e8be9d5eb6c4b8d05c794bb2fb0d, type: 2}
+  m_Upgrades: 00000000
