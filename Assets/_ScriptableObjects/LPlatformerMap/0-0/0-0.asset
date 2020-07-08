@@ -45,6 +45,7 @@ MonoBehaviour:
   Triggers:
   - {fileID: 11400000, guid: a6aba43d557116543bdae72d4c206953, type: 2}
   - {fileID: 11400000, guid: f364f8d09c3e90a45bc40f368d4a0af1, type: 2}
+  - {fileID: 11400000, guid: f364f8d09c3e90a45bc40f368d4a0af1, type: 2}
   DropTable:
   - ItemInstance: {fileID: 11400000, guid: c3e162686d7a71c4c96299478e56fac0, type: 2}
     DropChance: 1
