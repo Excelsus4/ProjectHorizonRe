@@ -9,12 +9,16 @@ namespace com.meiguofandian.Modules.SimpleUIOnNOff {
 		public bool includeSelf;
 
 		public void Activate() {
-			foreach(GameObject @object in boundedToBeON)
-				@object.SetActive(true);
-			foreach(GameObject @object in boundedToBeOFF)
-				@object.SetActive(false);
+			Activate(true);
+		}
+
+		public void Activate(bool dir) {
+			foreach (GameObject @object in boundedToBeON)
+				@object.SetActive(dir);
+			foreach (GameObject @object in boundedToBeOFF)
+				@object.SetActive(!dir);
 			if (includeSelf)
-				gameObject.SetActive(false);
+				gameObject.SetActive(!dir);
 		}
 	}
 }

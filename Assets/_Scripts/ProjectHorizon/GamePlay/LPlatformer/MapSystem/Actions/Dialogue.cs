@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.Modules.SimpleUIOnNOff;
 
 namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer.MapSystem.Actions {
 	[CreateAssetMenu(fileName = "New Action", menuName = "ProjectHorizon/LPlatformer/Action/Dialogue")]
@@ -9,7 +10,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer.MapSystem.Action
 		public string Speech;
 
 		public override void Activate() {
-			Debug.Log(CharacterName + " said : " + Speech);
+			SimpleDialogueViewer target = GameObject.Find("SimpleDialogueViewer").GetComponent<SimpleDialogueViewer>();
+			target.SetDialogue(CharacterName, Speech);
 		}
 	}
 }
