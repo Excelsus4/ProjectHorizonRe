@@ -64,7 +64,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		private ModIconRenderer CreateNewIcon(int index) {
-			Debug.Log(m_IconParent.position);
 			Vector3 IconOffset = m_IconParent.position;
 			if(index > 0) {
 				IconOffset.y = listOfIconRenderers[0].transform.position.y;
