@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
+  m_Name: Military_Muzzlebreak
+  m_EditorClassIdentifier: 
+  m_ModName: Flashhider
+  m_Visuals: {fileID: 21300010, guid: 13fbda4589548834eb4299709155cc17, type: 3}
+  m_DisplacementList:
+  - targetPart: 1280
+    displacement: {x: 0.165, y: -0.02}
+  m_Mainly: 256
+  m_Requires: 256
+  m_Locks: 256
+  m_Unlocks: 0
+  m_Stats:
+    damage: 0
+    damageCap: 83
+    attackSpeed: 0
+    penetration: 0
+    recoil: 1
+    recoilRecovery: 4
+    accuracy: 2.06
+    spread: 1
+    rounds: 0
+    reloadSpeed: 1
+    criticalChance: 0
+    criticalDamage: 0

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
-  m_Name: M16A1_Barrel
+  m_Name: M16A4_Handguard
   m_EditorClassIdentifier: 
-  m_ModName: M16A1_Barrel
-  m_Visuals: {fileID: 21300006, guid: 13fbda4589548834eb4299709155cc17, type: 3}
+  m_ModName: M16A2_Barrel
+  m_Visuals: {fileID: 21300008, guid: 13fbda4589548834eb4299709155cc17, type: 3}
   m_DisplacementList:
   - targetPart: 1296
     displacement: {x: 0.87, y: 0.03}

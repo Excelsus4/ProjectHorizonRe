@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e56b5e825631b5c41886092de3a7c052, type: 3}
-  m_Name: M16A1_Receiver
+  m_Name: M16_Receiver
   m_EditorClassIdentifier: 
-  m_ModName: M16A1_Receiver
+  m_ModName: AR15_Receiver
   m_Visuals: {fileID: 21300002, guid: 13fbda4589548834eb4299709155cc17, type: 3}
   m_DisplacementList:
   - targetPart: 2
