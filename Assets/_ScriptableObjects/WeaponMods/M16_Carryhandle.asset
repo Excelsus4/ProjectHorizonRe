@@ -15,14 +15,12 @@ MonoBehaviour:
   m_ModName: M16_CarryHandle
   m_Visuals: {fileID: 21300018, guid: 13fbda4589548834eb4299709155cc17, type: 3}
   m_DisplacementList:
-  - targetPart: 1296
-    displacement: {x: 0.87, y: 0.03}
-  - targetPart: 1280
-    displacement: {x: 0.87, y: -0.03}
-  m_Mainly: 16
-  m_Requires: 48
-  m_Locks: 48
-  m_Unlocks: 256
+  - targetPart: 512
+    displacement: {x: 0.085, y: 0.095}
+  m_Mainly: 512
+  m_Requires: 512
+  m_Locks: 2560
+  m_Unlocks: 0
   m_Stats:
     damage: 0
     damageCap: 83

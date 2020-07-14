@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4e065261c7c5046a676a115c953bda, type: 3}
   m_Name: TestStock
   m_EditorClassIdentifier: 
-  m_Reference: {fileID: 11400000, guid: 516449f9701543d4a91b0d1f30a9c4dd, type: 2}
+  m_Reference: {fileID: 11400000, guid: 39a46bc19b9b4254a86ed2d3d3fc669a, type: 2}
   m_Upgrades: 00000000

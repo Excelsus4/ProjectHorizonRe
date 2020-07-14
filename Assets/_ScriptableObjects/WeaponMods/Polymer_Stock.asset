@@ -16,7 +16,7 @@ MonoBehaviour:
   m_Visuals: {fileID: 21300004, guid: 13fbda4589548834eb4299709155cc17, type: 3}
   m_DisplacementList:
   - targetPart: 4
-    displacement: {x: -0.56, y: -0.23}
+    displacement: {x: -0.56, y: -0.258}
   m_Mainly: 4
   m_Requires: 4
   m_Locks: 4

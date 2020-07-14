@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4e065261c7c5046a676a115c953bda, type: 3}
   m_Name: TestHandle
   m_EditorClassIdentifier: 
-  m_Reference: {fileID: 11400000, guid: 6905e8be9d5eb6c4b8d05c794bb2fb0d, type: 2}
+  m_Reference: {fileID: 11400000, guid: 0bd011a50f694e04f8c1ff2a037e7899, type: 2}
   m_Upgrades: 00000000

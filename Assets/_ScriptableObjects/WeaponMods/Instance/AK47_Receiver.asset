@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d4e065261c7c5046a676a115c953bda, type: 3}
-  m_Name: NewWhatever
+  m_Name: AK47_Receiver
   m_EditorClassIdentifier: 
-  m_Reference: {fileID: 11400000, guid: 82ccaf32c5908cd4e956fa466cee6909, type: 2}
+  m_Reference: {fileID: 11400000, guid: e6135bd69a9229b4d8955b2685f86672, type: 2}
   m_Upgrades: 00000000

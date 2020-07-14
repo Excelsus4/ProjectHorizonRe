@@ -24,7 +24,7 @@ MonoBehaviour:
   - targetPart: 1520
     displacement: {x: 0.645, y: 0}
   - targetPart: 512
-    displacement: {x: 0, y: 0.1}
+    displacement: {x: 0, y: 0.19}
   m_Mainly: 1
   m_Requires: 1
   m_Locks: 1

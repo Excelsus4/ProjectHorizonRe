@@ -16,7 +16,7 @@ MonoBehaviour:
   m_Visuals: {fileID: 21300014, guid: 13fbda4589548834eb4299709155cc17, type: 3}
   m_DisplacementList:
   - targetPart: 8
-    displacement: {x: -0.27, y: -0.42}
+    displacement: {x: -0.415, y: -0.225}
   m_Mainly: 8
   m_Requires: 8
   m_Locks: 72
@@ -30,7 +30,7 @@ MonoBehaviour:
     recoilRecovery: -4
     accuracy: 0
     spread: 1
-    rounds: 30
+    rounds: 20
     reloadSpeed: 1
     criticalChance: 0.4
     criticalDamage: 0
