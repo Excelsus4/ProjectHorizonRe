@@ -65,6 +65,10 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			return "Item_Mod_" + m_ModName;
 		}
 
+		public override Sprite GetSprite() {
+			return m_Visuals;
+		}
+
 		public static string DEBUG_PRINT_FLAG(UInt64 flag) {
 			return String.Format("{0,3} - {1:G}", flag, (ModPart)flag);
 		}

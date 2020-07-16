@@ -11,5 +11,9 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		public override string GetName() {
 			return "Item_Resource_" + m_ResourceName;
 		}
+
+		public override Sprite GetSprite() {
+			return m_Visuals;
+		}
 	}
 }
