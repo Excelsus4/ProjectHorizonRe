@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: f023f5248d9ec7542bbc44264e02320d
+guid: 95f2481049759ab49b28179c991b0f08
 TextureImporter:
   fileIDToRecycleName:
-    21300000: RA47_Receiver
-    21300002: RA47_Stock
-    21300004: RA47_Barrel
-    21300006: RA47_Sight
-    21300008: RA47_Magazine
-    21300010: RA47_Handle
-    21300012: AKSU_Magazine
+    21300000: hammer
+    21300002: tong1
+    21300004: tong2
+    21300006: Anvil
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -38,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -48,11 +45,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 40
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -81,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -102,121 +99,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RA47_Receiver
+      name: hammer
       rect:
         serializedVersion: 2
         x: 1
-        y: 97
-        width: 130
-        height: 42
+        y: 382
+        width: 35
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804074e16317694409efecb78a359e20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tong1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 375
+        width: 43
+        height: 6
       alignment: 9
-      pivot: {x: 0.5, y: 0.42857143}
+      pivot: {x: 0.023255814, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe2591c4dc5cb9f478354e45f0e6768a
+      spriteID: 8b1fd2951602d2e43959ec09975e3029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA47_Stock
+      name: tong2
       rect:
         serializedVersion: 2
         x: 1
-        y: 44
-        width: 112
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 368
+        width: 43
+        height: 6
+      alignment: 9
+      pivot: {x: 0.023255814, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e371e08a11060f41b6d0bf5decbede1
+      spriteID: cdfd17d3c24f5b04388c4b4573a9895f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA47_Barrel
+      name: Anvil
       rect:
         serializedVersion: 2
-        x: 132
-        y: 97
-        width: 174
-        height: 42
+        x: 1
+        y: 346
+        width: 42
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b7d6ab383595c54a8df270335ff5f14
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA47_Magazine
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 12
-        width: 68
-        height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0495f26c6d5803344bef769c5a2ab89a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA47_Handle
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 46
-        width: 38
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6c59b4c44033794c9c40ea362f73e56
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AKSU_Magazine
-      rect:
-        serializedVersion: 2
-        x: 222
-        y: 12
-        width: 68
-        height: 84
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e1f3584413efcb41977283fa9351d8d
+      spriteID: 237feeee9e7f51544ac74bda66275930
       vertices: []
       indices: 
       edges: []
@@ -224,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 72b17d6329a8b194abd26c8e48dfa64f
+    spriteID: 5cbc0b3ea8efd154bbf8783ef5829780
     vertices: []
     indices: 
     edges: []
