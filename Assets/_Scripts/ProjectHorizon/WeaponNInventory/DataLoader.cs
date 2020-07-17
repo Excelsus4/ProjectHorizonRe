@@ -20,7 +20,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		private void Start() {
-			InventoryData.getSingleton().AddItemToInventory(debugAddingList);
 		}
 	}
 }
