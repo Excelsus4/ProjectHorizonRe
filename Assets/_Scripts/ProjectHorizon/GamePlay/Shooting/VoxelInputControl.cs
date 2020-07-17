@@ -139,7 +139,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_DelayFire = 0;
 			m_AnimationControl.Reload();
 			m_LockAction = true;
-			Invoke("ReloadComplete", 1.9f);
+			//Invoke("ReloadComplete", 1.9f);
 		}
 
 		private void FireMethod() {

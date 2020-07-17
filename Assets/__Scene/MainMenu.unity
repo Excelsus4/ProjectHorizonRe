@@ -2637,6 +2637,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponRenderer
       objectReference: {fileID: 0}
+    - target: {fileID: 8030693878510495605, guid: 96f3ddc386ff1a44d98e2ae94d5861e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8030693878510495608, guid: 96f3ddc386ff1a44d98e2ae94d5861e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3042,14 +3047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 100
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1 &1433485911
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,7 +4930,7 @@ PrefabInstance:
     - target: {fileID: 4157362002821153113, guid: f7eb311d520bb6149bcdbcb08e67bbe4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.000000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 4157362003694855304, guid: f7eb311d520bb6149bcdbcb08e67bbe4,
         type: 3}
