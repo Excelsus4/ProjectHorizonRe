@@ -12,14 +12,16 @@ public class GMWindow : EditorWindow {
 
 	private void OnGUI() {
 		// Window Code
-		GUILayout.Label("Adding Item to inventory", EditorStyles.boldLabel);
+		GUILayout.Label("Add Item to inventory", EditorStyles.boldLabel);
+		GUILayout.BeginHorizontal();
 		itemInstance = (InventoryItem)EditorGUILayout.ObjectField("Item Instance", itemInstance, typeof(InventoryItem), false);
-		if(GUILayout.Button("Create Item by Item Instance")) {
-			CreateItem();
+		if(GUILayout.Button("Create")) {
+			CreateItemByInstance();
 		}
+		GUILayout.EndHorizontal();
 	}
 
-	private void CreateItem() {
+	private void CreateItemByInstance() {
 		InventoryData.getSingleton().AddItemToInventory(new InventoryItem[] { itemInstance });
 	}
 }

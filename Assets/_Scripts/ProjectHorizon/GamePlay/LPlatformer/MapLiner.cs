@@ -56,6 +56,10 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 				CheckTrigger();
 		}
 
+		public void LoadMapComponent() {
+			print("Not Yet Implementd. Need cleaning beforehand");
+		}
+
 		private void CheckTrigger() {
 			footprints.PlayerPosition = playerTransform.position;
 			for (int idx = triggers.Count - 1; idx >= 0; idx--) {
