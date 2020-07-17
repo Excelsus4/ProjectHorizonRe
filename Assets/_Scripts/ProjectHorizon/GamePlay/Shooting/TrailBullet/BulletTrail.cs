@@ -15,7 +15,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting.TrailBullet {
 			start = Start;
 			end = End;
 			p = 0;
-			rSpeed = Speed / Vector2.Distance(start, end);
+			rSpeed = Speed / Vector2.Distance(start, end) + (Random.value * 0.5f);
 		}
 
 		private void Update() {

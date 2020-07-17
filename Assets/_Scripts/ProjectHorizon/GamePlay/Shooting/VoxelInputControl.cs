@@ -39,7 +39,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		private float m_unstableDegree;
 		private float m_delayedUnstable;
 		public Transform[] m_MuzzleLocation;
-		public LineRenderer m_BulletLine;
 		public float recoilMultiplier;
 		public float reccoveryMultiplier;
 		public float softMultiplier;
@@ -71,8 +70,6 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			m_weaponManager.RegisterObserver(this);
 			m_CurrentAmmo = m_stats.rounds;
 			m_DelayFire = 0;
-			
-			m_BulletLine = FindObjectOfType<BulletLineRenderer>().GetComponent<LineRenderer>();
 		}
 
 		private void Start() {
