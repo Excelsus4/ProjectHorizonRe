@@ -52,6 +52,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 
 		public DamageSkin basicAttackSkin;
 
+		public GameObject Trail;
+
 		//External UI Control
 		//private bool[] isUIOn = new bool[4];
 		//public GameObject[] UIPanel = new GameObject[4];
@@ -91,16 +93,20 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		private void FixedUpdate() {
-			if (Input.GetButtonDown("FireMode")) {
+			// TODO: Rework need to be done here so that firemode cycles in the gun's status
+			if (TCKInput.GetAction("FireMode", EActionEvent.Click)) {
 				switch (m_CurrentFireMode) {
 				case FireMode.Semi:
 					m_CurrentFireMode = FireMode.Burst;
+					print("FireMode is now Burst");
 					break;
 				case FireMode.Burst:
 					m_CurrentFireMode = FireMode.Auto;
+					print("FireMode is now Auto");
 					break;
 				case FireMode.Auto:
 					m_CurrentFireMode = FireMode.Semi;
+					print("FireMode is now Semi");
 					break;
 				}
 			}
@@ -153,17 +159,25 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 			//m_AnimationControl.UpdateBulletIndicator(Mathf.CeilToInt((float)GlobalWeaponData.g_CurrentWeapon.m_CurrentStatus[(int)WeaponPart.Specification.Rounds]), m_CurrentAmmo);
 
 			RaycastHit2D hitdata = Physics2D.Raycast(m_MuzzleLocation[0].position, -m_MuzzleLocation[0].forward, 100f, LayerMask.GetMask("Mob", "Terrain"));
-			m_BulletLine.SetPosition(0, m_MuzzleLocation[0].position - new Vector3(0, 0, 0.7f));
-			m_BulletLine.startColor = m_BulletLine.endColor = Color.yellow;
+
+			Vector2 start = m_MuzzleLocation[0].position - new Vector3(0, 0, 0.7f);
+
 			if (hitdata.collider != null) {
-				m_BulletLine.SetPosition(1, hitdata.point);
+				CreateBulletEffect(start, hitdata.point);
 				MobHealthManager target = hitdata.collider.GetComponent<MobHealthManager>();
 
 				DealDamageToThisMob(target);
 			} else
-				m_BulletLine.SetPosition(1, m_MuzzleLocation[0].position - m_MuzzleLocation[0].forward * 100f);
+				CreateBulletEffect(start, m_MuzzleLocation[0].position - m_MuzzleLocation[0].forward * 100f);
 			
 			Invoke("UnlockAction", 60f / m_stats.attackSpeed);
+		}
+
+		public void CreateBulletEffect(Vector2 start, Vector2 end) {
+			// 1. Instantiate Bullet Trail
+			TrailBullet.BulletTrail bullet = Instantiate(Trail, start, Quaternion.identity).GetComponent<TrailBullet.BulletTrail>();
+			// 2. Set Bullet Trail
+			bullet.SetTrail(start, end);
 		}
 
 		public void Aim(Vector3 aim){

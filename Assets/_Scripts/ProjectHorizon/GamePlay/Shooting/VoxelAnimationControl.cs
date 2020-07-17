@@ -93,6 +93,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shooting {
 		}
 
 		public void GenerateShell() {
+			// TODO: apply Pool here.
 			Instantiate(m_ShellRenderer, m_Receiver.position, Quaternion.Euler(0, 0, 0)).GetComponent<Rigidbody2D>().AddForce(Random.Range(0.9f, 1.1f) * m_Receiver.up * m_ShellUpForce - m_Receiver.forward * m_ShellBackForce);
 		}
 
