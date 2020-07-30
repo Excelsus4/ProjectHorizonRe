@@ -5,24 +5,36 @@ using UnityEngine;
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	[CreateAssetMenu(fileName = "New Equipment Instance", menuName = "ProjectHorizon/Equipment/Instance")]
 	public class EquipmentInstance : InventoryItem {
+		public EquipmentReference m_Reference;
+		public int[] m_Upgrades;
+
 		public override int[] GetInstanceData() {
-			throw new System.NotImplementedException();
+			return m_Upgrades;
 		}
 
 		public override ItemReference GetReference() {
-			throw new System.NotImplementedException();
+			return m_Reference;
 		}
 
 		public override string GetReferenceName() {
-			throw new System.NotImplementedException();
+			return m_Reference.GetName();
 		}
 
 		public override void SetInstanceData(int[] data) {
-			throw new System.NotImplementedException();
+			m_Upgrades = new int[UpgradeInterpreter.UpgradeLength];
+			for (int idx = 0; idx < m_Upgrades.Length; idx++) {
+				if (data == null) {
+					m_Upgrades[idx] = 0;
+				} else if (idx < data.Length) {
+					m_Upgrades[idx] = data[idx];
+				} else {
+					m_Upgrades[idx] = 0;
+				}
+			}
 		}
 
 		public override void SetReference(ItemReference reference) {
-			throw new System.NotImplementedException();
+			this.m_Reference = reference as EquipmentReference;
 		}
 	}
 }
