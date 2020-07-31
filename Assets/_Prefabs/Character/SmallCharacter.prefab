@@ -1667,6 +1667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5016979514129068023}
   - component: {fileID: 723188961}
+  - component: {fileID: 1963917607602187553}
   m_Layer: 0
   m_Name: SmallCharacter
   m_TagString: Untagged
@@ -1709,6 +1710,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1963917607602187553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016979514129068022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81735adea27fd924686fc7ee046f095f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 2100000, guid: b2a7201863f0a314b88d0d6b50df36ff, type: 2}
 --- !u!1 &5073454560889076157
 GameObject:
   m_ObjectHideFlags: 0
