@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 209223476257091789}
   - component: {fileID: 209223476257091788}
   - component: {fileID: 209223476257091786}
+  - component: {fileID: 8161437641915988911}
   m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
@@ -500,6 +501,20 @@ MonoBehaviour:
   cameraControl: {fileID: 0}
   defaultCameraSize: 6
   zoomMultiplier: 1.2
+--- !u!114 &8161437641915988911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209223476257091795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f409da0cc3e3597469f5398c3c5df45c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Equipments:
+  - {fileID: 11400000, guid: a84794fb1d4c00e45b709fb8ec835b53, type: 2}
 --- !u!1 &209223476315034439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1692,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6be1d8c45bdb5254799696fcf5656e56, type: 3}
+--- !u!95 &209223477395437095 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 633884616, guid: 6be1d8c45bdb5254799696fcf5656e56,
+    type: 3}
+  m_PrefabInstance: {fileID: 209223476930410991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5150055211428635966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5016979514106944721, guid: 6be1d8c45bdb5254799696fcf5656e56,
@@ -1689,6 +1710,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 209223476930410991}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &5150055211314239000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5016979514129068023, guid: 6be1d8c45bdb5254799696fcf5656e56,
+    type: 3}
+  m_PrefabInstance: {fileID: 209223476930410991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5150055211860402290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5016979512526461341, guid: 6be1d8c45bdb5254799696fcf5656e56,
@@ -1698,18 +1725,6 @@ Transform:
 --- !u!95 &209223477348074766 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 723188961, guid: 6be1d8c45bdb5254799696fcf5656e56,
-    type: 3}
-  m_PrefabInstance: {fileID: 209223476930410991}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5150055211314239000 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5016979514129068023, guid: 6be1d8c45bdb5254799696fcf5656e56,
-    type: 3}
-  m_PrefabInstance: {fileID: 209223476930410991}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &209223477395437095 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 633884616, guid: 6be1d8c45bdb5254799696fcf5656e56,
     type: 3}
   m_PrefabInstance: {fileID: 209223476930410991}
   m_PrefabAsset: {fileID: 0}

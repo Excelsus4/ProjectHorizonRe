@@ -15,27 +15,9 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 			Boots,
 		}
 
-		public enum EquipmentVisualPart {
-			Head,
-			Thorax_Inner,	Thorax_Outer,
-			Stomach,
-			Shoulder_Left,	Shoulder_Right,
-			UpperArm_Left,	UpperArm_Right,
-			LowerArm_Left,	LowerArm_Right,
-			UpperLeg_Left,	UpperLeg_Right,
-			LowerLeg_Left,	LowerLeg_Right,
-			Foot_Left,		Foot_Right
-		}
-
-		public struct EquipmentVisual {
-			public EquipmentVisualPart Part;
-			public Sprite Visual;
-			public int Priority;
-		}
-
 		public string m_EquipmentName;
 		public Sprite m_Icon;
-		public List<EquipmentVisual> m_Visuals;
+		public List<Clothing.HumanoidDresser.EquipmentVisual> m_Visuals;
 
 		public override string GetName() {
 			return "Item_Equipment_" + m_EquipmentName;

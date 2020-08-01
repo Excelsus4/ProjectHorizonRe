@@ -1893,6 +1893,35 @@ PrefabInstance:
       propertyPath: cameraControl
       value: 
       objectReference: {fileID: 152691622}
+    - target: {fileID: 8161437641915988911, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: Equipments.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8161437641915988911, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: Equipments.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 20e5441513d5abb4183eb23e7c436f9c,
+        type: 2}
+    - target: {fileID: 8161437641915988911, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: Equipments.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b27817813ab5da64fa373d113035452b,
+        type: 2}
+    - target: {fileID: 8161437641915988911, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: Equipments.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: a84794fb1d4c00e45b709fb8ec835b53,
+        type: 2}
+    - target: {fileID: 8161437641915988911, guid: 30ce1e3993437f846b6c21ce3f868dd3,
+        type: 3}
+      propertyPath: Equipments.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 711f0608eaf100546a5f20d4c473026a,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30ce1e3993437f846b6c21ce3f868dd3, type: 3}
 --- !u!1 &882105883

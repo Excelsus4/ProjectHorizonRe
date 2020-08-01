@@ -1668,6 +1668,7 @@ GameObject:
   - component: {fileID: 5016979514129068023}
   - component: {fileID: 723188961}
   - component: {fileID: 1963917607602187553}
+  - component: {fileID: 5918667496494759325}
   m_Layer: 0
   m_Name: SmallCharacter
   m_TagString: Untagged
@@ -1723,6 +1724,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 2100000, guid: b2a7201863f0a314b88d0d6b50df36ff, type: 2}
+--- !u!114 &5918667496494759325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016979514129068022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdac0c67d95e494d826eca7b5077d1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransformInPartOrder:
+  - {fileID: 5016979512522835961}
+  - {fileID: 5016979513737919743}
+  - {fileID: 5016979513737919743}
+  - {fileID: 5016979513026015477}
+  - {fileID: 5016979513635720904}
+  - {fileID: 5016979512165651817}
+  - {fileID: 5016979513635720904}
+  - {fileID: 5016979512165651817}
+  - {fileID: 5016979513892462755}
+  - {fileID: 5016979513164483061}
+  - {fileID: 5016979513173841927}
+  - {fileID: 5016979513072989755}
+  - {fileID: 5016979512605110222}
+  - {fileID: 5016979512202472961}
+  - {fileID: 5016979512901164917}
+  - {fileID: 5016979512615585016}
+  m_Visuals: []
+  SpritePrefab: {fileID: 7474047905107120696, guid: 8379111620100de419fe2532ef3e40c1,
+    type: 3}
 --- !u!1 &5073454560889076157
 GameObject:
   m_ObjectHideFlags: 0

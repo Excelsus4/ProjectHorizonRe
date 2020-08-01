@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6a153b1a620d643ac5a3353df5a8db, type: 3}
+  m_Name: Shirt
+  m_EditorClassIdentifier: 
+  m_EquipmentName: Military Issued Shirt
+  m_Icon: {fileID: 0}
+  m_Visuals:
+  - Part: 1
+    Visual: {fileID: 21300004, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 66
+  - Part: 6
+    Visual: {fileID: 21300006, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 81
+  - Part: 7
+    Visual: {fileID: 21300006, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 31
+  - Part: 8
+    Visual: {fileID: 21300008, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 100
+  - Part: 9
+    Visual: {fileID: 21300008, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 36

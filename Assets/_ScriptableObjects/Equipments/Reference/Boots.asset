@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec6a153b1a620d643ac5a3353df5a8db, type: 3}
+  m_Name: Boots
+  m_EditorClassIdentifier: 
+  m_EquipmentName: Military Issued Boots
+  m_Icon: {fileID: 0}
+  m_Visuals:
+  - Part: 12
+    Visual: {fileID: 21300018, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 55
+  - Part: 13
+    Visual: {fileID: 21300018, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 45
+  - Part: 14
+    Visual: {fileID: 21300016, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 57
+  - Part: 15
+    Visual: {fileID: 21300016, guid: 330c15d9865b7134f89359706a559590, type: 3}
+    Priority: 47
