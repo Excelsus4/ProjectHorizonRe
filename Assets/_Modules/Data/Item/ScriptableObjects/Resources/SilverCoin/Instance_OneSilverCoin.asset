@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33e3607d1f97f5045af63f48430594bf, type: 3}
-  m_Name: aSilverCoin
+  m_Name: Instance_OneSilverCoin
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: f9b1d6b4b9e8bd84b9ff22ae5362a0e4, type: 2}
   m_Amount: 1

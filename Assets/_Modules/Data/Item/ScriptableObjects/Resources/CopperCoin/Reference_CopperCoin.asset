@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4acb9fd3411213c47ac800d4ca27d306, type: 3}
-  m_Name: Coin_Copper
+  m_Name: Reference_CopperCoin
   m_EditorClassIdentifier: 
   m_ResourceName: Coin_Copper
   m_Visuals: {fileID: 21300000, guid: 4605338a5a51383478a6b8eb3707e90c, type: 3}

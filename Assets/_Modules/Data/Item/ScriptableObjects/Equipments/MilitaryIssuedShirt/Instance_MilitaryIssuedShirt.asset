@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1683ff279950bc44b9a54e65b58ebcf, type: 3}
-  m_Name: Shirt
+  m_Name: Instance_MilitaryIssuedShirt
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 11400000, guid: 9c9570ff6fc510040bc86b5526618971, type: 2}
   m_Upgrades: 00000000

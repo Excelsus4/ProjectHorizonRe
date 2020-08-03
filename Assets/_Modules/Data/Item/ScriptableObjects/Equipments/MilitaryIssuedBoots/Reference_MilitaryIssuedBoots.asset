@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec6a153b1a620d643ac5a3353df5a8db, type: 3}
-  m_Name: Boots
+  m_Name: Reference_MilitaryIssuedBoots
   m_EditorClassIdentifier: 
   m_EquipmentName: Military Issued Boots
   m_Icon: {fileID: 0}
