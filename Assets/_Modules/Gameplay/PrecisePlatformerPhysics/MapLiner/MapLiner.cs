@@ -7,6 +7,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		public bool isTest;
 		public MapData testMapData;
 		public GameObject testLiners;
+		public GameObject spriteRenderer;
 		public Material[] testMaterials = new Material[MapData.COMPONENT_TYPE_SIZE];
 		public string[] LayerName = new string[MapData.COMPONENT_TYPE_SIZE];
 		private int[] LineLayers = new int[MapData.COMPONENT_TYPE_SIZE];
@@ -40,6 +41,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 						lr.SetPosition(idx, component.Points[idx]);
 					}
 				}
+			}
+
+			foreach(MapData.VisualElement visual in testMapData.MapGraphic) {
+				GameObject @object = Instantiate(spriteRenderer, transform);
+				@object.transform.localPosition = visual.referencePoint;
+				@object.GetComponent<SpriteRenderer>().sprite = visual.sprite;
 			}
 
 			triggers = new List<MapSystem.Trigger>();

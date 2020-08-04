@@ -323,7 +323,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -1577,6 +1577,8 @@ MonoBehaviour:
   isTest: 1
   testMapData: {fileID: 11400000, guid: 720c4d04ad0ed504289299797909418b, type: 2}
   testLiners: {fileID: 9022217537914867350, guid: 8032f45b3bba9cd4b832c1a4904cf78d,
+    type: 3}
+  spriteRenderer: {fileID: 2510838835068902678, guid: 0e116e9e3b984bc43a5b34fe50db543a,
     type: 3}
   testMaterials:
   - {fileID: 2100000, guid: d72399bf1a4eff449b997c3f8183ed03, type: 2}

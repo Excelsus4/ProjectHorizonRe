@@ -12,6 +12,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 		public MapComponent[] Components;
 		public MapSystem.Trigger[] Triggers;
 		public DropElement[] DropTable;
+		public VisualElement[] MapGraphic;
 
 		public const int COMPONENT_TYPE_SIZE = 5; 
 		public enum MapType {
@@ -34,6 +35,12 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.LPlatformer {
 			public float DropChance;
 			public int MinAmount;
 			public int MaxAmount;
+		}
+
+		[Serializable]
+		public class VisualElement {
+			public Sprite sprite;
+			public Vector3 referencePoint;
 		}
 	}
 }
