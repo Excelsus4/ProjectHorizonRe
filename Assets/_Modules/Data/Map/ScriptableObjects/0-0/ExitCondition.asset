@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CertainRange:
     serializedVersion: 2
-    x: -7
-    y: -1
+    x: 30
+    y: 7
     width: 2
     height: 2
