@@ -10,6 +10,8 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 		public Numerics.MobDefensiveStat Stat;
 		
 		public GameObject m_DamagePrefab;
+		public float DeathTime;
+
 		private IMobAnimation m_AnimationManager;
 
 		private DamageRenderer m_damageRenderer;
@@ -96,7 +98,7 @@ namespace com.meiguofandian.ProjectHorizon.GamePlay.Shootables {
 
 			m_AnimationManager.Death();
 
-			Destroy(gameObject, 2);
+			Destroy(gameObject, DeathTime);
 		}
 	}
 }

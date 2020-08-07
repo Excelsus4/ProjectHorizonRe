@@ -111,6 +111,7 @@ MonoBehaviour:
   Stat: {fileID: 11400000, guid: 6ec9bf496d0845d45be78fe54c83b624, type: 2}
   m_DamagePrefab: {fileID: 1949202687806990, guid: db26501f4eb7b124eb10f7b18a40714b,
     type: 3}
+  DeathTime: 0.5
 --- !u!1 &7547977311815960272
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ MonoBehaviour:
   WallMask:
     serializedVersion: 2
     m_Bits: 65536
-  FootLength: 0.5
+  FootLength: 1.25
   BodySize: 0.2
   gravity: 0.98
 --- !u!1 &7547977312312148934
