@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: FloatingCrates
   m_EditorClassIdentifier: 
   CertainPosition:
-  - {x: 0, y: 0}
+  - {x: -11, y: 0}
+  - {x: -8, y: 6}
+  - {x: -6, y: 6}
   CertainObject: {fileID: 3504250571744806322, guid: 8f26b342a0a799041a23e2defa5dc999,
     type: 3}
