@@ -9,14 +9,12 @@ using com.meiguofandian.Modules.ObserverPattern;
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class InventoryData : SynchronizedSave {
 		private static InventoryData singleton;
-
 		public static InventoryData getSingleton() {
 			if (singleton != null)
 				return singleton;
 			else
 				return createSingleton();
 		}
-
 		private static InventoryData createSingleton() {
 			singleton = new InventoryData();
 			return singleton;
@@ -39,10 +37,32 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		}
 
 		public void AddItemToInventory(InventoryItem[] item) {
-			foreach(InventoryItem element in item)
-				inventoryItems.Add(element);
+			foreach (InventoryItem element in item) {
+				// TODO: Inventory Sort on inventoryItems, Only on item list
+				if (element is MaterialInstance) {
+					ScanAddingForMaterialInstance((MaterialInstance)element);
+				} else {
+					inventoryItems.Add(element);
+				}
+			}
+
 			SynchronizeSaveData(SynchronizeType.Save);
 			NotifyObservers();
+		}
+
+		public void ScanAddingForMaterialInstance(MaterialInstance material) {
+			// Scan through the items
+			foreach (InventoryItem mi in inventoryItems) {
+				if (mi.GetReference() == material.GetReference()) {
+					int[] data1 = mi.GetInstanceData();
+					int[] data2 = material.GetInstanceData();
+					data1[0] += data2[0];
+					mi.SetInstanceData(data1);
+					return;
+				}
+			}
+			// Not found, add new
+			inventoryItems.Add(material);
 		}
 
 		public void RemoveItemFromInventory(int index) {
