@@ -9,19 +9,16 @@ using com.meiguofandian.Modules.ObserverPattern;
 namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class UserHandWeaponData : SynchronizedSave {
 		private static UserHandWeaponData singleton;
-
 		public static UserHandWeaponData getSingleton() {
 			if (singleton != null)
 				return singleton;
 			else
 				return createSingleton();
 		}
-
 		private static UserHandWeaponData createSingleton() {
 			singleton = new UserHandWeaponData();
 			return singleton;
 		}
-
 		public WeaponInstance weapon;
 		private List<IDataUpdateCallback> observers;
 

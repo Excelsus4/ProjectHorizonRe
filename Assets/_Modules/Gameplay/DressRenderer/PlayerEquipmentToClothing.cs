@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using com.meiguofandian.Modules.ObserverPattern;
+using com.meiguofandian.ProjectHorizon.WeaponNInventory;
 
 namespace com.meiguofandian.ProjectHorizon.Clothing {
-	public class PlayerEquipmentToClothing : MonoBehaviour {
-		public List<WeaponNInventory.EquipmentInstance> Equipments;
+	public class PlayerEquipmentToClothing : MonoBehaviour, IDataUpdateCallback {
+		public EquipmentInstance[] Equipments;
+		private Body bodySingleton;
+
+		public void OnDataUpdate(string data) {
+			Equipments = bodySingleton.slots.ToArray();
+			VisualizeEquipment();
+		}
 
 		public void Start() {
-			VisualizeEquipment();
+			bodySingleton = Body.getSingleton();
+			bodySingleton.RegisterObserver(this);
 		}
 
 		public void VisualizeEquipment() {

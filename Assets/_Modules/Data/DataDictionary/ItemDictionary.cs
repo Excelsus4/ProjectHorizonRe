@@ -7,5 +7,6 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 		public static bool isLoaded = false;
 		public static Dictionary<string, ItemReference> dictionary = new Dictionary<string, ItemReference>();
 		public static ModInstance[] defaultWeapon;
+		public static EquipmentInstance[] defaultEquipment;
 	}
 }

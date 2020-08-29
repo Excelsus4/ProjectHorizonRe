@@ -39,7 +39,6 @@ namespace com.meiguofandian.ProjectHorizon.Clothing {
 		}
 
 		public void Dress() {
-			// TODO: Add the dressing algorithm HERE
 			foreach(EquipmentVisual vis in m_Visuals) {
 				SpriteRenderer renderer = Instantiate(SpritePrefab, TransformInPartOrder[(int)vis.Part]).GetComponent<SpriteRenderer>();
 				InstantiatedSprites.Add(renderer);

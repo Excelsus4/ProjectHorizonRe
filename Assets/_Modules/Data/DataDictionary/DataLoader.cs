@@ -6,6 +6,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 	public class DataLoader : MonoBehaviour {
 		public ItemReference[] itemReferences;
 		public ModInstance[] defaultWeaponData;
+		public EquipmentInstance[] defaultEquipmentData;
 
 		public InventoryItem[] debugAddingList;
 
@@ -15,6 +16,7 @@ namespace com.meiguofandian.ProjectHorizon.WeaponNInventory {
 					ItemDictionary.dictionary.Add(item.GetName(), item);
 				}
 				ItemDictionary.defaultWeapon = defaultWeaponData;
+				ItemDictionary.defaultEquipment = defaultEquipmentData;
 				ItemDictionary.isLoaded = true;
 			}
 		}
